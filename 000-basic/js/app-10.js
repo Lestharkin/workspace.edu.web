@@ -1,3 +1,4 @@
+
 /*
 const headaer = document.querySelector('h1');
 console.log(headaer.style);
@@ -6,22 +7,21 @@ headaer.style.backgroundColor = 'red';
 headaer.style.fontFamily = 'Arial';
 headaer.style.textTransform = 'uppercase';
 
-
 const card = document.querySelector('.card');
 card.classList.add('new-class', 'onew-class');
 card.classList.remove('card');
 console.log(card.classList);
-
+*/
 const navBar = document.querySelector('.navbar');
 console.log(navBar);
-console.log(navBar.childNodes); // agrega text
-console.log(navBar.children);
-console.log(navBar.firstElementChild);
-console.log(navBar.lastElementChild);
-console.log(navBar.children[0].nodeName); // tag
+// console.log(navBar.childNodes); // agrega text
+// console.log(navBar.children);
+// console.log(navBar.firstElementChild);
+// console.log(navBar.lastElementChild);
+// console.log(navBar.children[0].nodeName); // tag
 console.log(navBar.children[0].children[0].nodeName); // tag
-console.log(navBar.children[0].nodeType); // thttps://www.w3schools.com/jsref/prop_node_nodetype.asp
-
+// console.log(navBar.children[0].nodeType); // thttps://www.w3schools.com/jsref/prop_node_nodetype.asp
+/*
 const card = document.querySelector('.card');
 card.children[1].children[1].textContent = 'Nuevo texto usando el DOM';
 console.log(card.children[1].children[1].textContent);

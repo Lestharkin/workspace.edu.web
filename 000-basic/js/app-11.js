@@ -18,7 +18,7 @@ link.onclick = miFunction;
 console.log(link);
 
 const navBarNav = document.querySelector('.navbar-nav');
-//navBar.appendChild(link);
+// navBarNav.appendChild(link);
 navBarNav.insertBefore(link, navBarNav.children[3]);
 
 //Crear un card
