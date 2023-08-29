@@ -2,8 +2,8 @@ import MovieInterface from './MovieInterface.js'
 
 const nullMovie: MovieInterface = {
   rank: 0,
-  title: '',
-  thumbnail: '',
+  title: 'No fue posible cargar la información',
+  thumbnail: './image/null.jpg',
   rating: '',
   id: '',
   year: 0,
