@@ -1,4 +1,5 @@
 import MovieInterface from '../types/MovieInterface.js'
+import nullMovie from '../types/NullMovie.js'
 
 export default class IndexModel {
   constructor () {
