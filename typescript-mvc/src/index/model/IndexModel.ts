@@ -13,5 +13,14 @@ export default class IndexModel {
         'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
       }
     })
+    const movies = response.json()
+    return await new Promise((resolve, reject) => {
+      try {
+        resolve(movies)
+      } catch (error) {
+        console.warn(error)
+        reject(nullMovie)
+      }
+    })
   }
 }
