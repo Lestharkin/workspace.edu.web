@@ -1,32 +1,25 @@
-import MovieInterface from '../types/MovieInterface.js'
-
 export default class IndexView {
-  constructor () {
-    console.log('IndexView constructor')
-  }
-
-  checkIsHTMLDivElement = (element: HTMLDivElement | null): element is HTMLDivElement => (element as HTMLDivElement).innerHTML !== null
-
-  getElement = (selector: string): HTMLDivElement => {
-    const html = document.querySelector(selector) as HTMLDivElement
-    if (this.checkIsHTMLDivElement(html)) {
-      return html
-    } else {
-      return document.createElement('div')
-    }
-  }
-
-  render = (movies: Promise<MovieInterface[]>): void => {
-    movies.then((movies) => {
-      movies.forEach((movie) => {
-        this.getElement('#sec').innerHTML += this.getArticle(movie)
-      })
-    })
-      .catch((error) => console.warn(error))
-  }
-
-  getArticle = (movie: MovieInterface): string => {
-    return `
+    constructor() {
+        this.checkIsHTMLDivElement = (element) => element.innerHTML !== null;
+        this.getElement = (selector) => {
+            const html = document.querySelector(selector);
+            if (this.checkIsHTMLDivElement(html)) {
+                return html;
+            }
+            else {
+                return document.createElement('div');
+            }
+        };
+        this.render = (movies) => {
+            movies.then((movies) => {
+                movies.forEach((movie) => {
+                    this.getElement('#sec').innerHTML += this.getArticle(movie);
+                });
+            })
+                .catch((error) => console.warn(error));
+        };
+        this.getArticle = (movie) => {
+            return `
     <article>
       <div class="card">
         <div class="card_img"><a href="">
@@ -46,6 +39,8 @@ export default class IndexView {
       </div>          
     </article>
     <p class="hr"></p>
-    `
-  }
+    `;
+        };
+        console.log('IndexView constructor');
+    }
 }
