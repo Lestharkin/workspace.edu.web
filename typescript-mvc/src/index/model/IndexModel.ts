@@ -9,7 +9,7 @@ export default class IndexModel {
     const response = await fetch('https://imdb-top-100-movies.p.rapidapi.com/', {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '',
+        'X-RapidAPI-Key': '1c95ebb708mshc05c266b057330cp1df76djsnba5426df4bdb',
         'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
       }
     })
