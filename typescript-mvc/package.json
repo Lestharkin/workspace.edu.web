@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "ts-standard --fix",
+    "build": "tsc -w"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +14,11 @@
   "devDependencies": {
     "ts-standard": "^12.0.2",
     "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": "./node_modules/ts-standard/eslintrc.json"
   }
 }
