@@ -12,4 +12,4 @@ echo "/node_modules" >> .gitignore
 # -- init tools
 npm init -y
 npm i typescript ts-standard -D
-npx tsc --init
+tsc --init
