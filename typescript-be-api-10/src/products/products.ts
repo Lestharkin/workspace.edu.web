@@ -14,6 +14,8 @@ class Server {
     dotenv.config({
       path: path.join(__dirname, '../../config/.env.development')
     })
+    this.products.use(express.json())
+    this.products.use(express.urlencoded({ extended: true }))
   }
 
   start = (): void => {
