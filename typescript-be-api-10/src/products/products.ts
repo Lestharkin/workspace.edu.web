@@ -1,10 +1,19 @@
 import express, { Application } from 'express'
+import dotenv from 'dotenv'
+import path from 'path'
 
 class Server {
   products: Application
 
   constructor () {
     this.products = express()
+    this.config()
+  }
+
+  config = (): void => {
+    dotenv.config({
+      path: path.join(__dirname, '../../config/.env.development')
+    })
   }
 
   start = (): void => {
