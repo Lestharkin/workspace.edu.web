@@ -1,11 +1,11 @@
 # -- folder architecture
 app=products
 App=${app^}
-mkdir src src/$app src/$app/controller src/$app/model src/$app/view test config docs build
+mkdir src src/$app src/$app/controller src/$app/model test config docs build
 touch ./src/$app/$app.ts
 touch ./src/$app/controller/${App}Controller.ts
 touch ./src/$app/model/${App}Model.tsa
-touch ./src/$app/view/${App}View.ts
+
 touch ./test/$app.test.ts
 
 echo '# '$App > README.md
