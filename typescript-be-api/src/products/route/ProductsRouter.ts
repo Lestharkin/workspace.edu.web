@@ -11,6 +11,7 @@ export default class ProductsRouter {
 
   routes = (): void => {
     this.router.get('/products', this.productsController.getProducts)
+    this.router.get('/product/:id', this.productsController.getProductById)
     this.router.get('*', this.productsController.controlError)
   }
 }
