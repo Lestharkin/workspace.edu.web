@@ -14,7 +14,7 @@ export default class ProductsController {
   getProductById = (req: Request, res: Response): void => {
     const { id } = req.params
     // Aquí se tiene validar el id
-    this.productsModel.getProductById(id).then((product) => {
+    this.productsModel.getProductById(Number(id)).then((product) => {
       // Aquí se tiene que manipular el producto
       res.status(200).json(product)
     }).catch((err: Error) => {
