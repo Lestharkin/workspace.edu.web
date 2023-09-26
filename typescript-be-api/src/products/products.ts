@@ -1,12 +1,16 @@
 import express, { Application } from 'express'
 import path from 'path'
 import dotenv from 'dotenv'
+import ProductsRouter from './route/ProductsRouter'
+import ProductsController from './controller/ProductsController'
+import ProductsModel from './model/ProductsModel'
 class Server {
   products: Application
 
-  constructor () {
+  constructor (private readonly productsRouter: ProductsRouter) {
     this.products = express()
     this.config()
+    this.route()
   }
 
   config = (): void => {
@@ -15,6 +19,11 @@ class Server {
     })
     this.products.use(express.json())
     this.products.use(express.urlencoded({ extended: true }))
+  }
+
+  route = (): void => {
+    this.products.use('/', this.productsRouter.router)
+    this.products.use('*', this.productsRouter.router)
   }
 
   start = (): void => {
@@ -26,5 +35,5 @@ class Server {
   }
 }
 
-const server = new Server()
+const server = new Server(new ProductsRouter(new ProductsController(new ProductsModel())))
 server.start()
