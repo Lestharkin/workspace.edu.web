@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import ProductsController from '../controller/ProductsController'
 
 export default class ProductsRouter {
   router: Router
@@ -9,6 +10,6 @@ export default class ProductsRouter {
   }
 
   routes = (): void => {
-    this.router.get('/', this.productsController.products)
+    this.router.get('/products', this.productsController.getProducts)
   }
 }
