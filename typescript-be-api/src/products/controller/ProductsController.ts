@@ -29,7 +29,7 @@ export default class ProductsController {
   getProductsByPrice = (req: Request, res: Response): void => {
     const { min, max } = req.body
     // Aquí se tiene validar las entradas
-    this.productsModel.getProductsByPrice(min, max).then((products) => {
+    this.productsModel.getProductsByPrice(Number(min), Number(max)).then((products) => {
       res.status(200).json(products)
     }).catch((err: Error) => {
       res.status(500).json(err)
