@@ -13,5 +13,7 @@ export default class ProductsRouter {
     this.router.get('/products', this.productsController.getProducts)
     this.router.get('/product/:id', this.productsController.getProductById)
     this.router.get('*', this.productsController.controlError)
+
+    this.router.post('/products/price', this.productsController.getProductsByPrice)
   }
 }

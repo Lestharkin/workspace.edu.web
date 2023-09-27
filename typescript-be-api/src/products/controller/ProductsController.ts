@@ -25,4 +25,14 @@ export default class ProductsController {
   controlError = (_: Request, res: Response): void => {
     res.status(404).json({ error: 'Not Found' })
   }
+
+  getProductsByPrice = (req: Request, res: Response): void => {
+    const { min, max } = req.body
+    // Aquí se tiene validar las entradas
+    this.productsModel.getProductsByPrice(min, max).then((products) => {
+      res.status(200).json(products)
+    }).catch((err: Error) => {
+      res.status(500).json(err)
+    })
+  }
 }
