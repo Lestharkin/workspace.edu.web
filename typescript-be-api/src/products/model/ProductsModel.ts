@@ -26,4 +26,15 @@ export default class ProductsModel {
       }
     })
   }
+
+  getProductsByPrice = async (min: number, max: number): Promise<ProductInterface[]> => {
+    return await new Promise((resolve, reject) => {
+      try {
+        const productsByPrice = products.filter((product) => product.price >= min && product.price <= max)
+        resolve(productsByPrice)
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
 }
