@@ -2,13 +2,17 @@
   "name": "typescript-mvt-dyn-10",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/products/products.js",
   "directories": {
     "doc": "docs",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev src/products/products.ts",
+    "build": "tsc",
+    "lint": "ts-standard --fix",
+    "start": "node build/src/products/products.js",
+    "test": "jest --verbose"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +24,25 @@
     "express": "^4.18.2",
     "helmet": "^7.0.0",
     "morgan": "^1.10.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": "./node_modules/ts-standard/eslintrc.json",
+    "env": {
+      "jest": true
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ]
   },
   "devDependencies": {
     "@types/cors": "^2.8.14",
