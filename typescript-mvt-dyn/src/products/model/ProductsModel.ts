@@ -17,7 +17,8 @@ export default class ProductsModel {
       try {
         const product = products.find((product) => product.id === id)
         if (product !== undefined) {
-          resolve(product as ProductInterface)
+          const p = { ...product, ...{ img: `${product.id}.jpg` } }
+          resolve(p as ProductInterface)
         } else {
           reject(new Error('Product not found'))
         }

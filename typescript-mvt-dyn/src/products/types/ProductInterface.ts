@@ -8,4 +8,5 @@ export default interface ProductInterface {
   discount: boolean
   discountPer: number
   discountUni: string
+  img?: string
 }
