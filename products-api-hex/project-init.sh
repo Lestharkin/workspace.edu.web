@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 # Create project folders
 project="product-api"
 Project="Product-API"
