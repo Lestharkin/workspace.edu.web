@@ -1,5 +1,7 @@
 import ProductModel from '../../domain/model/ProductModel'
+import ProductNullModel from '../../domain/model/ProductNullModel'
 import ProductManagementPort from '../../domain/port/driver/ProductManagementPort'
+import ProductManagementService from '../service/ProductServiceUseCase'
 
 export default class ProductManagementUseCase implements ProductManagementPort {
   constructor (private readonly productManagementService: ProductManagementService) {}
