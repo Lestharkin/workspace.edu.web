@@ -1,15 +1,19 @@
 import ProductModel from '../../domain/model/ProductModel'
+import ProductNullModel from '../../domain/model/ProductNullModel'
 import ProductManagementPort from '../../domain/port/driver/ProductManagementPort'
+import ProductManagementService from '../service/ProductServiceUseCase'
 
 export default class ProductManagementUseCase implements ProductManagementPort {
   constructor (private readonly productManagementService: ProductManagementService) {}
 
   getProduct = async (id: string): Promise<ProductModel> => {
-    // TODO: implement
+    const idNumber = Number(id)
+    if (isNaN(idNumber)) return ProductNullModel
+    return await this.productManagementService.findById(idNumber)
   }
 
   getProducts = async (): Promise<ProductModel[]> => {
-    // TODO: implement
+    return await this.productManagementService.findAll()
   }
 
   getProductsByPrice = async (min: number, max: number): Promise<ProductModel[]> => {
