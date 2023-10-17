@@ -7,7 +7,11 @@ export default class ProductManagementService {
 
   findById = async (id: number): Promise<ProductModel> => {
     const product = await this.productRepository.findById(String(id))
-    if (product !== undefined) return product
+    if (product !== undefined) {
+      if (product.getId() === id) {
+        return product
+      }
+    }
     return ProductNullModel
   }
 

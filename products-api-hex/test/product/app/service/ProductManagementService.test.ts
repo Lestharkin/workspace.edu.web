@@ -59,10 +59,17 @@ describe('ProductManagementService', () => {
   })]
 
   describe('findById', () => {
-    it('should return product if found', async () => {
+    it('should return product if found by id = 1', async () => {
       productRepository.findById.mockResolvedValueOnce(product)
       const result = await productManagementService.findById(1)
       expect(result).toEqual(product)
+    })
+
+    it('should return a null product object if not found', async () => {
+      const productNull = ProductNullModel
+      productRepository.findById.mockResolvedValueOnce(product)
+      const result = await productManagementService.findById(2)
+      expect(result).toEqual(productNull)
     })
 
     it('should return a null product object if not found', async () => {
