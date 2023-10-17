@@ -65,6 +65,13 @@ describe('ProductManagementService', () => {
       expect(result).toEqual(product)
     })
 
+    it('should return product if found', async () => {
+      const productNull = ProductNullModel
+      productRepository.findById.mockResolvedValueOnce(product)
+      const result = await productManagementService.findById(2)
+      expect(result).toEqual(productNull)
+    })
+
     it('should return a null product object if not found', async () => {
       const productNull = ProductNullModel
       productRepository.findById.mockResolvedValueOnce(ProductNullModel)
