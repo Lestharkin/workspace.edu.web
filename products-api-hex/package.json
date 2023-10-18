@@ -1,5 +1,5 @@
 {
-  "name": "products-api-hex",
+  "name": "product-api-hex",
   "version": "1.0.0",
   "description": "",
   "main": "build/products-api.js",
@@ -8,10 +8,10 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "ts-node-dev src/products-api.ts",
+    "dev": "ts-node-dev src/product-api.ts",
     "build": "tsc",
     "lint": "ts-standard --fix",
-    "start": "node build/products-api.js",
+    "start": "node build/product-api.js",
     "test": "jest --verbose"
   },
   "keywords": [],
