@@ -35,7 +35,7 @@ console.log(`Password 1 = ${password1}, Password 2 = ${password2}`);
 console.log(`Password 1 == Password 2 => ${password1 == password2}`);
 console.log(`Password 1 === Password 2 => ${password1 === password2}`);
 console.log(`Password 1 != Password 2 => ${password1 != password2}`);
-console.log('---');
+console.log('---///////////////////');
 
 let varn;
 console.log(`varn => ${varn}`);

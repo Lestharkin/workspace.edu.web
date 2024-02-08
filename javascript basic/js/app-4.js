@@ -99,7 +99,7 @@ res -= 3;
 console.log(res);
 console.log('---');
 
-const n61 = "20";
+const n61 = [1,2];
 const n62 = "20.2";
 const n63 = "Uno";
 const n64 = 20;

@@ -94,3 +94,30 @@ const { nombre, informacion, informacion: { fabricacion: { pais } } } = item;
 console.log(nombre);
 console.log(informacion);
 console.log(pais);
+
+console.log(item.fabricacion.pais);
+
+
+
+const fun = function fn(a,b) {
+    return a + b;
+}
+
+fn(1,3);
+
+fun(1, 3);
+
+const fun2 = (a, b) => a + b;
+
+
+fun2(1, 3);
+
+const fun3 = (un) => {
+    console.log("hace cosas");
+    console.log("hace cosas");
+    console.log("hace cosas");
+    console.log("hace cosas");
+    console.log("hace cosas");
+    return "cosas";   
+
+};
