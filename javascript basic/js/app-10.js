@@ -1,10 +1,10 @@
 /*
-const headaer = document.querySelector('h1');
-console.log(headaer.style);
+const header = document.querySelector('h1');
+console.log(header.style);
 
-headaer.style.backgroundColor = 'red';
-headaer.style.fontFamily = 'Arial';
-headaer.style.textTransform = 'uppercase';
+header.style.backgroundColor = 'red';
+header.style.fontFamily = 'Arial';
+header.style.textTransform = 'uppercase';
 
 
 const card = document.querySelector('.card');
