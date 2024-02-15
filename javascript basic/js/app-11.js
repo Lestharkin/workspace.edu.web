@@ -9,7 +9,7 @@ link.target = '_blank';
 link.setAttribute('data-link', 'nuevo-link');
 
 link.classList.add('btn');
-link.classList.add('btn-primary');
+link.classList.add('btn-warning');
 
 const miFunction = () => alert("test");
 
@@ -19,7 +19,7 @@ console.log(link);
 
 const navBarNav = document.querySelector('.navbar-nav');
 //navBar.appendChild(link);
-navBarNav.insertBefore(link, navBarNav.children[3]);
+navBarNav.insertBefore(link, navBarNav.children[2]);
 
 //Crear un card
 const p1 = document.createElement('p');

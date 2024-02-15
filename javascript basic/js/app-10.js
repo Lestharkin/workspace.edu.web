@@ -25,7 +25,7 @@ console.log(navBar.children[0].nodeType); // thttps://www.w3schools.com/jsref/pr
 const card = document.querySelector('.card');
 card.children[1].children[1].textContent = 'Nuevo texto usando el DOM';
 console.log(card.children[1].children[1].textContent);
-
+*/
 // hijo al padre
 console.log(card.parentNode);
 console.log(card.parentElement.parentElement.parentElement);

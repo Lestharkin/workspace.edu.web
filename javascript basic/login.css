@@ -1,0 +1,12 @@
+.msn {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(196, 45, 56);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
