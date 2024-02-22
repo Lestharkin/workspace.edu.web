@@ -31,7 +31,7 @@ if (dis) {
     _any = false;
     dis.innerHTML += "<p>Any = ".concat(_any.toString(), "</p>");
     var PI = 3.1416;
-    dis.innerHTML += "<p>Constant: PI = ".concat(_any.toString(), "</p>");
+    dis.innerHTML += "<p>Constant: PI = ".concat(PI.toString(), "</p>");
     // num to string
     _str = 123 + " string";
     dis.innerHTML += "<p>toConcatenate = ".concat(_str, "</p>");

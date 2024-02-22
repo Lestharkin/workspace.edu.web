@@ -1,13 +1,14 @@
 console.log("TS -> JS");
 
 const getElement = (selector: string): HTMLElement | null => document.querySelector(selector);
+
 const dis = getElement('.display');
 
 if (dis) {
-
+    
     dis.innerHTML = `<h3>Types</h3>`;
 
-    let _num: number = 123;
+    let _num = 123;
     dis.innerHTML += `<p>Number int = ${_num.toString() + " "}</p>`;
 
     _num = 123.456;
@@ -18,7 +19,6 @@ if (dis) {
 
     let _str: string = "text";
     dis.innerHTML += `<p>String = ${_str.toString()}</p>`;
-
 
     let _any: any = "any";
     dis.innerHTML += `<p>Any = ${_any.toString()}</p>`;
