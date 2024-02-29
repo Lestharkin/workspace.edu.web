@@ -3,7 +3,6 @@ export default class IndexModel {
     console.log('IndexModel')
   }
 
-  public getData (): void {
-    console.log('IndexModel.getData')
+  public getMovies (): Promise<MovieInterface[]> {
   }
 }
