@@ -10,6 +10,8 @@ export default class IndexController {
   }
 
   public start (): void {
+    console.log('IndexController.start')
+
     this.view.deploy(this.model.getMovies())
   }
 }

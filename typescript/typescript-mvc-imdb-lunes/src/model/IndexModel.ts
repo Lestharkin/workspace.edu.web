@@ -14,10 +14,11 @@ export default class IndexModel {
           'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
         }
       })
-      response.then((movies) => {
-        resolve(movies.json())
-      }).catch((err) => {
-        reject(err)
+
+      response.then((data) => {
+        resolve(data.json())
+      }).catch((error) => {
+        reject(error)
       })
     })
   }

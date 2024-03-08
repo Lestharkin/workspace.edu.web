@@ -12,8 +12,8 @@ export default class IndexView {
       movies.forEach((movie) => {
         this.sec.innerHTML += this.getArticle(movie)
       })
-    }).catch((err) => {
-      console.error(err)
+    }).catch((error) => {
+      console.error(error)
     })
   }
 

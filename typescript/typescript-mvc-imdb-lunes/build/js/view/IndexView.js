@@ -1,24 +1,7 @@
-import MovieInterface from '../types/MovieInterface'
-
 export default class IndexView {
-  private readonly sec: HTMLDivElement
-
-  constructor () {
-    this.sec = document.querySelector('#sec') as HTMLDivElement
-  }
-
-  public deploy (moviesPromise: Promise<MovieInterface[]>): void {
-    moviesPromise.then((movies) => {
-      movies.forEach((movie) => {
-        this.sec.innerHTML += this.getArticle(movie)
-      })
-    }).catch((err) => {
-      console.error(err)
-    })
-  }
-
-  getArticle = (movie: MovieInterface): string => {
-    return `
+    constructor() {
+        this.getArticle = (movie) => {
+            return `
     <article>
       <div class="card">
         <div class="card_img"><a href="">
@@ -38,6 +21,17 @@ export default class IndexView {
       </div>          
     </article>
     <p class="hr"></p>
-    `
-  }
+    `;
+        };
+        this.sec = document.querySelector('#sec');
+    }
+    deploy(moviesPromise) {
+        moviesPromise.then((movies) => {
+            movies.forEach((movie) => {
+                this.sec.innerHTML += this.getArticle(movie);
+            });
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
 }
