@@ -1,15 +1,15 @@
-import express, { Application } from "express";
+import express, { Application } from 'express'
 
 export default class PapersExpress {
-  private app: Application
+  private readonly app: Application
 
-  constructor() {
+  constructor () {
     this.app = express()
   }
 
-  start = () => {
+  start = (): void => {
     this.app.listen(1802, () => {
-      console.log("Server is running on port 1802")
+      console.log('Server is running on port 1802')
     })
   }
 }
