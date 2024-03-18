@@ -4,7 +4,7 @@
   "description": "Papers Server",
   "main": "papers.js",
   "scripts": {
-    "start": "node --env-file=env/.production.env build/papers.js",
+    "start": "node --env-file=env/.production.env papers.js",
     "dev": "ts-node-dev --env-file=env/.development.env src/papers.ts",    
     "build": "rm -rf ./build && tsc",
     "lint": "ts-standard --fix",
