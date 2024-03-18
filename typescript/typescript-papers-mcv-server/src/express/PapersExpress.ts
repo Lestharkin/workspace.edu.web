@@ -8,8 +8,10 @@ export default class PapersExpress {
   }
 
   start = (): void => {
-    this.app.listen(1802, () => {
-      console.log('Server is running on port 1802')
+    const PORT = process.env['PORT'] ?? 1802
+    const HOST = process.env['HOST'] ?? 'localhost'
+    this.app.listen(PORT, () => {
+      console.log(`Server is running on http://${HOST}:${PORT}`)
     })
   }
 }
