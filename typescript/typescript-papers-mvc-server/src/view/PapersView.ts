@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import PapersController from '../controller/PapersController'
 
-export default class PaperView {
+export default class PapersView {
   router: Router
 
   constructor (private readonly papersController: PapersController) {
@@ -10,6 +10,7 @@ export default class PaperView {
   }
 
   routes = (): void => {
-    this.router.get('/ref/references', this.papersController.getReferences.bind(this.papersController))
+    this.router.get('/ref/references', this.papersController.getReferences.bind(this.papersController.getReferences))
+    this.router.get('/ref/reference/:id', this.papersController.getReferenceById.bind(this.papersController.getReferenceById))
   }
 }
