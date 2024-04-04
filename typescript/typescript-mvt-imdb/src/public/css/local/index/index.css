@@ -1,0 +1,164 @@
+:root {
+  --main-logo-color: #F5C518;
+  --main-select-color: rgb(82, 82, 148);
+  --body-font-family: Roboto, Helvetica,Arial,sans-serif;
+}
+
+body {
+  background-color: black;
+  border-radius: 10px;
+  font-family: var(--body-font-family);
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  font-size: small;
+  font-weight: bold;
+  background-color: var(--main-logo-color);
+}
+
+.btn:hover {
+  background-color: var(--main-select-color);
+  color: white;
+}
+
+.container {
+  margin: auto;
+  width: 90%;
+  max-width: 1024px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px 0px 10px;
+}
+
+.logo {
+  flex-grow: 1;  
+}
+
+.search {
+  flex: 8;
+}
+
+.login {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.menu form {
+  display: flex;
+  flex-direction: row;
+  padding: 1px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.menu form input {
+  flex-grow: 1;
+  padding: 8px;  
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.btn_search {
+  display: block;
+  padding: 2px 6px 0px 6px;
+  text-decoration: none;
+  color: var(--main-logo-color);
+  border-left: 1px solid var(--main-logo-color);
+}
+
+.btn_search:hover {
+  color: var(--main-select-color);
+  border-left: 1px solid var(--main-select-color);
+}
+
+main {
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  font-size: 12px;  
+}
+
+section {
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+section .hr {
+  margin: auto;
+  width: 97%;
+  border-bottom: 1px solid #cccccc;
+}
+
+article {
+  padding: 10px 20px 10px 20px;
+}
+
+header .h1super {
+  margin: 0px;
+  padding: 0px 0px 0px 10px;
+  font-size: 30px;
+  font-weight: bold;
+  border-left: 5px solid var(--main-logo-color);
+}
+
+header p {
+  color: #777777;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.card .card_header {
+  padding: 10px;
+}
+
+.card .card_header h1 {
+  margin-bottom: 5px;
+}
+
+.card .card_header .subtitle {
+  margin: 0px;
+}
+
+.card img {
+  width: 80px;
+}
+
+.card .star {
+  color: var(--main-logo-color);
+}
+
+@media (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+    text-align: center;    
+  }
+
+  .search {
+    margin-bottom: 5px; 
+  }
+
+  .login table {
+    margin: auto;
+  }
+
+  .btn {
+    width: 100%;   
+    padding: 5px 0px 5px 0px;
+  }
+}

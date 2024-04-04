@@ -1,0 +1,37 @@
+
+{
+  "compilerOptions": {
+
+    /* Language and Environment */
+    "target": "ES2022",
+    "lib": ["dom", "ES2022"],
+
+    /* Modules */
+    "module": "node16",                          
+    "rootDir": "./",
+    "moduleResolution": "node16",
+    "types": ["jest", "node"],
+    "resolveJsonModule": true,
+
+    /* Emit */
+    "sourceMap": true,
+    "outDir": "./build",
+
+    /* Interop Constraints */
+    "esModuleInterop": true,                          
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules", "config", "docs", "logs", "build"]
+}
+
