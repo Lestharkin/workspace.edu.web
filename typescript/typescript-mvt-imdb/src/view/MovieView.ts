@@ -8,8 +8,6 @@ export default class MovieView {
   index = async (_req: Request, res: Response): Promise<void> => {
     const movies = await this.movieModel.getMovies()
 
-    console.log(movies)
-
     if (movies.length > 0) {
       res.render('IndexTemplate', { movies })
     } else {
