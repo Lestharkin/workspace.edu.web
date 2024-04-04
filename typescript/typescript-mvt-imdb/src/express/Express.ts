@@ -4,7 +4,7 @@ import path from 'path'
 import morgan from 'morgan'
 import MovieRouter from '../router/MovieRouter'
 
-export default class PapersExpress {
+export default class Express {
   private readonly app: Application
 
   constructor (

@@ -73,7 +73,7 @@
         <p class="subtitle">IMDb Top 100 as rated by regular IMDb voters</p>
       </header>
       <section id="sec">
-        <% movies.array.forEach(movie => {%>
+        <% movies.forEach(movie => {%>
           <%- include('./MovieTemplate'); %>
         <% }); %>
       </section>
