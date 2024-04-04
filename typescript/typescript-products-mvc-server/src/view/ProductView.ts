@@ -11,5 +11,6 @@ export default class ProductView {
 
   routes = (): void => {
     this.router.get('/eco/products', this.productController.getProducts.bind(this.productController.getProducts))
+    this.router.get('/eco/product/image/:id', this.productController.getProductImage.bind(this.productController.getProductImage))
   } 
 }
