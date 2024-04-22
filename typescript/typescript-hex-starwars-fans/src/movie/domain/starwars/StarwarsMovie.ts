@@ -1,6 +1,6 @@
-export default interface Movie {
+export default interface StarwarsMovie {
   title: string
-  episode_id: string
+  episode_id: number
   opening_crawl: string
   release_date: string
   director: string

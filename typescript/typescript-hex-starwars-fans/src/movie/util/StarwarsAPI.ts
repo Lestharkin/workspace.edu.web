@@ -1,13 +1,12 @@
-import Character from "../domain/starwars/Character"
-import Movie from "../domain/starwars/Movie"
+import StarwarsCharacter from "../domain/starwars/StarwarsCharacter"
+import StarwarsMovie from "../domain/starwars/StarwarsMovie"
 
 export default class StarwarsAPI {
   private uriFilms = 'https://swapi.dev/api/films/'
-  private uriPeople = 'https://swapi.dev/api/people/'
 
 
-  public async fetchAllMovies(): Promise<Movie[]> {
-    let movies: Movie[] = []
+  public async fetchAllMovies(): Promise<StarwarsMovie[]> {
+    let movies: StarwarsMovie[] = []
     const response = await fetch(this.uriFilms)
     const data = await response.json()
     movies = data.results.map((movie: any) => {
@@ -24,8 +23,8 @@ export default class StarwarsAPI {
     return movies
   }
 
-  public charactersFromMovies(movie: Movie): Character[] {
-    let characters: Character[] = []
+  public async charactersFromMovies(movie: StarwarsMovie): Promise<StarwarsCharacter[]> {
+    let characters: StarwarsCharacter[] = []
     movie.characters.forEach(async (character: string) => {
       const response = await fetch(character)
       const data = await response.json()
