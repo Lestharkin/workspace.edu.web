@@ -10,7 +10,7 @@ export default class RetrieveMoviesUseCase implements RetrieveMoviesUseCasePort 
   }
 
   public getMovies = async (): Promise<Movie[]> => {
-    return this.retrieveMoviesService.getMovies()
+    this.retrieveMoviesService.getMovies()
   }
 }
   
