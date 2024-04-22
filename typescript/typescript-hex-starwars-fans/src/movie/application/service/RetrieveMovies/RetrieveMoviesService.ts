@@ -1,5 +1,4 @@
-
-import Movie from '../../../domain/model/Movie'
+import Movie from '../../../domain/model/movie/Movie'
 import RetrieveMoviesServicePort from '../../../domain/port/driver/RetrieveMovies/RetrieveMoviesServicePort'
 
 export default class RetrieveMoviesService implements RetrieveMoviesServicePort {

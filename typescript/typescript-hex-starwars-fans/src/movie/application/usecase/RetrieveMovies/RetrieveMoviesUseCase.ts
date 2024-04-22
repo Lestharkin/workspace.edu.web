@@ -1,5 +1,5 @@
 
-import Movie from '../../../domain/model/Movie'
+import Movie from '../../../domain/model/movie/Movie'
 import RetrieveMoviesUseCasePort from '../../../domain/port/driver/RetrieveMovies/RetrieveMoviesUseCasePort'
 
 export default class RetrieveMoviesUseCase implements RetrieveMoviesUseCasePort {

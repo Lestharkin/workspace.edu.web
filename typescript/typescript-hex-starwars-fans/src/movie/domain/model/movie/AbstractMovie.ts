@@ -2,12 +2,12 @@ import Director from "../director/Director"
 import Producer from "../producer/Producer"
 
 export default abstract class AbstractMovie {
-  private title: string
-  private episode_id: number
-  private opening: string
-  private releaseDate: Date
-  private producers: Producer[]
-  private director: Director
+  protected title: string
+  protected episode_id: number
+  protected opening: string
+  protected releaseDate: Date
+  protected producers: Producer[]
+  protected director: Director
 
   constructor(
     title: string,
@@ -79,7 +79,7 @@ export default abstract class AbstractMovie {
     this.producers.push(producer)
   }
 
-  removeProducer(producer:Producer): void {
+  public removeProducer(producer:Producer): void {
     this.producers = this.producers.filter(
       _producer => _producer !== producer
     )
