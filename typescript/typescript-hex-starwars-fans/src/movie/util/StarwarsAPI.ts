@@ -1,3 +1,4 @@
+import Character from "../domain/starwars/Character"
 import Movie from "../domain/starwars/Movie"
 
 export default class StarwarsAPI {
@@ -23,11 +24,16 @@ export default class StarwarsAPI {
     return movies
   }
 
-  public charactersFromMovies(url: string) {
-    fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      return data.results
-    })
+  public charactersFromMovies(movie: Movie): Character[] {
+    let characters: Character[] = []
+    movie.characters.forEach(async (character: string) => {
+      const response = await fetch(character)
+      const data = await response.json()
+      characters.push({
+        name: data.name,
+        gender: data.gender
+      })      
+  })
+  return characters
   }
 }
