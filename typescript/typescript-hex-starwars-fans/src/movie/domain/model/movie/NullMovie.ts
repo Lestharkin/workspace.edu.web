@@ -1,5 +1,5 @@
 import AbstractMovie from "./AbstractMovie";
-import NullDirector from "./NullDirector";
+import NullDirector from "../director/NullDirector";
 
 export default class NullMovie extends AbstractMovie {
   constructor() {

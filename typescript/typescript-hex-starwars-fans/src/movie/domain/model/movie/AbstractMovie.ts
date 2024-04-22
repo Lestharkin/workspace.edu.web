@@ -1,5 +1,5 @@
-import Director from "./Director"
-import Producer from "./Producer"
+import Director from "../director/Director"
+import Producer from "../producer/Producer"
 
 export default abstract class AbstractMovie {
   private title: string

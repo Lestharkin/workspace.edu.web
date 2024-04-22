@@ -1,10 +1,10 @@
 export default abstract class AbstractPerson {
-  private name: string
-  private lastname: string
+  protected name: string
+  protected lastName: string
 
-  constructor(name: string, lastname: string) {
+  constructor(name: string, lastName: string) {
     this.name = name
-    this.lastname = lastname
+    this.lastName = lastName
   }
 
   public abstract isNull(): boolean
@@ -17,12 +17,12 @@ export default abstract class AbstractPerson {
     this.name = name
   }
 
-  public getLastname(): string {
-    return this.lastname
+  public getLastName(): string {
+    return this.lastName
   }
 
   public getFullName(): string {
-    return `${this.name} ${this.lastname}`
+    return `${this.name} ${this.lastName}`
   }
 
 }

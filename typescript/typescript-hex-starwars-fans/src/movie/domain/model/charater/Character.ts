@@ -1,4 +1,4 @@
-import AbstractPerson from "./AbstractPerson";
+import AbstractPerson from "../person/AbstractPerson"
 
 export default class Character extends AbstractPerson {
   private gender: string
@@ -22,5 +22,4 @@ export default class Character extends AbstractPerson {
   public setGender(gender: string): void {
     this.gender = gender
   }
-
 }
