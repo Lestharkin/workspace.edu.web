@@ -1,3 +1,6 @@
+import StarwarsCharacter from "../domain/starwars/StarwarsCharacter"
+import StarwarsMovie from "../domain/starwars/StarwarsMovie"
+
 export default class StarwarsAPI {
   private uriFilms = 'https://swapi.dev/api/films/'
 
