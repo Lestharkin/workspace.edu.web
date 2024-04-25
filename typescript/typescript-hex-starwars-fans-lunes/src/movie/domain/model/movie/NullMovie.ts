@@ -9,7 +9,8 @@ export default class NullMovie extends AbstractMovie {
       "not found opening in database",
       new Date(),
       [],
-      new NullDirector()
+      new NullDirector(),
+      []
     )
   }
 
@@ -23,6 +24,7 @@ export default class NullMovie extends AbstractMovie {
   public setReleaseDate(): void { return }
   public setProducers(): void { return }
   public setDirector(): void { return }
+  public setCast(): void { return }
   public addProducer(): void { return }
   public removeProducer(): void { return }
 }
