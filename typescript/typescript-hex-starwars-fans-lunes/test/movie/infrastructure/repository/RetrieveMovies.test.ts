@@ -66,6 +66,25 @@ describe('RetrieveMovies', () => {
   
       expect(movies).toEqual([movie])
     })
+
+    it('should retrieve all movies with characters, producers, and director', async () => {
+      starwarsAPI.fetchAllMovies.mockResolvedValue(mockMovieData)
+      starwarsAPI.charactersFromMovies.mockResolvedValue(mockCharacters)
+
+      const movies = await retrieveMovies.findAll()
+
+      expect(movies).toHaveLength(1)
+      expect(movies[0]).toBeInstanceOf(Movie)
+      expect(movies[0].getTitle()).toEqual('A New Hope')
+      expect(movies[0].getEpisode_id()).toEqual(4)
+      expect(movies[0].getProducers()).toHaveLength(2)
+      expect(movies[0].getProducers()[0]).toBeInstanceOf(Producer)
+      expect(movies[0].getProducers()[1]).toBeInstanceOf(Producer)
+      expect(movies[0].getDirector()).toBeInstanceOf(Director)
+      expect(movies[0].getCast()).toHaveLength(2)
+      expect(movies[0].getCast()[0]).toBeInstanceOf(Character)
+      expect(movies[0].getCast()[1]).toBeInstanceOf(Character)
+    })
   })
 
 })
