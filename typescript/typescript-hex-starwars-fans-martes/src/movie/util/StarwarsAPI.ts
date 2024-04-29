@@ -4,6 +4,7 @@ import StarwarsMovie from "../domain/starwars/StarwarsMovie"
 export default class StarwarsAPI {
   private uriFilms = 'https://swapi.dev/api/films/'
 
+
   public async fetchAllMovies(): Promise<StarwarsMovie[]> {
     let movies: StarwarsMovie[] = []
     const response = await fetch(this.uriFilms)
@@ -34,5 +35,4 @@ export default class StarwarsAPI {
   })
   return characters
   }
-
 }

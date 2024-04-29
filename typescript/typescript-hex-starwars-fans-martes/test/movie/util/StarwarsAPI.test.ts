@@ -35,8 +35,9 @@ beforeAll(() => {
   }
 })
 
+
 describe('StarwarsAPI', () => {
-  
+
   describe('fetchAllMovies', () => {
     it('aquí pongo lo que debería hacer esto', async () => {
       const response = await starwarsAPI.fetchAllMovies()
@@ -45,4 +46,9 @@ describe('StarwarsAPI', () => {
       expect(response[0].title).toEqual(iv.title)
     })
   })
+
+  describe('charactersFromMovies', () => {
+
+  })
+
 })

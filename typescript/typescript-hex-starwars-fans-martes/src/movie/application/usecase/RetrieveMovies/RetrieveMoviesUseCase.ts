@@ -1,12 +1,11 @@
 
 import Movie from '../../../domain/model/movie/Movie'
-import RetrieveMoviesServicePort from '../../../domain/port/driver/RetrieveMovies/RetrieveMoviesServicePort'
 import RetrieveMoviesUseCasePort from '../../../domain/port/driver/RetrieveMovies/RetrieveMoviesUseCasePort'
 
 export default class RetrieveMoviesUseCase implements RetrieveMoviesUseCasePort {
   name: string
 
-  constructor(private readonly retrieveMoviesService: RetrieveMoviesServicePort) {
+  constructor(private readonly retrieveMoviesService: RetrieveMoviesUseCasePort) {
     this.name = 'RetrieveMoviesUseCase'
   }
 
