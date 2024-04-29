@@ -11,7 +11,7 @@ import { Mock, mock } from 'ts-jest-mocker'
 describe('RetrieveMovies', () => {
 
   let retrieveMovies: RetrieveMovies
-  let starwarsAPI: StarwarsAPI
+  let starwarsAPI: Mock<StarwarsAPI>
 
   let mockCharacters: StarwarsCharacter[]
   let mockMovieData: StarwarsMovie[]
@@ -51,6 +51,21 @@ describe('RetrieveMovies', () => {
         new Character('Leia', 'Organa', 'female'),
       ]
     )
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  describe('findAll', () => {
+    it('should return all movies', async () => {
+      starwarsAPI.fetchAllMovies.mockResolvedValue(mockMovieData)
+      starwarsAPI.charactersFromMovies.mockResolvedValue(mockCharacters)
+  
+      const movies = await retrieveMovies.findAll()
+  
+      expect(movies).toEqual([movie])
+    })
   })
 
 })
