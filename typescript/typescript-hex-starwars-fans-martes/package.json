@@ -7,7 +7,8 @@
     "dev": "ts-node-dev --env-file=env/.development.env src/swf-app.ts",
     "build": "rm -rf ./build && tsc",
     "start": "node --env-file=env/.production.env build/swf-app.js",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "testf": "npx jest --testPathPattern='RetrieveMovies.test.ts' --verbose"
   },
   "keywords": [
     "swf-app"

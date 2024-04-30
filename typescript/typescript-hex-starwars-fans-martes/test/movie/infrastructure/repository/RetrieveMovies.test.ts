@@ -7,6 +7,7 @@ import Movie from "../../../../src/movie/domain/model/movie/Movie"
 import Producer from "../../../../src/movie/domain/model/producer/Producer"
 import Director from "../../../../src/movie/domain/model/director/Director"
 import Character from "../../../../src/movie/domain/model/character/Character"
+import NullDirector from "../../../../src/movie/domain/model/director/NullDirector"
 
 describe('RetrieveMovies', () => {
 
@@ -57,7 +58,29 @@ describe('RetrieveMovies', () => {
   })
 
   describe('findAll', () => {
+    it('should retrieve movies instance from starwars API', async () => {
+      starwarsAPI.fetchAllMovies.mockResolvedValue(mockMovieData)
+      starwarsAPI.charactersFromMovies.mockResolvedValue(mockCharacters)
 
+      const movies = await retrieveMovies.findAll()
+
+      expect(movies).toEqual([movie])
+    })
+
+    fit('should handle null director', async () => {
+      mockMovieData[0].director = ''
+      movie.setDirector(new NullDirector())
+
+      starwarsAPI.fetchAllMovies.mockResolvedValue(mockMovieData)
+      starwarsAPI.charactersFromMovies.mockResolvedValue(mockCharacters)
+
+      const movies = await retrieveMovies.findAll()
+
+      expect(movies).toEqual([movie])
+      expect(movies).toHaveLength(1)
+      expect(movies[0].getDirector()).toBeInstanceOf(NullDirector)
+      expect(movies[0].getDirector()).toEqual(new NullDirector())
+    })
   })
 
 })
