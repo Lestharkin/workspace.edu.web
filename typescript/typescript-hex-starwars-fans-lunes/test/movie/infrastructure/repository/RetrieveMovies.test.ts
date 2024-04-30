@@ -1,5 +1,7 @@
 import Character from "../../../../src/movie/domain/model/character/Character"
+import NullCharacter from "../../../../src/movie/domain/model/character/NullCharacter"
 import Director from "../../../../src/movie/domain/model/director/Director"
+import NullDirector from "../../../../src/movie/domain/model/director/NullDirector"
 import Movie from "../../../../src/movie/domain/model/movie/Movie"
 import Producer from "../../../../src/movie/domain/model/producer/Producer"
 import StarwarsCharacter from "../../../../src/movie/domain/starwars/StarwarsCharacter"
@@ -58,12 +60,12 @@ describe('RetrieveMovies', () => {
   })
 
   describe('findAll', () => {
-    it('should return all movies', async () => {
+    it('should retrieve movies instance from starwars API', async () => {
       starwarsAPI.fetchAllMovies.mockResolvedValue(mockMovieData)
       starwarsAPI.charactersFromMovies.mockResolvedValue(mockCharacters)
-  
+
       const movies = await retrieveMovies.findAll()
-  
+
       expect(movies).toEqual([movie])
     })
 
@@ -84,6 +86,51 @@ describe('RetrieveMovies', () => {
       expect(movies[0].getCast()).toHaveLength(2)
       expect(movies[0].getCast()[0]).toBeInstanceOf(Character)
       expect(movies[0].getCast()[1]).toBeInstanceOf(Character)
+    })
+
+    it('should handle null or empty values for name fields', async () => {
+      const mockToNullCharacters = [
+        { name: 'Luke Skywalker', gender: 'male' },
+        { name: '', gender: 'female' },
+      ]
+  
+      const mockToNullMovieData = [
+        {
+          title: 'A New Hope',
+          episode_id: 4,
+          opening_crawl: 'It is a period of civil war...',
+          release_date: '1977-05-25',
+          producer: 'Gary Kurtz, Rick McCallum',
+          director: '',
+          characters: ['Luke Skywalker', ''],
+        }
+      ]
+  
+      const mockToNullMovie = new Movie(
+        'A New Hope',
+        4,
+        'It is a period of civil war...',
+        new Date('1977-05-25'),
+        [new Producer('Gary', 'Kurtz'), new Producer('Rick', 'McCallum')],
+        new NullDirector(),
+        [
+          new Character('Luke', 'Skywalker', 'male'),
+          new NullCharacter(),
+        ]
+      )
+
+      starwarsAPI.fetchAllMovies.mockResolvedValue(mockToNullMovieData)
+      starwarsAPI.charactersFromMovies.mockResolvedValue(mockToNullCharacters)
+
+      const movies = await retrieveMovies.findAll()
+
+      expect(movies).toEqual([mockToNullMovie])
+
+      expect(movies).toHaveLength(1)
+      expect(movies[0].getDirector()).toBeInstanceOf(NullDirector)
+      expect(movies[0].getProducers()[0]).toBeInstanceOf(Producer)
+      expect(movies[0].getProducers()[1]).toBeInstanceOf(Producer)
+      expect(movies[0].getCast()[1]).toBeInstanceOf(NullCharacter)
     })
   })
 

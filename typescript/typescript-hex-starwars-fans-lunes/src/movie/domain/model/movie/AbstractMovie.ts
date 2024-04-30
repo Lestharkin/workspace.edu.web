@@ -1,5 +1,5 @@
-import Character from "../character/Character"
 import Director from "../director/Director"
+import AbstractPerson from "../person/AbstractPerson"
 import Producer from "../producer/Producer"
 
 export default abstract class AbstractMovie {
@@ -9,7 +9,7 @@ export default abstract class AbstractMovie {
   protected releaseDate: Date
   protected producers: Producer[]
   protected director: Director
-  protected cast: Character[]
+  protected cast: AbstractPerson[]
 
   constructor(
     title: string,
@@ -18,7 +18,7 @@ export default abstract class AbstractMovie {
     releaseDate: Date,
     producers: Producer[],
     director: Director,
-    cast: Character[]
+    cast: AbstractPerson[]
   ) {
     this.title = title
     this.episode_id = episode_id
@@ -79,11 +79,11 @@ export default abstract class AbstractMovie {
     this.director = director
   }
 
-  public getCast(): Character[] {
+  public getCast(): AbstractPerson[] {
     return this.cast
   }
 
-  public setCast(cast: Character[]): void {
+  public setCast(cast: AbstractPerson[]): void {
     this.cast = cast
   }
 
