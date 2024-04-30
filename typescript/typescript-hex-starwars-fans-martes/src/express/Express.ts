@@ -1,5 +1,6 @@
 import express, { Application } from "express"
 import Environment from "./config/Environment"
+import ExpressRouter from "./route/ExpressRouter"
 
 export default class Express {
   private readonly app: Application
