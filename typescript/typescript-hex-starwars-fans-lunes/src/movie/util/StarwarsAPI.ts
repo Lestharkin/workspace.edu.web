@@ -23,16 +23,17 @@ export default class StarwarsAPI {
     return movies
   }
 
-  public async charactersFromMovies(movie: StarwarsMovie): Promise<StarwarsCharacter[]> {
-    let characters: StarwarsCharacter[] = []
-    movie.characters.forEach(async (character: string) => {
+  public async charactersFromMovie(
+    movie: StarwarsMovie
+  ): Promise<StarwarsCharacter[]> {
+    const characters = movie.characters.map(async (character: string): Promise<StarwarsCharacter>  => {
       const response = await fetch(character)
       const data = await response.json()
-      characters.push({
+      return {
         name: data.name,
-        gender: data.gender
-      })      
-  })
-  return characters
+        gender: data.gender,
+      }
+    })
+    return await Promise.all(characters)
   }
 }

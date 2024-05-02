@@ -21,7 +21,7 @@ export default class RetrieveMovies implements RetrieveMoviesPort {
         return new NullMovie()
       }
 
-      const characters = await this.getCharacters(starwarsMovie)
+      const characters = await this.getCharacters(starwarsMovie) as Character[]
       const producers = await this.getProducers(starwarsMovie)
       const director = await this.getDirector(starwarsMovie)
 
@@ -32,7 +32,7 @@ export default class RetrieveMovies implements RetrieveMoviesPort {
         new Date(starwarsMovie.release_date),
         producers,
         director,
-        characters as Character[]
+        characters
       )
     })
 
