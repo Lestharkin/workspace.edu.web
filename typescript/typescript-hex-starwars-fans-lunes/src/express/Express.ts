@@ -13,6 +13,10 @@ export default class Express {
     this.routes()
   }
 
+  public getApp = (): Application => {
+    return this.app
+  }
+
   config = (): void => {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))

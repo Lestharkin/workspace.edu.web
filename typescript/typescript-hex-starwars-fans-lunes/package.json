@@ -8,7 +8,7 @@
     "build": "rm -rf ./build && tsc",
     "start": "node --env-file=env/.production.env build/swf-app.js",
     "test": "jest --verbose",
-    "testf": "npx jest --testPathPattern='RetrieveMovies.test.ts' --verbose"
+    "fit": "npx jest --testPathPattern='swf-app.test.ts' --verbose"
   },
   "keywords": [
     "swf-app"
@@ -48,6 +48,7 @@
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/morgan": "^1.9.9",
+    "@types/supertest": "^6.0.2",
     "eslint-config-lover": "^2.1.0",
     "jest": "^29.7.0",
     "supertest": "^6.3.4",
