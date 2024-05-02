@@ -23,7 +23,7 @@ export default class StarwarsAPI {
     return movies
   }
 
-  public async charactersFromMovie(
+  public async charactersFromMovies(
     movie: StarwarsMovie
   ): Promise<StarwarsCharacter[]> {
     const characters = movie.characters.map(async (character: string): Promise<StarwarsCharacter>  => {

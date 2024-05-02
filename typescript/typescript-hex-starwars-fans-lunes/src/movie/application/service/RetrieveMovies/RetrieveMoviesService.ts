@@ -12,6 +12,8 @@ export default class RetrieveMoviesService
   }
 
   public getMovies = async (): Promise<Movie[]> => {
-    return this.retrieveMovies.findAll()
+    const movies = await this.retrieveMovies.findAll()
+    console.log(movies)
+    return movies
   }
 }
