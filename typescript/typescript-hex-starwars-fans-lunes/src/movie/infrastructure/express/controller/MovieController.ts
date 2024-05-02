@@ -7,7 +7,7 @@ export default class MovieController {
   public getMovies = (_req: Request, res: Response): void => {
     const data = this.retrieveMoviesUseCase.getMovies()
     data.then((data) => {
-      const movies = data.map((movie) => {JSON.stringify(movie)})
+      const movies = data.map((movie) => JSON.stringify(movie))
       res.status(200).json({ movies })
     }).catch((error) => {
       if(error instanceof Error) {

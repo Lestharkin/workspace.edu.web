@@ -12,6 +12,7 @@ export default class MovieRouter implements ExpressRouter {
     this.path = '/movie'
     this.version = '/v1.0'
     this.path = `${this.version}${this.path}`
+    this.routes()
   }
 
   routes = (): void => {

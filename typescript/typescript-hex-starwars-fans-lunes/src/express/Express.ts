@@ -20,7 +20,7 @@ export default class Express {
 
   routes = (): void => {
     this.expressRouter.forEach(router => {
-      this.app.use(router.root, router.router)
+      this.app.use(router.path, router.router)
     })
     // this.app.use('*', this.errorView.router)
   }
