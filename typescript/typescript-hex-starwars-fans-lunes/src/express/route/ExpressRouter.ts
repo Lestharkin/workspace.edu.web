@@ -2,6 +2,7 @@ import { Router } from "express"
 
 export default  interface ExpressRouter {
   router: Router
-  root: string
+  path: string
+  version: string
   routes: () => void
 }
