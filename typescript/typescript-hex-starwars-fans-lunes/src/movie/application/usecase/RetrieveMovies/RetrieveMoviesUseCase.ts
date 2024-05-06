@@ -14,6 +14,6 @@ export default class RetrieveMoviesUseCase
   }
 
   public getMovies = async (): Promise<Movie[]> => {
-    return this.retrieveMoviesService.getMovies()
+    return await this.retrieveMoviesService.getMovies()
   }
 }

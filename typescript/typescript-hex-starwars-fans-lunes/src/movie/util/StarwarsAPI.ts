@@ -1,9 +1,8 @@
-import StarwarsCharacter from "../domain/starwars/StarwarsCharacter"
-import StarwarsMovie from "../domain/starwars/StarwarsMovie"
+import StarwarsCharacter from '../domain/starwars/StarwarsCharacter'
+import StarwarsMovie from '../domain/starwars/StarwarsMovie'
 
 export default class StarwarsAPI {
   private uriFilms = 'https://swapi.dev/api/films/'
-
 
   public async fetchAllMovies(): Promise<StarwarsMovie[]> {
     let movies: StarwarsMovie[] = []
@@ -17,7 +16,7 @@ export default class StarwarsAPI {
         release_date: movie.release_date,
         director: movie.director,
         producer: movie.producer,
-        characters: movie.characters
+        characters: movie.characters,
       }
     })
     return movies
@@ -26,14 +25,23 @@ export default class StarwarsAPI {
   public async charactersFromMovies(
     movie: StarwarsMovie
   ): Promise<StarwarsCharacter[]> {
-    const characters = movie.characters.map(async (character: string): Promise<StarwarsCharacter>  => {
-      const response = await fetch(character)
-      const data = await response.json()
-      return {
-        name: data.name,
-        gender: data.gender,
+    const characters = movie.characters.map(
+      async (character: string): Promise<StarwarsCharacter> => {
+        try {
+          const response = await fetch(character)
+          const data = await response.json()
+          return {
+            name: data.name,
+            gender: data.gender
+          }
+        } catch (error) {
+          return {
+            name: '',
+            gender: ''
+          }
+        }
       }
-    })
+    )
     return await Promise.all(characters)
   }
 }
