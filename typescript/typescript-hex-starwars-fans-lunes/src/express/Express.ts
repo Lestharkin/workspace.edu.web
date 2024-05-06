@@ -1,6 +1,7 @@
 import express, { Application } from "express"
 import Environment from "./config/Environment"
 import ExpressRouter from "./route/ExpressRouter"
+import path from 'path'
 
 export default class Express {
   private readonly app: Application
@@ -20,6 +21,7 @@ export default class Express {
   config = (): void => {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
+    this.app.use(express.static(path.join(__dirname, '../frontend')));
   }
 
   routes = (): void => {
