@@ -1,12 +1,13 @@
-import express, { Application } from "express"
-import Environment from "./config/Environment"
-import ExpressRouter from "./route/ExpressRouter"
+import express, { Application } from 'express'
+import Environment from './config/Environment'
+import ExpressRouter from './route/ExpressRouter'
+import path from 'path'
 
 export default class Express {
   private readonly app: Application
   private readonly env: Environment
 
-  constructor (private readonly expressRouter: ExpressRouter[]) {
+  constructor(private readonly expressRouter: ExpressRouter[]) {
     this.app = express()
     this.env = new Environment()
     this.config()
@@ -20,10 +21,11 @@ export default class Express {
   config = (): void => {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
+    this.app.use(express.static(path.join(__dirname, '../frontend')))
   }
 
   routes = (): void => {
-    this.expressRouter.forEach(router => {
+    this.expressRouter.forEach((router) => {
       this.app.use(router.path, router.router)
     })
     // this.app.use('*', this.errorView.router)
@@ -31,7 +33,9 @@ export default class Express {
 
   start = (): void => {
     this.app.listen(this.env.PORT, () => {
-      console.log(`Server is running on http://${this.env.HOST}:${this.env.PORT}`)
+      console.log(
+        `Server is running on http://${this.env.HOST}:${this.env.PORT}`
+      )
     })
   }
 }
