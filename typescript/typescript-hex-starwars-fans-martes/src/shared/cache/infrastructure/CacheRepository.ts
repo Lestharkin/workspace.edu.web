@@ -8,7 +8,6 @@ export default class CacheRepository<E> implements CacheRepositoryPort<E> {
     private readonly expirationTime: number
   ) {}
 
-
   public get = async (key: string): Promise<E | null> => {
     const value = await this.redisDBC.getClient().get(key) ?? null
     if (value) {
