@@ -1,28 +1,29 @@
-import Character from "../../../domain/model/character/Character"
-import NullCharacter from "../../../domain/model/character/NullCharacter"
-import AbstractPerson from "../../../domain/model/person/AbstractPerson"
+import CacheRepository from "../../../../shared/cache/infrastructure/CacheRepository"
+import StarwarsCharacter from "../../../domain/starwars/StarwarsCharacter"
 import StarwarsMovie from "../../../domain/starwars/StarwarsMovie"
-import { isEmpty } from "../../../helper/Validator"
 import StarwarsAPI from "../../../util/StarwarsAPI"
 import MovieAbstractProvider from "./MovieAbstractProvider"
 
 export default class MovieCharacterProviderCache extends MovieAbstractProvider {
-  constructor(private readonly starwarsAPI: StarwarsAPI) {
+  constructor(
+    private readonly starwarsAPI: StarwarsAPI,
+    private readonly cacheRepository: CacheRepository<StarwarsCharacter[]>
+  ) {
     super()
-  }
+  }  
 
-  public get = async (starwarsMovie: StarwarsMovie): Promise<AbstractPerson[]> => {
-    const starwarsCharacters = await this.starwarsAPI.charactersFromMovies(starwarsMovie)
-    return starwarsCharacters.map((starwarsCharacter): AbstractPerson => {
-      const {name, lastname} = this.splitNames(starwarsCharacter.name)
-      if(isEmpty(name) || isEmpty(lastname)) {
-        return new NullCharacter()
-      }
-      return new Character(
-        name,
-        lastname,
-        starwarsCharacter.gender
-      )
-    })
+  protected charactersFromMovies = async (starwarsMovie: StarwarsMovie): Promise<StarwarsCharacter[]> => {
+    const key = `starwarsCharacter-${starwarsMovie.title}`
+    let starwarsCharacter: StarwarsCharacter[] | null = null
+
+    if(await this.cacheRepository.isHealthy()) {
+      starwarsCharacter = await this.cacheRepository.get(key)
+    }
+
+    if (!starwarsCharacter) {
+      starwarsCharacter = await this.starwarsAPI.charactersFromMovies(starwarsMovie)
+    }
+
+    return starwarsCharacter
   }
 }
