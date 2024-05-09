@@ -44,24 +44,5 @@ export default class RetrieveMovies implements RetrieveMoviesPort {
     })
 
     return await Promise.all(movies)
-  }
-
-  private getCharacters = async (starwarsMovie: StarwarsMovie): Promise<AbstractPerson[]> => {
-    const starwarsCharacters = await this.starwarsAPI.charactersFromMovies(starwarsMovie)
-    return starwarsCharacters.map((starwarsCharacter): AbstractPerson => {
-      const names = starwarsCharacter.name.split(" ")
-      const name = names[0]
-      const lastname = names[1]
-      if(this.isEmpty(name) || this.isEmpty(lastname)) {
-        return new NullCharacter()
-      }
-      return new Character(
-        name,
-        lastname,
-        starwarsCharacter.gender
-      )
-    })
-  }
-
-  
+  }  
 }
