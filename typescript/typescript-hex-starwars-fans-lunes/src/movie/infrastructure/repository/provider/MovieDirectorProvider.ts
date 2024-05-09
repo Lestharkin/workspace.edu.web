@@ -5,7 +5,7 @@ import { isEmpty } from "../../../helper/Validator"
 import MovieAbstractProvider from "./MovieAbstractProvider"
 
 export default class MovieDirectorProvider extends MovieAbstractProvider {
-  public get = async (director: string): Promise<AbstractPerson> => {
+  public get = (director: string): AbstractPerson => {
     const {name, lastname} = this.splitNames(director)
     if(isEmpty(name) || isEmpty(lastname)) {
       return new NullDirector()
