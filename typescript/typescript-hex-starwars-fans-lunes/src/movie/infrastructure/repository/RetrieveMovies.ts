@@ -9,16 +9,19 @@ import Producer from "../../domain/model/producer/Producer"
 import RetrieveMoviesPort from "../../domain/port/driven/RetrieveMoviesPort"
 import StarwarsMovie from "../../domain/starwars/StarwarsMovie"
 import StarwarsAPI from "../../util/StarwarsAPI"
+import MovieCharacterProvider from "./provider/MovieCharacterProvider"
 import MovieDirectorProvider from "./provider/MovieDirectorProvider"
 import MovieProducerProvider from "./provider/MovieProducersProvider"
 
 export default class RetrieveMovies implements RetrieveMoviesPort {
   private readonly movieDirectorProvider: MovieDirectorProvider
   private readonly movieProducerProvider: MovieProducerProvider
+  private readonly movieCharacterProvider: MovieCharacterProvider
 
   constructor(private readonly starwarsAPI: StarwarsAPI) {
     this.movieDirectorProvider = new MovieDirectorProvider()
     this.movieProducerProvider = new MovieProducerProvider()
+    this.movieCharacterProvider = new MovieCharacterProvider(starwarsAPI)
   }
 
   public findAll = async (): Promise<Movie[]> => {
@@ -28,8 +31,8 @@ export default class RetrieveMovies implements RetrieveMoviesPort {
         return new NullMovie()
       }
 
-      const characters = await this.getCharacters(starwarsMovie) as Character[]
-      const producers = await this.movieProducerProvider.get(starwarsMovie.producer)
+      const characters = await this.movieCharacterProvider.get(starwarsMovie) as Character[]
+      const producers = this.movieProducerProvider.get(starwarsMovie.producer)
       const director = this.movieDirectorProvider.get(starwarsMovie.director)
 
       return new Movie(
