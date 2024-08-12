@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introdution to Javascript</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/app.css">
+
+</head>
+
+<body>
+
+  <!-- <div class="container">
+    <h1>Learn javascript in five minutes... really? ;)</h1>
+    <p class="disp"></p>
+  </div> -->
+
+  <div class="container">
+
+    <div class="row bg-gradient">
+      <header class="header p-2">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1><span>test</span>Universidad Pontificia Bolivariana Seccional Bucaramanga</h1>
+          </div>
+          <div class="col-lg-4 text-end">
+            <img src="img/Logo-UPB-2022.svg" alt="UPB" class="w-100">
+          </div>
+
+        </div>
+      </header>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li><form class="d-flex" name="f-1" id="idf-1">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </ul>
+            <form class="d-flex" name="f-1" id="idf-1">
+              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h1>DOM: Document Object Model</h1>
+        <p>
+          The HTML DOM model is constructed as a tree of Objects:
+        </p>
+
+        <div class="w-75 m-auto">
+          <form id="form-1" method="post" action="/form-1-action">
+            <fieldset>
+              <legend>Legend</legend>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly="" class="form-control-plaintext" id="staticEmail"
+                    value="email@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Example select</label>
+                <select class="form-select" id="exampleSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect2" class="form-label mt-4">Example multiple select</label>
+                <select multiple="" class="form-select" id="exampleSelect2">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleTextarea" class="form-label mt-4">Example textarea</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="formFile" class="form-label mt-4">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
+              </div>
+              <fieldset class="form-group">
+                <legend class="mt-4">Radio buttons</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                    checked="">
+                  <label class="form-check-label" for="optionsRadios1">
+                    Option one is this and that—be sure to include why it's great
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                  <label class="form-check-label" for="optionsRadios2">
+                    Option two can be something else and selecting it will deselect option one
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                  <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios3" value="option3"
+                    disabled="">
+                  <label class="form-check-label" for="optionsRadios3">
+                    Option three is disabled
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend class="mt-4">Checkboxes</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                  <label class="form-check-label" for="flexCheckChecked">
+                    Checked checkbox
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend class="mt-4">Switches</legend>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <legend class="mt-4">Ranges</legend>
+                <label for="customRange1" class="form-label">Example range</label>
+                <input type="range" class="form-range" id="customRange1">
+                <label for="disabledRange" class="form-label">Disabled range</label>
+                <input type="range" class="form-range" id="disabledRange" disabled="">
+                <label for="customRange3" class="form-label">Example range</label>
+                <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+              </fieldset>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="card-container">
+          <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Primary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Secondary card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Success card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Danger card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Warning card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Info card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Light card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h4 class="card-title">Dark card title</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app-1.js"></script>
+  <!-- <script src="js/app-2.js"></script> -->
+  <!-- <script src="js/app-3.js"></script> -->
+  <!-- <script src="js/app-4.js"></script> -->
+  <!-- <script src="js/app-5.js"></script> -->
+  <!-- <script src="js/app-6.js"></script> -->
+  <!-- <script src="js/app-7.js"></script> -->
+  <!-- <script src="js/app-8.js"></script> -->
+  <!-- <script src="js/app-9.js"></script> -->
+  <!-- <script src="js/app-10.js"></script> -->
+  <!-- <script src="js/app-11.js"></script> -->
+  <!-- <script src="js/app-12.js"></script> -->
+  <!-- <script src="js/app-13.js"></script> -->
+</body>
+
+</html>
