@@ -44,7 +44,7 @@ info.appendChild(p3);
 const imagen = document.createElement('img');
 imagen.src = 'img/bga.jpeg';
 imagen.classList.add('img-fluid');
-imagen.alt = 'Texto Altenativo';
+imagen.alt = 'Texto Alternativo';
 
 imagen.addEventListener('click', miFunction);
 
