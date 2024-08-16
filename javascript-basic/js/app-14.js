@@ -12,6 +12,7 @@ const formElements = {
 form.addEventListener('submit', function (e) {
     e.preventDefault()
     let successful = true;
+    
     const formGroup = document.querySelectorAll('.form-group')
     console.log(formElements.name.value);
     
@@ -20,6 +21,7 @@ form.addEventListener('submit', function (e) {
         successful = false
     }
 
+    // TODO VALIDATE ALL
 
     if (successful) {
         form.submit()
