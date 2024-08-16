@@ -1,4 +1,4 @@
-/*
+
 const header = document.querySelector('h1');
 console.log(header.style);
 
@@ -22,10 +22,10 @@ console.log(navBar.children[0].nodeName); // tag
 console.log(navBar.children[0].children[0].nodeName); // tag
 console.log(navBar.children[0].nodeType); // thttps://www.w3schools.com/jsref/prop_node_nodetype.asp
 
-const card = document.querySelector('.card');
+card = document.querySelector('.card');
 card.children[1].children[1].textContent = 'Nuevo texto usando el DOM';
 console.log(card.children[1].children[1].textContent);
-*/
+
 // hijo al padre
 console.log(card.parentNode);
 console.log(card.parentElement.parentElement.parentElement);
@@ -50,4 +50,3 @@ test.removeChild( test.children[1]);
 
 console.log(test.children);
 
-*/
