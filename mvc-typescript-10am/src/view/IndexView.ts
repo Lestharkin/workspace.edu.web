@@ -3,7 +3,7 @@ export default class IndexView {
     console.log('IndexView constructor')
   }
 
-  public init() {
+  public init(): void  {
     console.log('IndexView init')
   }
 }

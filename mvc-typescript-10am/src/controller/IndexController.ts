@@ -11,7 +11,7 @@ export default class IndexController {
     this.model = model
   }
 
-  public init() {
+  public init(): void  {
     console.log('IndexController init')
     this.model.init()
     this.view.init()

@@ -3,7 +3,7 @@ export default class IndexModel {
     console.log('IndexModel constructor')
   }
 
-  public init() {
+  public init(): void {
     console.log('IndexModel init')
   }
 }
