@@ -1,4 +1,4 @@
-import Observer from './Observer'
+import Observer from './Observer.js'
 
 export default abstract class Subject<T> {
   private observers: Observer<T>[]

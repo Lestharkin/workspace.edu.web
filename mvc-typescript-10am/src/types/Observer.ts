@@ -1,4 +1,4 @@
-import Subject from './Subject'
+import Subject from './Subject.js'
 
 export default abstract class Observer<T> {
   protected subject: Subject<T>
