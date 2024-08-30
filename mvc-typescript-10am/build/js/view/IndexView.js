@@ -1,8 +1,14 @@
 export default class IndexView {
+    pioneerView;
     constructor() {
-        console.log('IndexView constructor');
+        this.pioneerView = undefined;
     }
-    init() {
-        console.log('IndexView init');
+    setPioneerView(pioneerView) {
+        this.pioneerView = pioneerView;
+    }
+    render() {
+        if (this.pioneerView) {
+            this.pioneerView.render();
+        }
     }
 }
