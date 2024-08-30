@@ -1,14 +1,19 @@
+import PioneerModel from '../model/PioneerModel.js';
+import PioneerView from '../view/PioneerView.js';
 export default class IndexController {
     view;
     model;
+    pioneerView;
+    pioneerModel;
     constructor(view, model) {
-        console.log('IndexController constructor');
         this.view = view;
         this.model = model;
+        this.pioneerModel = new PioneerModel([]);
+        this.pioneerView = new PioneerView(this.pioneerModel);
+        this.view.setPioneerView(this.pioneerView);
     }
-    init() {
-        console.log('IndexController init');
-        this.model.init();
-        this.view.init();
+    async init() {
+        const data = await this.model.getPioneersFromFile();
+        this.pioneerModel.setPioneers(data);
     }
 }

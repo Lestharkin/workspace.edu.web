@@ -1,8 +1,9 @@
 {
-  "name": "mvc-typescript-2pm",
+  "name": "mvc-typescript-10am",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

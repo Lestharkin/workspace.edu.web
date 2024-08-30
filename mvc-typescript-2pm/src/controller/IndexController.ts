@@ -1,19 +1,27 @@
-import IndexModel from "../model/IndexModel.js"
-import IndexView from "../view/IndexView.js"
+import IndexModel from '../model/IndexModel.js'
+import PioneerModel from '../model/PioneerModel.js'
+import IndexView from '../view/IndexView.js'
+import PioneerView from '../view/PioneerView.js'
 
 export default class IndexController {
   private view: IndexView
   private model: IndexModel
 
+  private pioneerView: PioneerView
+  private pioneerModel: PioneerModel
+
   constructor(view: IndexView, model: IndexModel) {
-    console.log('IndexController constructor');
     this.view = view
     this.model = model
+
+    this.pioneerModel = new PioneerModel([])
+    this.pioneerView = new PioneerView(this.pioneerModel)
+
+    this.view.setPioneerView(this.pioneerView)
   }
 
-  public init() {
-    console.log('IndexController init');
-    this.model.init()
-    this.view.init()
+  public async init(): Promise<void>  {
+    const data = await this.model.getPioneersFromFile()
+    this.pioneerModel.setPioneers(data)     
   }
 }
