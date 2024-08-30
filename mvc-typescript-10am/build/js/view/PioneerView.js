@@ -9,8 +9,23 @@ export default class PioneerView extends Observer {
         this.render();
     }
     render() {
+        this.addPioneerTable();
+        this.addListeners();
+    }
+    addPioneerTable() {
         this.selector.removeChild(this.selector.firstChild);
         this.selector.appendChild(this.renderPioneerFromJavascript(this.subject.getPioneers()));
+    }
+    addListeners() {
+        const buttons = this.selector.getElementsByTagName('button');
+        if (buttons.length !== 0) {
+            for (const element of buttons) {
+                element.addEventListener('click', (e) => {
+                    const button = e.target;
+                    this.subject.deletePioneer(parseInt(button.id));
+                });
+            }
+        }
     }
     // private renderPioneerFromTemplate(
     //   computingPioneers: Pioneer[]
@@ -67,7 +82,7 @@ export default class PioneerView extends Observer {
             description.textContent = pioneer.description;
             const button = document.createElement('button');
             button.className = 'btn btn-danger';
-            button.id = pioneer.name;
+            button.id = pioneer.id.toString();
             button.textContent = 'Eliminar';
             const cell = document.createElement('td');
             cell.className = 'text-center';

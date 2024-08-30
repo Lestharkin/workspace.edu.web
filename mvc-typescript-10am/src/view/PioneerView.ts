@@ -15,10 +15,27 @@ export default class PioneerView extends Observer<PioneerModel> {
   }
 
   public render(): void {
+    this.addPioneerTable()
+    this.addListeners()
+  }
+
+  private addPioneerTable(): void {
     this.selector.removeChild(this.selector.firstChild as Node)
     this.selector.appendChild(this.renderPioneerFromJavascript(
       (this.subject as PioneerModel).getPioneers()
     ))
+  }
+
+  private addListeners(): void {
+    const buttons = this.selector.getElementsByTagName('button')
+    if (buttons.length !== 0) {
+      for (const element of buttons) {
+        element.addEventListener('click', (e) => {
+          const button = e.target as HTMLButtonElement
+          (this.subject as PioneerModel).deletePioneer(parseInt(button.id))
+        })
+      }
+    }
   }
 
   // private renderPioneerFromTemplate(
@@ -79,7 +96,7 @@ export default class PioneerView extends Observer<PioneerModel> {
         description.textContent = pioneer.description
         const button = document.createElement('button')
         button.className = 'btn btn-danger'
-        button.id = pioneer.name
+        button.id = pioneer.id.toString()
         button.textContent = 'Eliminar'
         const cell = document.createElement('td')
         cell.className = 'text-center'
