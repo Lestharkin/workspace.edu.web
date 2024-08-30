@@ -22,7 +22,6 @@ export default class IndexController {
 
   public async init(): Promise<void>  {
     const data = await this.model.getPioneersFromFile()
-    this.pioneerModel.setPioneers(data)
-    this.view.render()    
+    this.pioneerModel.setPioneers(data)     
   }
 }
