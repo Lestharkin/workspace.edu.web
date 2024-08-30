@@ -6,13 +6,11 @@ export default class IndexController {
   private model: IndexModel
 
   constructor(view: IndexView, model: IndexModel) {
-    console.log('IndexController constructor')
     this.view = view
     this.model = model
   }
 
   public init(): void  {
-    console.log('IndexController init')
     this.model.init()
     this.view.init()
   }
