@@ -15,6 +15,7 @@ export default class PioneerView extends Observer<PioneerModel> {
   }
 
   public render(): void {
+    this.selector.removeChild(this.selector.firstChild as Node)
     this.selector.appendChild(this.renderPioneerFromJavascript(
       (this.subject as PioneerModel).getPioneers()
     ))

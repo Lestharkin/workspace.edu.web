@@ -5,6 +5,10 @@ export default class PioneerModel extends Subject {
         super();
         this.pioneers = pioneers;
     }
+    setPioneers(pioneers) {
+        this.pioneers = pioneers;
+        this.notifyAllObservers();
+    }
     getPioneers() {
         return this.pioneers;
     }

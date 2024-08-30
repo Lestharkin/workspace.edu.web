@@ -10,6 +10,11 @@ export default class PioneerModel extends Subject<PioneerView> {
     this.pioneers = pioneers
   }
 
+  public setPioneers(pioneers: Pioneer[]): void {
+    this.pioneers = pioneers
+    this.notifyAllObservers()
+  }
+
   public getPioneers(): Pioneer[] {
     return this.pioneers
   }

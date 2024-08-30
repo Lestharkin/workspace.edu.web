@@ -12,8 +12,9 @@ export default class IndexController {
         this.pioneerView = new PioneerView(this.pioneerModel);
         this.view.setPioneerView(this.pioneerView);
     }
-    init() {
-        this.model.init();
-        this.view.init();
+    async init() {
+        const data = await this.model.getPioneersFromFile();
+        this.pioneerModel.setPioneers(data);
+        this.view.render();
     }
 }

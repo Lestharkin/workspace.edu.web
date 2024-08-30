@@ -9,6 +9,7 @@ export default class PioneerView extends Observer {
         this.render();
     }
     render() {
+        this.selector.removeChild(this.selector.firstChild);
         this.selector.appendChild(this.renderPioneerFromJavascript(this.subject.getPioneers()));
     }
     // private renderPioneerFromTemplate(
