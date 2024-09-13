@@ -1,0 +1,24 @@
+{
+  "name": "mvc-movies-server-2pm",
+  "version": "1.0.0",
+  "main": "movies.js",
+  "scripts": {
+    "start": "node --env-file=./env/.prod.env ./build/movies.js",
+    "dev": "ts-node-dev --env-file=./env/.devp.env ./src/movies.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.2"
+  }
+}
