@@ -23,7 +23,7 @@ export default class Server {
 
   public statics = (): void => {
     this.app.use(
-      path.resolve(__dirname, '../client/public'),
+      express.static(path.resolve(__dirname, '../client/public'))
     )
   }
 
