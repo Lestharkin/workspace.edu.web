@@ -2,12 +2,11 @@ import { Router } from 'express'
 import MoviesController from '../controller/MoviesController'
 
 export default class MoviesView {
-  private router: Router
+  router: Router
 
-  constructor(
-    private readonly moviesController: MoviesController
-  ) {
+  constructor(private readonly moviesController: MoviesController) {
     this.router = Router()
+    this.routes()
   }
 
   public routes = (): void => {
