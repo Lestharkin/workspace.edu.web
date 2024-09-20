@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node --env-file=./env/.pro.env build/movies.js",
-    "dev": "ts-node-dev --env-file=./env/.devp.env src/movies.ts",
+    "start": "node --env-file=./env/.pro.env build/rental.js",
+    "dev": "ts-node-dev --env-file=./env/.devp.env src/rental.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

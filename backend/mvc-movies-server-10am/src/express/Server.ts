@@ -1,18 +1,15 @@
 import cors from 'cors'
 import express, { Application } from 'express'
-import MoviesController from '../movies/controller/MoviesController'
-import MoviesModel from '../movies/model/MoviesModel'
 import MoviesView from '../movies/view/MoviesView'
 
 export default class Server {
   private readonly app: Application
-  private readonly moviesView: MoviesView
+  
 
-  constructor() {
-    this.app = express()    
-    const model = new MoviesModel()
-    const controller = new MoviesController(model)
-    this.moviesView = new MoviesView(controller)    
+  constructor(
+    private readonly moviesView: MoviesView
+  ) {
+    this.app = express()     
     this.config()
   }
 
