@@ -30,6 +30,7 @@ export default class Server {
   public routes = (): void => {
     this.app.use('/', cors(), this.clientView.router)
     this.app.use('/api/', cors(), this.moviesView.router)
+    this.app.use('*', cors(), this.moviesView.router)
   }
 
   public start = (): void => {
