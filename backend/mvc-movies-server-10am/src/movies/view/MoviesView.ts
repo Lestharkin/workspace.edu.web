@@ -14,5 +14,10 @@ export default class MoviesView {
       '/v1.0/movies',
       this.moviesController.getMovies.bind(this.moviesController)
     )
+
+    this.router.get(
+      '/v1.0/movies/movie/image/:id',
+      this.moviesController.getMovieImage.bind(this.moviesController)
+    )
   }
 }

@@ -12,4 +12,8 @@ export default class MoviesController {
     }
     res.status(200).json(movies)
   }
+
+  public getMovieImage = (req: Request, res: Response) => {
+    const id = req.params['id']
+  }
 }
