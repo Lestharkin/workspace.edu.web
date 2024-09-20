@@ -1,8 +1,8 @@
-import express, { Application } from 'express'
-import MoviesView from '../view/MoviesView'
-import MoviesController from '../controller/MoviesController'
-import MoviesModel from '../model/MoviesModel'
 import cors from 'cors'
+import express, { Application } from 'express'
+import MoviesController from '../movies/controller/MoviesController'
+import MoviesModel from '../movies/model/MoviesModel'
+import MoviesView from '../movies/view/MoviesView'
 
 export default class Server {
   private readonly app: Application
