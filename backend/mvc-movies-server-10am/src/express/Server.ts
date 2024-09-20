@@ -1,25 +1,36 @@
 import cors from 'cors'
 import express, { Application } from 'express'
 import MoviesView from '../movies/view/MoviesView'
+import ClientView from '../client/view/ClientView'
+import path from 'path'
 
 export default class Server {
   private readonly app: Application
   
 
   constructor(
-    private readonly moviesView: MoviesView
+    private readonly moviesView: MoviesView,
+    private readonly clientView: ClientView
   ) {
-    this.app = express()     
+    this.app = express() 
+    this.statics()   
     this.config()
+    this.routes()
   }
 
   public config = (): void => {
     this.app.use(cors())
-    this.routes()
+  }
+
+  public statics = (): void => {
+    this.app.use(
+      express.static(path.resolve(__dirname, '../client/public'))
+    )
   }
 
   public routes = (): void => {
-    this.app.use('/', cors(), this.moviesView.router)
+    this.app.use('/', cors(), this.clientView.router)
+    this.app.use('/api/', cors(), this.moviesView.router)
   }
 
   public start = (): void => {

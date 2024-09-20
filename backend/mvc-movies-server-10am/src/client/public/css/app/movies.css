@@ -1,0 +1,130 @@
+.movies {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.movie {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--text-color-light);
+  background: var(--main-color-gradient);
+}
+
+.movie-poster {
+  color: var(--main-color);
+}
+
+.movie-poster img {
+  width: 100px;
+  height: 150px;
+}
+
+.movie-poster img:hover {
+  cursor: pointer;
+}
+
+.movie-info {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.movie-info h2 {
+  margin: 0px;
+  padding: 0px;
+}
+
+.movie-info .text-info {
+  padding-right: 10px;
+  margin-bottom:10px;
+  height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.movie-info .text-info p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.movie-btn-rental {
+  text-align: center;
+}
+
+.movie-poster ul {
+  list-style-type: square;
+  padding: 0px 20px;
+  margin: 0px;
+}
+
+.movie-poster ul li {
+  text-decoration-line: underline;
+  padding: 0px;
+  color: var(--main-color);
+}
+
+.movie-btn-rental button {
+  background: var(--main-color);
+  color: var(--text-color-light);
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  padding: 16px;
+  margin: 0px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.movie-btn-rental button:hover {
+  background: var(--btn-hover);
+}
+
+.movie-not-fount {
+  text-align: center;
+  color: var(--main-color);
+}
+
+.pagination {
+  display: flex;  
+  justify-content: right;
+  align-items: center;
+  margin: auto;  
+  padding: 5px;
+  width: 90%;
+}
+
+.pagination div {
+  padding: 10px;
+}
+
+.pagination .page {
+  padding: 15px;
+}
+
+.pagination button {
+  cursor: pointer;
+  border: none;
+  color: var(--main-color);  
+  padding: 0px;
+  margin: 0px;
+}
+
+.pagination button:hover {
+  color: var(--main-color-dark);  
+}
+
+@media screen and (max-width: 600px) {
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+}
