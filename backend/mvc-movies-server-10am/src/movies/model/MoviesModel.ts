@@ -32,7 +32,6 @@ export default class MoviesModel {
       if (stats.isFile()) {
         return absolutePath + file
       }
-      console.log(absolutePath)
       return absolutePath + defaultImage
     } catch (err) {
       return absolutePath + defaultImage

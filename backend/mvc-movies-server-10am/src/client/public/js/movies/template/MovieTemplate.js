@@ -16,7 +16,7 @@ export default class MovieTemplate {
         const moviesPromise = Promise.all(movies.map(async (movie) => `
       <div class="movie">
         <div class="movie-poster">
-          <img src="${await MovieTemplate.validatePathOfImage(movie.thumbnail)}" alt="">
+          <img src="${movie.thumbnail}" alt="">
           <div>
               <p>${MovieTemplate.renderStars(movie.score)}</p>
               <ul>${movie.genres.map(g => `<li>${g}</li>`).join('')}</ul>
@@ -38,12 +38,6 @@ export default class MovieTemplate {
     `));
         return (await moviesPromise).join('');
     }
-    static validatePathOfImage = async (file) => {
-        const path = './img/movies/';
-        const defaultImage = 'not-icon.png';
-        const response = await fetch(`${path}${file}`);
-        return path + ((response.ok) ? file : defaultImage);
-    };
     static renderStars(score) {
         const fullStars = Math.floor(score);
         const halfStar = (score * 10) % 2 === 0 ? 0 : 1;
