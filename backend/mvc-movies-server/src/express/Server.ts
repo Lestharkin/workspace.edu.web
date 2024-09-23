@@ -3,6 +3,7 @@ import express, { Application } from 'express'
 import MoviesView from '../movies/view/MoviesView'
 import ClientView from '../client/view/ClientView'
 import path from 'path'
+import ContactView from '../contact/view/ContactView'
 
 export default class Server {
   private readonly app: Application
@@ -10,7 +11,8 @@ export default class Server {
 
   constructor(
     private readonly moviesView: MoviesView,
-    private readonly clientView: ClientView
+    private readonly clientView: ClientView,
+    private readonly contactView: ContactView
   ) {
     this.app = express() 
     this.statics()   
@@ -19,6 +21,8 @@ export default class Server {
   }
 
   public config = (): void => {
+    this.app.use(express.json())
+    this.app.use(express.urlencoded({ extended: true }))
     this.app.use(cors())
   }
 
@@ -29,8 +33,9 @@ export default class Server {
   }
 
   public routes = (): void => {
+    this.app.use('/api/v1.0/rental', cors(), this.moviesView.router)
+    this.app.use('/api/v1.0/contact', cors(), this.contactView.router)
     this.app.use('/', cors(), this.clientView.router)
-    this.app.use('/api/', cors(), this.moviesView.router)
     this.app.use('*', cors(), this.moviesView.router)
   }
 

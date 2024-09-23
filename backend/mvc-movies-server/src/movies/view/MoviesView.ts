@@ -11,12 +11,12 @@ export default class MoviesView {
 
   public routes = (): void => {
     this.router.get(
-      '/v1.0/movies',
+      '/movies',
       this.moviesController.getMovies.bind(this.moviesController)
     )
 
     this.router.get(
-      '/v1.0/movies/movie/image/:id',
+      '/movies/movie/image/:id',
       this.moviesController.getMovieImage.bind(this.moviesController)
     )
   }

@@ -7,4 +7,10 @@ export default class ClientController {
       path.resolve(__dirname, '../public/index.html')
     )
   }
+
+  public not_found = (_req: Request, res: Response): void => {
+    res.status(404).sendFile(
+      path.resolve(__dirname, '../public/404.html')
+    )
+  }
 }
