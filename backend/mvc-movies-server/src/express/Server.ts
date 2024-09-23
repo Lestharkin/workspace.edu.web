@@ -36,7 +36,7 @@ export default class Server {
     this.app.use('/api/v1.0/rental', cors(), this.moviesView.router)
     this.app.use('/api/v1.0/contact', cors(), this.contactView.router)
     this.app.use('/', cors(), this.clientView.router)
-    this.app.use('*', cors(), this.moviesView.router)
+    this.app.use('*', cors(), this.clientView.router)
   }
 
   public start = (): void => {
