@@ -10,7 +10,7 @@ export default class ContactView {
   }
 
   public routes = (): void => {
-    this.router.get(
+    this.router.post(
       '/message/register',
       this.contactController.register.bind(this.contactController)
     )
