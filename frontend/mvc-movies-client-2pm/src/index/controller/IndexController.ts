@@ -1,3 +1,5 @@
+import ErrorController from '../../error/controller/ErrorController.js'
+import Error404 from '../../error/Error404.js'
 import MenuController from '../../menu/controller/MenuController.js'
 import Menu from '../../menu/Menu.js'
 import MoviesController from '../../movies/controller/MoviesController.js'
@@ -8,6 +10,7 @@ import IndexView from '../view/IndexView.js'
 export default class IndexController {
   private menu: MenuController
   private movies: MoviesController
+  private error: ErrorController
 
   constructor(
     private readonly indexModel: IndexModel,
@@ -15,11 +18,13 @@ export default class IndexController {
   ) {
     this.movies = Movies.create()
     this.menu = Menu.create()
+    this.error = Error404.create()
   }
 
   public init = async (): Promise<void> => {
     this.menu.init()
     this.movies.init()
+    this.error.init()
     this.indexModel.init()
     this.indexView.init(this.searchMovies)
   }
@@ -27,4 +32,4 @@ export default class IndexController {
   public searchMovies = (search: string): void => {
     this.movies.searchMovies(search)
   }
-}   
+}

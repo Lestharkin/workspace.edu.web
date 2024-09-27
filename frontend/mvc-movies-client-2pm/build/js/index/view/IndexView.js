@@ -4,6 +4,7 @@ export default class IndexView {
         this.elements = {
             searchForm: document.querySelector('#search') ??
                 document.createElement('form'),
+            main: document.querySelector('main') ?? document.createElement('main')
         };
     }
     init = (searchMovies) => {

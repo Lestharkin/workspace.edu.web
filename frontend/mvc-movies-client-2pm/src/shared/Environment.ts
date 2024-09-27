@@ -1,4 +1,4 @@
-import EndPoint from "./EndPoint.js"
+import EndPoint from './EndPoint.js'
 
 export default class Environment {
   public static readonly getEndpointMovies = async (): Promise<string> => {

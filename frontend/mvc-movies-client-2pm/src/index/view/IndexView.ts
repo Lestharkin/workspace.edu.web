@@ -6,6 +6,7 @@ export default class IndexView {
       searchForm:
         (document.querySelector('#search') as unknown as HTMLInputElement) ??
         document.createElement('form'),
+      main: document.querySelector('main') ?? document.createElement('main')
     }
   }
 
@@ -13,7 +14,14 @@ export default class IndexView {
     searchMovies: (search: string) => void
   ): void => {
     this.searchMoviesForm(searchMovies)
-  }  
+  }
+
+  public renderMain = (componentName: string): void => {
+    if (this.elements['main'] !== undefined){
+      this.elements['main'].innerHTML = ''
+      this.elements['main'].appendChild(document.createElement(componentName))
+    }    
+  }
 
   private searchMoviesForm = (searchMovies: (search: string) => void): void => {
     const searchForm = this.elements['searchForm']

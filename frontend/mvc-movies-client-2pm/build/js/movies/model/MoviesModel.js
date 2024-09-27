@@ -1,3 +1,4 @@
+import Environment from '../../shared/Environment.js';
 import Subject from '../types/Subject.js';
 export default class MoviesModel extends Subject {
     movies;
@@ -29,7 +30,7 @@ export default class MoviesModel extends Subject {
             : Math.floor(this.data.length / this.limit);
     };
     getMoviesFromFile = async () => {
-        const response = await fetch('http://localhost:1802/api/v1.0/movies');
+        const response = await fetch(await Environment.getEndpointMovies());
         if (response.status !== 200) {
             return [];
         }

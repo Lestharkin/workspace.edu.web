@@ -1,3 +1,4 @@
+import Environment from '../../shared/Environment.js'
 import Movie from '../types/Movie.js'
 import Subject from '../types/Subject.js'
 import MoviesView from '../view/MoviesView.js'
@@ -33,12 +34,12 @@ export default class MoviesModel extends Subject<MoviesView> {
 
   public getTotalPages = (): number => {
     return this.search.length > 0
-    ? Math.floor(this.search.length / this.limit)
-    : Math.floor(this.data.length / this.limit)
+      ? Math.floor(this.search.length / this.limit)
+      : Math.floor(this.data.length / this.limit)
   }
 
   public getMoviesFromFile = async (): Promise<Movie[]> => {
-    const response = await fetch('./database/movies-2020s.json')
+    const response = await fetch(await Environment.getEndpointMovies())
     if (response.status !== 200) {
       return []
     }
