@@ -15,6 +15,7 @@ export default class IndexController {
         this.error = Error404.create();
     }
     init = async () => {
+        this.indexView.renderMain("error");
         this.menu.init();
         this.movies.init();
         this.error.init();

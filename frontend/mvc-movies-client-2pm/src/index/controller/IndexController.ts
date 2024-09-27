@@ -22,6 +22,7 @@ export default class IndexController {
   }
 
   public init = async (): Promise<void> => {
+    this.indexView.renderMain("error")
     this.menu.init()
     this.movies.init()
     this.error.init()
