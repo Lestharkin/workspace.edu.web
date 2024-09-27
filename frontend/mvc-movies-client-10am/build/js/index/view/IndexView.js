@@ -4,10 +4,17 @@ export default class IndexView {
         this.elements = {
             searchForm: document.querySelector('#search') ??
                 document.createElement('form'),
+            main: document.querySelector('main') ?? document.createElement('main'),
         };
     }
     init = (searchMovies) => {
         this.searchMoviesForm(searchMovies);
+    };
+    renderMain = (componentName) => {
+        if (this.elements['main'] !== undefined) {
+            this.elements['main'].innerHTML = '';
+            this.elements['main'].appendChild(document.createElement(componentName));
+        }
     };
     searchMoviesForm = (searchMovies) => {
         const searchForm = this.elements['searchForm'];

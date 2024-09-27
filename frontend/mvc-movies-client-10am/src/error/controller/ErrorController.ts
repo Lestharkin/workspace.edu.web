@@ -1,4 +1,4 @@
-import ErrorView from '../view/ErrorView'
+import ErrorView from '../view/ErrorView.js'
 
 export default class ErrorController {
   private view: ErrorView

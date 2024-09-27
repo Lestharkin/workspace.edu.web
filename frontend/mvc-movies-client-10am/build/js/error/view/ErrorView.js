@@ -1,4 +1,4 @@
-import ErrorTemplate from '../template/ErrorTemplate';
+import ErrorTemplate from '../template/ErrorTemplate.js';
 export default class ErrorView {
     selector;
     selectorName = 'error';
