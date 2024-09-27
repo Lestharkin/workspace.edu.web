@@ -15,7 +15,7 @@ export default class MoviesModel {
         cast: movie.cast,
         genres: movie.genres,
         extract: movie.extract,
-        thumbnail: `${Environment.getDomain()}/api/v1.0/movies/movie/image/${
+        thumbnail: `${Environment.getDomain()}/api/v1.0/rental/movies/movie/image/${
           movie.thumbnail
         }`,
       }

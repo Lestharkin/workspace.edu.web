@@ -1,3 +1,4 @@
+import Environment from '../../shared/Environment.js'
 import Movie from '../types/Movie.js'
 import Subject from '../types/Subject.js'
 import MoviesView from '../view/MoviesView.js'
@@ -38,7 +39,7 @@ export default class MoviesModel extends Subject<MoviesView> {
   }
 
   public getMoviesFromFile = async (): Promise<Movie[]> => {
-    const response = await fetch('./database/movies-2020s.json')
+    const response = await fetch(await Environment.getEndpointMovies())
     if (response.status !== 200) {
       return []
     }
