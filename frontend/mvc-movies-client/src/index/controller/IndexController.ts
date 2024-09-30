@@ -1,3 +1,5 @@
+import Contact from '../../contact/Contact.js'
+import ContactController from '../../contact/controller/ContactController.js'
 import ErrorController from '../../error/controller/ErrorController.js'
 import Error404 from '../../error/Error404.js'
 import MenuController from '../../menu/controller/MenuController.js'
@@ -11,6 +13,7 @@ export default class IndexController {
   private readonly menu: MenuController
   private readonly movies: MoviesController
   private readonly error: ErrorController
+  private readonly contact: ContactController
 
   constructor(
     private readonly indexModel: IndexModel,
@@ -19,6 +22,7 @@ export default class IndexController {
     this.movies = Movies.create()
     this.menu = Menu.create()
     this.error = Error404.create()
+    this.contact = Contact.create()
   }
 
   public init = async (): Promise<void> => {
@@ -38,8 +42,8 @@ export default class IndexController {
       case 'movies':
         this.loadMovies()
         break
-      case 'error':
-        this.loadError()
+      case 'contact':
+        this.loadContact()
         break
       default:
         this.loadError()
@@ -48,6 +52,10 @@ export default class IndexController {
 
   public loadMovies = async (): Promise<void> => {
     this.movies.init()
+  }
+
+  public loadContact = async (): Promise<void> => {
+    this.contact.init()
   }
 
   public loadError = async (): Promise<void> => {

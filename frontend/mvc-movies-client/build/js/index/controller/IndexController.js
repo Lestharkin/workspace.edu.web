@@ -1,3 +1,4 @@
+import Contact from '../../contact/Contact.js';
 import Error404 from '../../error/Error404.js';
 import Menu from '../../menu/Menu.js';
 import Movies from '../../movies/Movies.js';
@@ -7,12 +8,14 @@ export default class IndexController {
     menu;
     movies;
     error;
+    contact;
     constructor(indexModel, indexView) {
         this.indexModel = indexModel;
         this.indexView = indexView;
         this.movies = Movies.create();
         this.menu = Menu.create();
         this.error = Error404.create();
+        this.contact = Contact.create();
     }
     init = async () => {
         this.indexModel.init();
@@ -29,8 +32,8 @@ export default class IndexController {
             case 'movies':
                 this.loadMovies();
                 break;
-            case 'error':
-                this.loadError();
+            case 'contact':
+                this.loadContact();
                 break;
             default:
                 this.loadError();
@@ -38,6 +41,9 @@ export default class IndexController {
     };
     loadMovies = async () => {
         this.movies.init();
+    };
+    loadContact = async () => {
+        this.contact.init();
     };
     loadError = async () => {
         this.error.init();
