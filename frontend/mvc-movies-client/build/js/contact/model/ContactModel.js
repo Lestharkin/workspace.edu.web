@@ -1,11 +1,12 @@
+import Environment from '../../shared/Environment.js';
 export default class ContactModel {
     sendMessage = async (message) => {
-        await fetch('http://localhost:1802/api/v1.0/contact/message/register', {
+        await fetch(await Environment.getEndpointContactRegister(), {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(message)
+            body: JSON.stringify(message),
         });
     };
 }
