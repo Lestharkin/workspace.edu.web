@@ -1,5 +1,5 @@
 export default class ContactTemplate {
-    static render() {
+    static create() {
         return `
       <div class="contact-form">
         <h2>Contáctenos</h2>

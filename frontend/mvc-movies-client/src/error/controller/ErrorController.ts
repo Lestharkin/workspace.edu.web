@@ -1,7 +1,7 @@
 import ErrorView from '../view/ErrorView.js'
 
 export default class ErrorController {
-  private view: ErrorView
+  private readonly view: ErrorView
 
   constructor(view: ErrorView) {
     this.view = view
