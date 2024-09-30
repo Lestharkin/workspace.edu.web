@@ -16,6 +16,11 @@ export default class MenuModel {
             {
                 title: 'Rentals',
                 url: '/rentals',
+                active: false,
+            },
+            {
+                title: 'Contact',
+                url: '/contact',
                 active: true,
             },
             {
