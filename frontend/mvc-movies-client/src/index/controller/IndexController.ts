@@ -8,9 +8,9 @@ import IndexModel from '../model/IndexModel.js'
 import IndexView from '../view/IndexView.js'
 
 export default class IndexController {
-  private menu: MenuController
-  private movies: MoviesController
-  private error: ErrorController
+  private readonly menu: MenuController
+  private readonly movies: MoviesController
+  private readonly error: ErrorController
 
   constructor(
     private readonly indexModel: IndexModel,
@@ -22,15 +22,35 @@ export default class IndexController {
   }
 
   public init = async (): Promise<void> => {
-    this.indexView.renderMain('movies')
-    this.menu.init()
-    this.movies.init()
-    this.error.init()
     this.indexModel.init()
+    this.loadMain(this.indexView.getPageFromMeta())
     this.indexView.init(this.searchMovies)
   }
 
   public searchMovies = (search: string): void => {
     this.movies.searchMovies(search)
+  }
+
+  public loadMain = async (component: string): Promise<void> => {
+    this.menu.init()
+    this.indexView.renderMain(component ?? 'error')
+    switch (component) {
+      case 'movies':
+        this.loadMovies()
+        break
+      case 'error':
+        this.loadError()
+        break
+      default:
+        this.loadError()
+    }
+  }
+
+  public loadMovies = async (): Promise<void> => {
+    this.movies.init()
+  }
+
+  public loadError = async (): Promise<void> => {
+    this.error.init()
   }
 }   

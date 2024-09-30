@@ -15,14 +15,31 @@ export default class IndexController {
         this.error = Error404.create();
     }
     init = async () => {
-        this.indexView.renderMain('movies');
-        this.menu.init();
-        this.movies.init();
-        this.error.init();
         this.indexModel.init();
+        this.loadMain(this.indexView.getPageFromMeta());
         this.indexView.init(this.searchMovies);
     };
     searchMovies = (search) => {
         this.movies.searchMovies(search);
+    };
+    loadMain = async (component) => {
+        this.menu.init();
+        this.indexView.renderMain(component ?? 'error');
+        switch (component) {
+            case 'movies':
+                this.loadMovies();
+                break;
+            case 'error':
+                this.loadError();
+                break;
+            default:
+                this.loadError();
+        }
+    };
+    loadMovies = async () => {
+        this.movies.init();
+    };
+    loadError = async () => {
+        this.error.init();
     };
 }

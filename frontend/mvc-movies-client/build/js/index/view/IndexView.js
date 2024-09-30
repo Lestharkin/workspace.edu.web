@@ -5,8 +5,13 @@ export default class IndexView {
             searchForm: document.querySelector('#search') ??
                 document.createElement('form'),
             main: document.querySelector('main') ?? document.createElement('main'),
+            path: document.querySelector('meta[name=path]') ?? document.createElement('meta'),
         };
     }
+    getPageFromMeta = () => {
+        const pathElement = this.elements['path'];
+        return pathElement ? pathElement.getAttribute('page') ?? 'error' : 'error';
+    };
     init = (searchMovies) => {
         this.searchMoviesForm(searchMovies);
     };

@@ -1,5 +1,5 @@
 export default class IndexView {
-  private elements: { [name: string]: HTMLElement }
+  private readonly elements: { [name: string]: HTMLElement }
 
   constructor() {
     this.elements = {
@@ -7,7 +7,13 @@ export default class IndexView {
         (document.querySelector('#search') as unknown as HTMLInputElement) ??
         document.createElement('form'),
       main: document.querySelector('main') ?? document.createElement('main'),
+      path: document.querySelector('meta[name=path]') ?? document.createElement('meta'),
     }
+  }
+
+  public getPageFromMeta = (): string => {
+    const pathElement = this.elements['path']
+    return pathElement ? pathElement.getAttribute('page') ?? 'error' : 'error'
   }
 
   public init = (
@@ -23,7 +29,7 @@ export default class IndexView {
     }    
   }
 
-  private searchMoviesForm = (searchMovies: (search: string) => void): void => {
+  private readonly searchMoviesForm = (searchMovies: (search: string) => void): void => {
     const searchForm = this.elements['searchForm']
     if (searchForm !== undefined) {
       const btn = searchForm.querySelector('button')
