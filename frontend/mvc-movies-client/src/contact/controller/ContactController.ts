@@ -10,9 +10,10 @@ export default class ContactController {
     this.model = model
   }
 
-  public init = (): void => {
+  public init = async (): Promise<void> => {
     this.model.init()
     this.view.init()
     this.view.render()
+    this.view.addListeners(this.model.sendMessage.bind(this.model))
   }
 }

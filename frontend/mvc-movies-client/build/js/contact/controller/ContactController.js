@@ -5,9 +5,10 @@ export default class ContactController {
         this.view = view;
         this.model = model;
     }
-    init = () => {
+    init = async () => {
         this.model.init();
         this.view.init();
         this.view.render();
+        this.view.addListeners(this.model.sendMessage.bind(this.model));
     };
 }
