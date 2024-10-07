@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response } from 'express'
 
 export default class ProductsView {
   index = (_req: Request, res: Response) => {
