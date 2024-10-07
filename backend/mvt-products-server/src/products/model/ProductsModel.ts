@@ -11,7 +11,7 @@ export default class ProductsModel{
   }
 
   public init = (): void => {
-    this.data = products_json
+    this.data = products_json as ProductInterface[]
   }
 
   public next = (): ProductInterface => {

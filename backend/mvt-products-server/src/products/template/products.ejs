@@ -47,40 +47,45 @@
                 <form class="row g-3 bg-dark-subtle m-2 p-4 rounded" id="prods">
                     <div class="col-md-2">
                         <label for="id" class="form-label">Id</label>
-                        <input type="number" class="form-control" id="id" readonly>
+                        <input type="number" class="form-control" id="id" readonly value="<%= product.id %>">
                     </div>
                     <div class="col-md-10">
                         <label for="title" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="title">
+                        <input type="text" class="form-control" id="title"  value="<%= product.title %>">
                     </div>
                     <div class="col-md-12">
                         <label for="description" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="description" rows="5"></textarea>
+                        <textarea class="form-control" id="description" rows="5"><%= product.description %></textarea>
                     </div>
 
                     <div class="col-md-2">
                         <label for="price" class="form-label">Precio</label>
-                        <input type="text" class="form-control" id="price">
+                        <input type="text" class="form-control" id="price"  value="<%= product.price %>">
                     </div>
                     <div class="col-md-2">
                         <label for="amount" class="form-label">Cantidad</label>
-                        <input type="text" class="form-control" id="amount">
+                        <input type="text" class="form-control" id="amount"  value="<%= product.amount %>">
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-2">
                         <label for="discount" class="form-label">Descuento</label>
                         <select id="discount" class="form-select">
-                            <option selected value="false">No</option>
-                            <option value="true">Si</option>
+                            <% if (product.discount) { %>
+                                <option value="false">No</option>
+                                <option selected value="true">Si</option>
+                            <% } else { %>
+                                <option selected value="false">No</option>
+                                <option value="true">Si</option>
+                            <% } %>                            
                         </select>
                     </div>
                     <div class="col-md-2">
                         <label for="discountper" class="form-label">%</label>
-                        <input type="text" class="form-control" id="discountper" readonly>
+                        <input type="text" class="form-control" id="discountper" readonly value="<%= product.discountPer %>">
                     </div>
                     <div class="col-md-2">
                         <label for="discountuni" class="form-label">Unid.</label>
-                        <input type="text" class="form-control" id="discountuni" readonly>
+                        <input type="text" class="form-control" id="discountuni" readonly value="<%= product.discountUni %>">
                     </div>
 
                     <div class="col-md-12">
