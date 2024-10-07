@@ -16,11 +16,11 @@ export default class Server {
   }
 
   public config = (): void => {
-    this.app.use(express.json())
-    this.app.use(express.urlencoded({ extended: true }))
-    this.app.use(cors())
     this.app.set('view engine', 'ejs')
     this.app.set('views', path.join(__dirname, '../products/template'))
+    this.app.use(express.urlencoded({ extended: true }))
+    this.app.use(express.json())
+    this.app.use(cors())
   }
 
   public statics = (): void => {
