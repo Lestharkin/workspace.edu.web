@@ -1,11 +1,14 @@
 import cors from 'cors'
 import express, { Application } from 'express'
 import path from 'path'
+import ProductsRouter from '../products/router/ProductsRouter'
 
 export default class Server {
   private readonly app: Application
 
-  constructor() {
+  constructor(
+    private readonly productsRouter: ProductsRouter
+  ) {
     this.app = express()
     this.statics()
     this.config()
@@ -25,8 +28,7 @@ export default class Server {
   }
 
   public routes = (): void => {
-    this.app.use('/', cors(), this.clientView.router)
-    this.app.use('*', cors(), this.clientView.router)
+    this.app.use('/', cors(), this.productsRouter.router)
   }
 
   public start = (): void => {
