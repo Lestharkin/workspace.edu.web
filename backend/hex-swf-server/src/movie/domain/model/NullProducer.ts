@@ -1,16 +1,11 @@
-import Director from './Director'
+import Producer from './Producer'
 
-export default class NullDirector extends Director {
+export default class NullProducer extends Producer {
   constructor() {
     super({
       name: 'not found name in database',
       lastname: 'not found lastname in database',
-      yearsOfExperience: 0,
     })
-  }
-
-  public override isNull = (): boolean => {
-    return true
   }
 
   public override setName = (_name: string): void => {
@@ -21,7 +16,7 @@ export default class NullDirector extends Director {
     return
   }
 
-  public override setYearsOfExperience = (_yearsOfExperience: number): void => {
-    return
+  public override isNull = (): boolean => {
+    return true
   }
 }

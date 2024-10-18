@@ -1,7 +1,7 @@
 import Person, { PersonAttributes } from './Person'
 
 export default class Director extends Person {
-  private readonly yearsOfExperience: number
+  private yearsOfExperience: number
 
   constructor(director: DirectorAttributes) {
     super({
@@ -17,6 +17,10 @@ export default class Director extends Person {
 
   public getYearsOfExperience = (): number => {
     return this.yearsOfExperience
+  }
+
+  public setYearsOfExperience = (yearsOfExperience: number): void => {
+    this.yearsOfExperience = yearsOfExperience
   }
 }
 
