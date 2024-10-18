@@ -16,6 +16,16 @@
     "express": "^4.21.1",
     "morgan": "^1.10.0"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ]
+  },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
