@@ -1,4 +1,4 @@
-import Person from './Person'
+import Person from '../person/Person'
 
 export default class Character extends Person {
   private birthYear: Date
