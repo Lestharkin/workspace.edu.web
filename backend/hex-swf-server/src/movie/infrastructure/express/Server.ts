@@ -1,12 +1,14 @@
 import cors from 'cors'
 import express, { Application } from 'express'
 import path from 'path'
+import RouterExpress from '../../domain/port/express/RouterExpress'
 
 export default class Server {
   private readonly app: Application
   
 
   constructor(
+    private readonly routers: RouterExpress[],
   ) {
     this.app = express() 
     this.statics()   
@@ -27,7 +29,9 @@ export default class Server {
   }
 
   public routes = (): void => {
-    this.app.use('/api/v1.0/rental', cors(), this.moviesView.router)
+    this.routers.forEach((router) => {
+      this.app.use('/', cors(), router.router)
+    })
   }
 
   public start = (): void => {
