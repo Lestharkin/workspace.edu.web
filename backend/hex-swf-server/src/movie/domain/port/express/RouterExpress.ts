@@ -5,6 +5,7 @@ export default abstract class RouterExpress {
 
   constructor() {
     this.router = Router()
+    // this.routes()
   }
 
   public abstract routes: () => void
