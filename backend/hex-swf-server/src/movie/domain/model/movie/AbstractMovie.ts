@@ -90,7 +90,12 @@ export default abstract class AbstractMovie {
     this.image = image
   }
 
-
+  public getYearsOld = (): number => {
+    const today = new Date()
+    const releaseDate = this.getReleaseDate()
+    const yearsOld = today.getFullYear() - releaseDate.getFullYear()
+    return yearsOld
+  }
 }
 
 export interface MovieAttributes {
