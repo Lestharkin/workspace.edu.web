@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express, { Application } from 'express'
 import path from 'path'
-import RouterExpress from '../../domain/port/express/RouterExpress'
+import RouterExpress from '../../domain/express/RouterExpress'
 
 export default class Server {
   private readonly app: Application
