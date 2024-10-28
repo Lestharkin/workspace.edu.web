@@ -1,17 +1,14 @@
 import cors from 'cors'
 import express, { Application } from 'express'
 import path from 'path'
-import RouterExpress from '../../domain/express/RouterExpress'
+import RouterExpress from '../../domain/RouterExpress'
 
 export default class Server {
   private readonly app: Application
-  
 
-  constructor(
-    private readonly routers: RouterExpress[],
-  ) {
-    this.app = express() 
-    this.statics()   
+  constructor(private readonly routers: RouterExpress[]) {
+    this.app = express()
+    this.statics()
     this.config()
     this.routes()
   }
@@ -23,9 +20,7 @@ export default class Server {
   }
 
   public statics = (): void => {
-    this.app.use(
-      express.static(path.resolve(__dirname, '../client/public'))
-    )
+    this.app.use(express.static(path.resolve(__dirname, '../client/public')))
   }
 
   public routes = (): void => {
