@@ -4,14 +4,14 @@ import Producer from '../producer/Producer'
 import Image from '../image/Image'
 
 export default abstract class AbstractMovie {
-  private title: string
-  private episodeId: number
-  private openingCrawl: string
-  private director: Director
-  private producers: Producer[]
-  private releaseDate: Date
-  private characters: Character[]
-  private image: Image
+  protected title: string
+  protected episodeId: number
+  protected openingCrawl: string
+  protected director: Director
+  protected producers: Producer[]
+  protected releaseDate: Date
+  protected characters: Character[]
+  protected image: Image
 
   constructor(movieAttributes: MovieAttributes) {
     this.title = movieAttributes.title

@@ -1,11 +1,9 @@
-import Person from '../person/Person'
+import Person, { PersonAttributes } from '../person/Person'
 
 export default class Character extends Person {
   private birthYear: Date
 
-  constructor(
-    character: CharacterAttributes
-  ) {
+  constructor(character: CharacterAttributes) {
     super({
       name: character.name,
       lastname: character.lastname,
@@ -31,8 +29,6 @@ export default class Character extends Person {
   }
 }
 
-export interface CharacterAttributes {
-  name: string
-  lastname: string
+export interface CharacterAttributes extends PersonAttributes {
   birthYear: Date
 }

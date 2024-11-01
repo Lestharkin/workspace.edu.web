@@ -1,4 +1,4 @@
-import Person from './Person'
+import Person, { PersonAttributes } from '../person/Person'
 
 export default class Producer extends Person {
   constructor(producer: ProducerAttributes) {
@@ -11,10 +11,6 @@ export default class Producer extends Person {
   public override isNull = (): boolean => {
     return false
   }
-  
 }
 
-export interface ProducerAttributes {
-  name: string
-  lastname: string
-}
+export interface ProducerAttributes extends PersonAttributes {}

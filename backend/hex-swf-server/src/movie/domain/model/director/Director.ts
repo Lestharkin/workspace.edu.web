@@ -1,4 +1,4 @@
-import Person, { PersonAttributes } from './Person'
+import Person, { PersonAttributes } from '../person/Person'
 
 export default class Director extends Person {
   private yearsOfExperience: number
