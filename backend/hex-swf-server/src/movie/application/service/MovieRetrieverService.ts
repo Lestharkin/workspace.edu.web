@@ -18,7 +18,7 @@ export default class MovieRetrieverService
   ) {}
 
   public retrieve = async (): Promise<Movie[]> => {
-    const SWAPImovies = await this.SWAPIRepository.findALL()
+    const SWAPImovies = await this.SWAPIRepository.findAll()
     const movieImages = await this.getImage(SWAPImovies)
     const movies = SWAPImovies.map((movie, index) => { 
       return new Movie({
