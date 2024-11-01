@@ -5,7 +5,9 @@
   "scripts": {
     "build": "rm -rf ./build && tsc",
     "dev": "ts-node-dev --env-file=env/.env src/swf-app.ts",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test_func": "jest --testNamePattern='retrieve 3' --verbose",
+    "test_file": "jest --testPathPattern='MovieRetrieverService.test.ts' --verbose"
   },
   "keywords": [],
   "author": "",
