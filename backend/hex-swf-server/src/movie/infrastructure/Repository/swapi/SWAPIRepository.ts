@@ -1,8 +1,8 @@
-import Repository from "../../../domain/repository/RepositoryInterface"
+import SWAPIRepositoryPort from "../../../domain/port/driven/SWAPIRepositoryPort"
 import MovieDataInterface from "../../../domain/types/MovieDataInterface"
 import SWAPIDBC from "./SWAPIDBC"
 
-export default class SWAPIRepository implements Repository<string, MovieDataInterface> {
+export default class SWAPIRepository implements SWAPIRepositoryPort {
   private readonly swApiDBC: SWAPIDBC
 
   constructor() {

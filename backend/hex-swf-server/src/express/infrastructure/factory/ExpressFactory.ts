@@ -1,12 +1,13 @@
-import MovieRetrieverService from '../../../movie/application/service/MovieRetrieverService'
+
 import MovieUseCase from '../../../movie/application/usecase/MovieUseCase'
 import MovieControllerExpress from '../../../movie/infrastructure/express/controller/MovieControllerExpress'
 import MovieRouterExpress from '../../../movie/infrastructure/express/router/MovieRouterExpress'
 import Server from '../server/Server'
+import MovieRetrieverServiceFactory from '../../../movie/infrastructure/factory/MovieRetrieverServiceFactory'
 
 export default class ExpressFactory {
   public static readonly create = (): Server => {
-    const movieRetrieverService = new MovieRetrieverService()
+    const movieRetrieverService = MovieRetrieverServiceFactory.create()
     // TODO: validate service
     const movieUseCase = new MovieUseCase(movieRetrieverService)
     // TODO: validate use case
