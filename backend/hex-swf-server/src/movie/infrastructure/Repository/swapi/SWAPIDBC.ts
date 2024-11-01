@@ -12,8 +12,8 @@ export default class SWAPIDBC {
         return await this.getCharacters(character)
       })
       movie.characters = (await Promise.all(char)).map((character: any) => character.name)
-      console.log(movie.characters)
     })
+    console.log(movies)
     return movies
   }
 
