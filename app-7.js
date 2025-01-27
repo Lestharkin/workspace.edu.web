@@ -17,4 +17,3 @@ promise1.then(value => {
 
 const w = async () => await promise1
 console.log(w());
-//console.log(await w());
