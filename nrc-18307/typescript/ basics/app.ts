@@ -105,7 +105,7 @@ interface StudentInterface {
     id: number;
     names: string;
     lastNames: string;
-    age?: number;
+    age?: number | undefined;
 }
 
 function testInterface(student: StudentInterface): string {
@@ -118,10 +118,10 @@ class User implements StudentInterface {
     public id: number;
     public names: string;
     public lastNames: string;
-    public age: number;
+    public age: number | undefined;
     private _address: string;
 
-    constructor(id: number, names: string, lastNames: string, age: number, address: string) {
+    constructor(id: number, names: string, lastNames: string, age: number| undefined, address: string) {
         this.id = id;
         this.names = names;
         this.lastNames = lastNames;
@@ -147,12 +147,16 @@ console.log(user.getString());
 
 console.log(`Class extends`);
 
+interface ChildOfUserInterface extends StudentInterface {
+    address: string;
+}
+
   class ChildOfUser extends User {
 
-      constructor(id: number, names: string, lastNames: string, age: number, address: string) {
-          super(id, names, lastNames, age, address);
+      constructor(childOfUser: ChildOfUserInterface) {
+          super(childOfUser.id, childOfUser.names, childOfUser.lastNames, childOfUser.age, childOfUser.address);
       }
   }
 
-const childOfUser = new ChildOfUser(987, 'javier', 'gil', 18, 'calle 2 con 1');
+const childOfUser = new ChildOfUser({id: 98, names: 'javier', lastNames: 'gil', age:18, address: 'calle 2 con 1'});
 console.log(childOfUser.getString());
