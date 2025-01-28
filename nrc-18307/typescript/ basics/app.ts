@@ -15,7 +15,7 @@ console.log(`String = ${_str.toString()}`);
 let _any: any = "any";
 console.log(`Any = ${_any.toString()}`);
  _any = false;
-console.log(`<p>Any = ${_any.toString()}`);
+console.log(`Any = ${_any.toString()}`);
 
 const PI: number = 3.1416;
 console.log(`Constant: PI = ${PI.toString()}`);
