@@ -125,10 +125,10 @@ console.log(user.getString());
 console.log("Class extends");
 var ChildOfUser = /** @class */ (function (_super) {
     __extends(ChildOfUser, _super);
-    function ChildOfUser(id, names, lastNames, age, address) {
-        return _super.call(this, id, names, lastNames, age, address) || this;
+    function ChildOfUser(childOfUser) {
+        return _super.call(this, childOfUser.id, childOfUser.names, childOfUser.lastNames, childOfUser.age, childOfUser.address) || this;
     }
     return ChildOfUser;
 }(User));
-var childOfUser = new ChildOfUser(987, 'javier', 'gil', 18, 'calle 2 con 1');
+var childOfUser = new ChildOfUser({ id: 98, names: 'javier', lastNames: 'gil', age: 18, address: 'calle 2 con 1' });
 console.log(childOfUser.getString());
