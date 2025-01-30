@@ -85,6 +85,9 @@ const item = {
         },
         fabricacion: {
             pais: 'Colombia'
+        },
+        x: {
+            pais: 'Colombia'
         }
     }
 }

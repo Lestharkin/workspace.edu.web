@@ -45,7 +45,8 @@ const anonymous = (function() {
 
 anonymous();
 
-const arrowFn_1 = (a,b) => "Arrow Function";
+const arrowFn_1 = a => "Arrow Function";
+
 
 console.log(arrowFn_1());
 
