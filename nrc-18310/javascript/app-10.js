@@ -26,7 +26,20 @@ function showBoard() {
   }
 }
 
+const nBom = () => Math.floor(Math.random() * (dim.length() / 2));
+
+function putBombs() {
+  let n = nBom();
+  for (let i = 0; i < n; i++) {
+    let row = Math.floor(Math.random() * dim.rows) + 1;
+    let column = Math.floor(Math.random() * dim.columns) + 1;
+    board[row][column] = 'B';
+  }
+}
+
 
 // Main
 initBoard();
+putBombs();
 showBoard();
+console.log(nBom());
