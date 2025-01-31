@@ -15,5 +15,7 @@ promise1.then(value => {
   console.log(error);
 });
 
+
+
 const w = async () => await promise1
 console.log(w());
