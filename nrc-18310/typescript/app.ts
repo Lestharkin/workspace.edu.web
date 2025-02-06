@@ -14,7 +14,7 @@ console.log(`String = ${_str.toString()}`);
 
 let _any: any = "any";
 console.log(`Any = ${_any.toString()}`);
- _any = false;
+_any = false;
 console.log(`Any = ${_any.toString()}`);
 
 const PI: number = 3.1416;
@@ -92,12 +92,12 @@ const addFunc = function add(
     }
     return n1 + n2;
 }
-console.log(`addFun = ${addFunc(1, 3)}`);
+console.log(`addFun = ${addFunc(5, 3)}`);
 
-  const _voidFunc = (): void => {
-  console.log(`-- void function -->`);
-  }
-  _voidFunc();
+const _voidFunc = (): void => {
+    console.log(`-- void function -->`);
+}
+_voidFunc();
 
 console.log(`# Interface - Class`);
 
@@ -140,9 +140,21 @@ class User implements StudentInterface {
     public get address(): string {
         return this._address;
     }
+
+    public setAddress(address: string) {
+        this._address = address;
+    }   
+
+    public getAddress(): string {
+        return this._address;
+    }
 }
 
 const user = new User(123, 'lenin', 'serrano', 20, 'calle 1 con 2');
+
+user.address = 'calle 2 con 1';
+user.setAddress('calle 3 con 4');
+
 console.log(user.getString());
 
 console.log(`Class extends`);
