@@ -5,6 +5,8 @@ export default class UserController {
   constructor(private readonly userModel: UserModel) {}
 
   public login(req: Request, res: Response): void {
+    console.log(req.body)
+
     const { username, password } = req.body
 
     if (username === undefined || password === undefined) {

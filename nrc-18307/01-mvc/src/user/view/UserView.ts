@@ -11,7 +11,7 @@ export default class UserView {
 
   public routes() {
     this.router.post(
-      '/api/v1.0/users/login',
+      '/login',
       this.userController.login.bind(this.userController)
     )
   }
