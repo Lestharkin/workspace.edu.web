@@ -7,4 +7,10 @@ export default class MovieController {
   public getMovies(_req: Request, res: Response): void {
     res.status(200).json({ movies: this.movieModel.retrieveMovies() })
   }
+
+  public getMovieImage(req: Request, res: Response): void {
+    const { name } = req.params
+    
+    res.status(200).sendFile(this.movieModel.retrieveMovieImage(name))
+  }
 }
