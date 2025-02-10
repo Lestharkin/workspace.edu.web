@@ -8,9 +8,14 @@ export default class MovieController {
     res.status(200).json({ movies: this.movieModel.retrieveMovies() })
   }
 
-  public getMovieImage(req: Request, res: Response): void {
+  public async getMovieImage(req: Request, res: Response): Promise<void> {
     const { name } = req.params
+
+    if(name === undefined) {
+      res.status(400).send('Bad request')
+      return
+    }
     
-    res.status(200).sendFile(this.movieModel.retrieveMovieImage(name))
+    res.status(200).sendFile(await this.movieModel.retrieveMovieImage(name))
   }
 }
