@@ -11,8 +11,8 @@ export default class Server {
     private readonly userView: UserView
   ) {
     this.app = express()
-    this.routes()
     this.configure()
+    this.routes()
   }
 
   public routes() {
