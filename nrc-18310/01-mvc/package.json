@@ -1,15 +1,14 @@
 {
   "name": "01-mvc",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./build/movies.js",
   "scripts": {
-    "dev": "ts-node-dev src/movies.ts",
-    "start": "node build/movies.js",
+    "dev": "ts-node-dev --env-file=./env/.env.dev src/movies.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Lenin Javier Serrano Gil",
+  "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
@@ -17,7 +16,8 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.0",
+    "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"
