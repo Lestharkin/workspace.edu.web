@@ -10,6 +10,11 @@ export default class Server {
     this.routes()
   }
 
+  public configure() {
+    this.app.use(express.json())
+    this.app.use(express.urlencoded({ extended: true }))
+  }
+
   public routes() {
     this.app.use('/api/v1.0/movies/', this.movieView.router)
   }

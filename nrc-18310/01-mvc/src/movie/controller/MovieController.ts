@@ -8,7 +8,7 @@ export default class MovieController {
     res.status(200).json({ movies: this.movieModel.retrieveMovies() })
   }
 
-  public getMovieImage(req: Request, res: Response) {
+  public async getMovieImage(req: Request, res: Response) {
     const { name } = req.params
 
     if(name === undefined) {
@@ -16,7 +16,7 @@ export default class MovieController {
       return
     }
 
-    const image = this.movieModel.retrieveMovieImage(name)
+    const image = await this.movieModel.retrieveMovieImage(name)
 
     res.status(200).sendFile(image)
   }
