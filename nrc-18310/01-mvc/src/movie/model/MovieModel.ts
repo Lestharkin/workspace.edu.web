@@ -1,5 +1,6 @@
 import Movie from '../types/Movie'
 import movies_json from '../../../database/movies-2020s.json'
+import EnvironmentProvider from '../../provider/EnvironmentProvider'
 
 export default class MovieModel {
   public retrieveMovies(): Movie[] {
@@ -12,10 +13,11 @@ export default class MovieModel {
         cast: movie.cast,
         genres: movie.genres,
         extract: movie.extract,
-        thumbnail: `${Environment.getProtocol()}://${Environment.getHost()}:${Environment.getPort()}/api/v1.0/movies/movie/image/${
+        thumbnail: `${EnvironmentProvider.getBaseUrl()}/api/v1.0/movies/movie/image/${
           movie.thumbnail
         }`,
       }
     })
+    return movies
   }
 }

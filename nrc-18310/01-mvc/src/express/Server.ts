@@ -1,5 +1,6 @@
 import express, { Application } from 'express'
 import MovieView from '../movie/view/MovieView'
+import EnvironmentProvider from '../provider/EnvironmentProvider'
 
 export default class Server {
   private readonly app: Application
@@ -14,11 +15,8 @@ export default class Server {
   }
 
   public start() {
-    const HOST = process.env['HOST'] ?? 'localhost'
-    const PORT = process.env['PORT'] ?? '3000'
-    const PROTOCOL = process.env['PROTOCOL'] ?? 'http'
-    this.app.listen(PORT, () =>
-      console.log(`Server is running on ${PROTOCOL}://${HOST}:${PORT}`)
-    )
+    const PORT = EnvironmentProvider.getPort()
+    const BASE_URL = EnvironmentProvider.getBaseUrl()
+    this.app.listen(PORT, () => console.log(`Server is running on ${BASE_URL}`))
   }
 }
