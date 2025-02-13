@@ -11,7 +11,7 @@ export default class Server {
   }
 
   public routes() {
-    this.app.use('/', this.movieView.router)
+    this.app.use('/api/v1.0/movies/', this.movieView.router)
   }
 
   public start() {
