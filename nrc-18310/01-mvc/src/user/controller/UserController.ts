@@ -2,13 +2,14 @@ import { Request, Response } from 'express'
 import UserModel from '../model/UserModel'
 
 export default class UserController {
-  constructor(private userModel: UserModel) {}
+  constructor(private readonly userModel: UserModel) {}
 
-  public login(req: Request, res: Response) {
+  public login(req: Request, res: Response): void {
     const { username, password } = req.body
 
     if (username === undefined || password === undefined) {
-      return res.status(400).json({ error: 'Invalid username or password' })
+      res.status(400).json({ error: 'Invalid username or password' })
+      return
     }
 
     // TODO VALIDATE USERNAME AND PASSWORD

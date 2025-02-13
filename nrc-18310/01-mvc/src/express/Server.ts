@@ -1,11 +1,14 @@
 import express, { Application } from 'express'
 import MovieView from '../movie/view/MovieView'
 import EnvironmentProvider from '../provider/EnvironmentProvider'
+import UserView from '../user/view/UserView'
 
 export default class Server {
   private readonly app: Application
 
-  constructor(private readonly movieView: MovieView) {
+  constructor(private readonly movieView: MovieView,
+    private readonly userView: UserView
+  ) {
     this.app = express()
     this.configure()
     this.routes()
@@ -18,6 +21,7 @@ export default class Server {
 
   public routes() {
     this.app.use('/api/v1.0/movies/', this.movieView.router)
+    this.app.use('/api/v1.0/users/', this.userView.router)
   }
 
   public start() {

@@ -1,11 +1,10 @@
 import Server from './express/Server'
-import MovieController from './movie/controller/MovieController'
-import MovieModel from './movie/model/MovieModel'
-import MovieView from './movie/view/MovieView'
+import MovieFactory from './movie/factory/MovieFactory'
+import UserFactory from './user/factory/UserFactory'
 
-const movieModel = new MovieModel()
-const movieController = new MovieController(movieModel)
-const movieView = new MovieView(movieController)
+const movieView = MovieFactory.createMovieView()
 
-const server = new Server(movieView)
+const userView = UserFactory.createUserView()
+
+const server = new Server(movieView, userView)
 server.start()
