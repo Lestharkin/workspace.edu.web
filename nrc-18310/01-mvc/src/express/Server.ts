@@ -7,6 +7,7 @@ export default class Server {
 
   constructor(private readonly movieView: MovieView) {
     this.app = express()
+    this.configure()
     this.routes()
   }
 
