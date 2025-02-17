@@ -6750,7 +6750,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGVAWkoopbW6uA="
 							},
-							"name": "Express",
+							"name": "express",
 							"ownedElements": [
 								{
 									"_type": "UMLInterface",
@@ -7956,7 +7956,7 @@
 											"top": 368,
 											"width": 85.22998046875,
 											"height": 13,
-											"text": "(from Express)"
+											"text": "(from express)"
 										},
 										{
 											"_type": "LabelView",
@@ -8149,7 +8149,7 @@
 											"top": 176,
 											"width": 85.22998046875,
 											"height": 13,
-											"text": "(from Express)"
+											"text": "(from express)"
 										},
 										{
 											"_type": "LabelView",
