@@ -28,7 +28,7 @@ export default abstract class AbstractMovie {
     this.characters = movieInterface.characters
   }
 
-  public abstract inNull(): boolean 
+  public abstract isNull(): boolean 
 
   public validateAge = (age: number): boolean => {
     return age >= this.age
@@ -47,3 +47,5 @@ interface MovieInterface{
   image: AbstractImagen[]
   characters: AbstractCharacter[]
 }
+
+export { MovieInterface }
