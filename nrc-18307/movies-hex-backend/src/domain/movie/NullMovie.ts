@@ -1,3 +1,4 @@
+import NullDirector from "../director/NullDirector"
 import AbstractMovie from "./AbstractMovie"
 
 export default class NullMovie extends AbstractMovie {

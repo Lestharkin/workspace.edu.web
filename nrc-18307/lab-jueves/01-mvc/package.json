@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "01-mvc": "file:",
     "express": "^4.21.2"
   },
   "devDependencies": {
