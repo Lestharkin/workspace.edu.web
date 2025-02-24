@@ -5,7 +5,5 @@ export default class Movie extends AbstractMovie {
     super(movieInterface)
   }
 
-  public isNull = (): boolean => {
-    return false
-  }
+  public isNull = (): boolean => false
 }

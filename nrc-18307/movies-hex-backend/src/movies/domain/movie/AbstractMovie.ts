@@ -1,6 +1,6 @@
 import AbstractCharacter from '../character/AbstractCharacter'
 import AbstractDirector from '../director/AbstractDirector'
-import AbstractImagen from '../imagen/AbstractImagen'
+import AbstractImage from '../image/AbstractImage'
 import AbstractProducer from '../producer/AbstractProducer'
 
 export default abstract class AbstractMovie {
@@ -12,7 +12,7 @@ export default abstract class AbstractMovie {
   protected director: AbstractDirector
   protected producer: AbstractProducer[]
   protected age: number
-  protected image: AbstractImagen[]
+  protected image: AbstractImage[]
   protected characters: AbstractCharacter[]
 
   constructor(movieInterface: MovieInterface) {
@@ -28,14 +28,12 @@ export default abstract class AbstractMovie {
     this.characters = movieInterface.characters
   }
 
-  public abstract isNull(): boolean 
+  public abstract isNull(): boolean
 
-  public validateAge = (age: number): boolean => {
-    return age >= this.age
-  }
+  public validateAge = (age: number): boolean => age >= this.age
 }
 
-interface MovieInterface{
+interface MovieInterface {
   title: string
   price: number
   year: number
@@ -44,7 +42,7 @@ interface MovieInterface{
   director: AbstractDirector
   producer: AbstractProducer[]
   age: number
-  image: AbstractImagen[]
+  image: AbstractImage[]
   characters: AbstractCharacter[]
 }
 
