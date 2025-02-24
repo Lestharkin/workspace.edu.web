@@ -13,8 +13,6 @@ export default class NullDirector extends AbstractDirector {
 
   public override toString = (): string => 'NullDirector'
 
-  public override getYearsOfExperience = (): number => 0
-
   public override setYearsOfExperience = (_yearsOfExperience: number): void => {
     return
   }
