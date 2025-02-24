@@ -1,1 +1,1 @@
-export default class MovieControllerExpress extends 
+export default class MovieControllerExpress {}
