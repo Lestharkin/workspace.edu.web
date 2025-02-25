@@ -1,14 +1,15 @@
 import { Router } from 'express'
-import ErrorExpressControllerInterface from '../../domain/ErrorExpressControllerInterface'
+import ErrorControllerExpressInterface from '../../domain/ErrorControllerExpressInterface'
+import RouterExpressInterface from '../../domain/RouterExpressInterface'
 
-export default class ErrorRouterExpressInterface
-  implements ErrorRouterExpressInterface
+export default class ErrorExpressRouter
+  implements RouterExpressInterface
 {
   router: Router
   path: string
 
   constructor(
-    private readonly errorController: ErrorExpressControllerInterface
+    private readonly errorController: ErrorControllerExpressInterface
   ) {
     this.router = Router()
     this.path = '*'

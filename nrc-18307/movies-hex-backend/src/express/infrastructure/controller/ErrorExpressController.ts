@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import ErrorExpressControllerInterface from '../../domain/ErrorExpressControllerInterface'
+import ErrorExpressControllerInterface from '../../domain/ErrorControllerExpressInterface'
 
 export default class ErrorExpressController
   implements ErrorExpressControllerInterface
