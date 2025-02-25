@@ -2,7 +2,7 @@ import FullMovieInterface from '../../../domain/api/FullMovieInterface'
 import Movie from '../../../domain/movie/Movie'
 
 export default class MovieToJson {
-  public static moviestoJson = (movies: Movie[]): FullMovieInterface[] => {
+  public static readonly get = (movies: Movie[]): FullMovieInterface[] => {
     const movies_json = movies.map((movie) => {
       return {
         title: movie.getTitle(),
@@ -11,29 +11,29 @@ export default class MovieToJson {
         genres: movie.getGenres(),
         extract: movie.getExtract(),
         director: {
-          name: movie.getDirector().getNames(),
-          surname: movie.getDirector().getSurnames(),
-          age: movie.getDirector().getYearsOfExperience(),
+          names: movie.getDirector().getNames(),
+          surnames: movie.getDirector().getSurnames(),
+          yearsOfExperience: movie.getDirector().getYearsOfExperience(),
         },
         producer: movie.getProducer().map((producer) => {
           return {
-            name: producer.getNames(),
-            surname: producer.getSurnames(),
-            age: producer.getBudget(),
+            names: producer.getNames(),
+            surnames: producer.getSurnames(),
+            budget: producer.getBudget(),
           }
         }),
         age: movie.getAge(),
         image: movie.getImage().map((image) => {
           return {
-            url: image.getName(),
-            alt: image.getPath(),
+            name: image.getName(),
+            path: image.getPath(),
           }
         }),
         characters: movie.getCharacters().map((character) => {
           return {
-            name: character.getNames(),
-            surname: character.getSurnames(),
-            age: character.getBirthYear(),
+            names: character.getNames(),
+            surnames: character.getSurnames(),
+            birthYear: character.getBirthYear(),
           }
         }),
       }
