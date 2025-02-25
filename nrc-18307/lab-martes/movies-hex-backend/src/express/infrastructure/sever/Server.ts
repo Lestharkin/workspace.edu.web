@@ -17,6 +17,7 @@ export default class Server {
 
   public routes() {    
     this.routesExpress.forEach((route) => {
+      console.log(route.path)
       this.app.use(route.path, route.router)
     })
 
