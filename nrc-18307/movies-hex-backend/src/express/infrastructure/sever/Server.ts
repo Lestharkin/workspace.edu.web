@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import ExpressProvider from '../provider/ExpressProvider'
 import RouterExpressInterface from '../../domain/RouterExpressInterface'
-import ErrorRouterExpressInterface from '../router/ErrorExpressRouter'
+import ErrorRouterExpressInterface from '../error/router/ErrorExpressRouter'
 
 export default class Server {
   private readonly app: Application
