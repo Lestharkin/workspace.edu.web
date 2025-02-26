@@ -9,6 +9,7 @@ export default class MovieControllerExpress
   constructor(private readonly movieUseCase: MovieUseCasePort) {}
 
   getMovies(_req: Request, res: Response): void {
+    console.log("I got this way")
     const movies = this.movieUseCase.getMovies()
     const movies_json = MoviesToJson.get(movies)
 
