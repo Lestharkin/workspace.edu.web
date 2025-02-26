@@ -17,10 +17,10 @@ export default class MovieRouterExpress implements MovieRouterExpressInterface {
   }
 
   public getMovies(): void {
-    this.router.get(`${this.path}/movies`, this.controller.getMovies.bind(this.controller))
+    this.router.get(`/`, this.controller.getMovies.bind(this.controller))
   }
 
   public getMovieById(): void {
-    this.router.get(`${this.path}/movie/:id`, this.controller.getMovieById.bind(this.controller))
+    this.router.get(`/:id`, this.controller.getMovieById.bind(this.controller))
   }
 }
