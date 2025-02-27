@@ -3,5 +3,7 @@ import MovieRouterFactory from './movies/infrastructure/factory/MovieRouterFacto
 
 const moviesRouter = MovieRouterFactory.create()
 
-const server = ServerFactory.create([moviesRouter])
+const routers = [moviesRouter]
+
+const server = ServerFactory.create(routers)
 server.start()

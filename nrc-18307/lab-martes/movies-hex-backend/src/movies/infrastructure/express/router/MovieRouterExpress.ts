@@ -6,7 +6,7 @@ export default class MovieRouterExpress implements MovieRouterExpressInterface {
   router: Router
   path: string
 
-  constructor(private readonly controller: MovieControllerExpressInterface) {
+  constructor(private readonly movieController: MovieControllerExpressInterface) {
     this.router = Router()
     this.path = '/movies'
     this.routes()
@@ -17,10 +17,10 @@ export default class MovieRouterExpress implements MovieRouterExpressInterface {
   }
 
   public getMovies(): void {
-    this.router.get(`${this.path}/movies`, this.controller.getMovies.bind(this.controller))
+    this.router.get('/movies', this.movieController.getMovies.bind(this.movieController))
   }
 
   public getMovieById(): void {
-    this.router.get(`${this.path}/movie/:id`, this.controller.getMovieById.bind(this.controller))
+    this.router.get('/movie/:id', this.movieController.getMovieById.bind(this.movieController))
   }
 }
