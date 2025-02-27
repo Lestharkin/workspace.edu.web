@@ -22,6 +22,6 @@ export default class MovieRouterExpress implements MovieRouterExpressInterface {
   }
 
   public getMovieById() {
-    this.router.get('/movies', this.movieController.getMovieById.bind(this.movieController))
+    this.router.get('/movie/:id', this.movieController.getMovieById.bind(this.movieController))
   }
 }
