@@ -35,7 +35,7 @@ export default abstract class AbstractMovie {
   public getTitle = (): string => this.title
 
   public setTitle = (title: string): void => {
-    if(title === ""|| title.length < 5 || title.length > 80) {
+    if (this.validateString(title, 5, 80)) {
       return
     }
     this.title = title
@@ -44,7 +44,7 @@ export default abstract class AbstractMovie {
   public getPrice = (): number => this.price
 
   public setPrice = (price: number): void => {
-    if(price < 0) {
+    if (price < 0) {
       return
     }
     this.price = price
@@ -53,7 +53,7 @@ export default abstract class AbstractMovie {
   public getYear = (): number => this.year
 
   public setYear = (year: number): void => {
-    if(year < 0) {
+    if (year < 0) {
       return
     }
     this.year = year
@@ -62,7 +62,7 @@ export default abstract class AbstractMovie {
   public getGenres = (): string => this.genres
 
   public setGenres = (genres: string): void => {
-    if(genres === "" || genres.length < 5 || genres.length > 10) {
+    if (this.validateString(genres, 5, 10)) {
       return
     }
     this.genres = genres
@@ -71,7 +71,7 @@ export default abstract class AbstractMovie {
   public getExtract = (): string => this.extract
 
   public setExtract = (extract: string): void => {
-    if(extract === "" || extract.length < 5 || extract.length > 1024) {
+    if (this.validateString(extract, 5, 1024)) {
       return
     }
     this.extract = extract
@@ -92,7 +92,7 @@ export default abstract class AbstractMovie {
   public getAge = (): number => this.age
 
   public setAge = (age: number): void => {
-    if(age < 0) {
+    if (age < 0) {
       return
     }
     this.age = age
@@ -109,6 +109,9 @@ export default abstract class AbstractMovie {
   public setCharacters = (characters: AbstractCharacter[]): void => {
     this.characters = characters
   }
+
+  private readonly validateString = (value: string, min: number, max: number): boolean =>
+    value === '' || value.length < min || value.length > max
 }
 
 interface MovieInterface {
