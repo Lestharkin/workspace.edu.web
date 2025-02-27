@@ -31,6 +31,84 @@ export default abstract class AbstractMovie {
   public abstract isNull(): boolean
 
   public validateAge = (age: number): boolean => age >= this.age
+
+  public getTitle = (): string => this.title
+
+  public setTitle = (title: string): void => {
+    if(title === ""|| title.length < 5 || title.length > 80) {
+      return
+    }
+    this.title = title
+  }
+
+  public getPrice = (): number => this.price
+
+  public setPrice = (price: number): void => {
+    if(price < 0) {
+      return
+    }
+    this.price = price
+  }
+
+  public getYear = (): number => this.year
+
+  public setYear = (year: number): void => {
+    if(year < 0) {
+      return
+    }
+    this.year = year
+  }
+
+  public getGenres = (): string => this.genres
+
+  public setGenres = (genres: string): void => {
+    if(genres === "" || genres.length < 5 || genres.length > 10) {
+      return
+    }
+    this.genres = genres
+  }
+
+  public getExtract = (): string => this.extract
+
+  public setExtract = (extract: string): void => {
+    if(extract === "" || extract.length < 5 || extract.length > 1024) {
+      return
+    }
+    this.extract = extract
+  }
+
+  public getDirector = (): AbstractDirector => this.director
+
+  public setDirector = (director: AbstractDirector): void => {
+    this.director = director
+  }
+
+  public getProducer = (): AbstractProducer[] => this.producer
+
+  public setProducer = (producer: AbstractProducer[]): void => {
+    this.producer = producer
+  }
+
+  public getAge = (): number => this.age
+
+  public setAge = (age: number): void => {
+    if(age < 0) {
+      return
+    }
+    this.age = age
+  }
+
+  public getImage = (): AbstractImage[] => this.image
+
+  public setImage = (image: AbstractImage[]): void => {
+    this.image = image
+  }
+
+  public getCharacters = (): AbstractCharacter[] => this.characters
+
+  public setCharacters = (characters: AbstractCharacter[]): void => {
+    this.characters = characters
+  }
 }
 
 interface MovieInterface {
