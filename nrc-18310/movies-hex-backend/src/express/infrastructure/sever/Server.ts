@@ -6,7 +6,8 @@ export default class Server {
   private readonly app: Application
 
   constructor(
-    private readonly routersExpress: RouterExpressInterface[]
+    private readonly routersExpress: RouterExpressInterface[],
+    private readonly errorRouter: RouterExpressInterface
   ) {
     this.app = express()
     this.configure()
@@ -17,6 +18,8 @@ export default class Server {
     this.routersExpress.forEach((router) => {
       this.app.use(router.path, router.router)
     })
+
+    this.app.use(this.errorRouter.path, this.errorRouter.router)
   }
 
   public configure() {
