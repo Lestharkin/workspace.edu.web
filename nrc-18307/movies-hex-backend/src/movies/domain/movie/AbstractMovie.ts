@@ -31,6 +31,26 @@ export default abstract class AbstractMovie {
   public abstract isNull(): boolean
 
   public validateAge = (age: number): boolean => age >= this.age
+
+  public getTitle = (): string => this.title
+
+  public getPrice = (): number => this.price
+
+  public getYear = (): number => this.year
+
+  public getGenres = (): string => this.genres
+
+  public getExtract = (): string => this.extract
+
+  public getDirector = (): AbstractDirector => this.director
+
+  public getProducer = (): AbstractProducer[] => this.producer
+
+  public getAge = (): number => this.age
+
+  public getImage = (): AbstractImage[] => this.image
+
+  public getCharacters = (): AbstractCharacter[] => this.characters
 }
 
 interface MovieInterface {

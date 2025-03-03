@@ -15,14 +15,12 @@ export default class Server {
     this.routes()
   }
 
-  public routes() {
-    if (this.routesExpress.length === 0) {
-      this.app.use(this.error.path, this.error.router)
-    }
-
+  public routes() {    
     this.routesExpress.forEach((route) => {
       this.app.use(route.path, route.router)
     })
+
+    this.app.use(this.error.path, this.error.router)
   }
 
   public configure() {
