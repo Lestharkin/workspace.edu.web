@@ -1,7 +1,7 @@
 import MovieServiceInterface from '../../domain/interfaces/MovieServiceInterface'
 import Movie from '../../domain/movie/Movie'
 import MovieRepositoryPort from '../../domain/port/driven/MovieRepositoryPort'
-import SWMovieRepositoryPort from '../../domain/port/driven/SWMovieRespositoryPort'
+import SWMovieRepositoryPort from '../../domain/port/driven/SWMovieRepositoryPort'
 
 export default class MovieService implements MovieServiceInterface {
   constructor(
