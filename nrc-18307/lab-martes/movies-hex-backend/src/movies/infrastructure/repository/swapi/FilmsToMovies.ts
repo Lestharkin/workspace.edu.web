@@ -2,14 +2,17 @@ import SWMovieInterface from '../../../../swapi/domain/SWMovieInterface'
 import Movie from '../../../domain/movie/Movie'
 import GetterDirector from './GetterDirector'
 import GetterProducers from './GetterProducer'
+import GetterCharacters from './GetterCharacters'
 
 export default class FilmsToMovies {
-  constructor(private readonly getterDirector: GetterDirector,
-    private readonly getterProducers: GetterProducers
+  constructor(
+    private readonly getterDirector: GetterDirector,
+    private readonly getterProducers: GetterProducers,
+    private readonly getterCharacters: GetterCharacters
   ) {}
 
-  public get = (swMovieInterface: SWMovieInterface[]): Movie[] => {
-    const movies = swMovieInterface.map((swMovie) => {
+  public get = (swMovieInterface: SWMovieInterface[]): Promise<Movie[]> => {
+    const movies = swMovieInterface.map(async (swMovie) => {
       return new Movie({
         title: swMovie.title,
         price: 0,
@@ -20,9 +23,9 @@ export default class FilmsToMovies {
         producer: this.getterProducers.get(swMovie.producer),
         age: 0,
         image: [],
-        characters: [],
+        characters: await this.getterCharacters.get(swMovie),
       })
     })
-    return movies
-  }  
+    return Promise.all(movies)
+  }
 }

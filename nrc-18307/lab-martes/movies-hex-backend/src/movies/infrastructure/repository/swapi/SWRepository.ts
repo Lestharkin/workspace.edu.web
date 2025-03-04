@@ -7,7 +7,8 @@ import FilmsToMovies from './FilmsToMovies'
 export default class SWMovieRepository implements SWMovieRepositoryPort {
 
   constructor(
-    private readonly swapi: SWAPIInterface
+    private readonly swapi: SWAPIInterface,
+    private readonly filmsToMovies: FilmsToMovies
   ) {}
 
   public findAll = async (): Promise<Movie[]> => {
@@ -17,7 +18,7 @@ export default class SWMovieRepository implements SWMovieRepositoryPort {
       return Promise.resolve([])
     }
 
-    const movies = FilmsToMovies.get(films)
+    const movies = this.filmsToMovies.get(films)
 
     if(movies !== undefined && movies !== null) {
       return Promise.resolve([])
