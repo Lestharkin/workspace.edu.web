@@ -8,13 +8,13 @@ export default class MovieControllerExpress
 {
   constructor(private readonly movieUseCase: MovieUseCasePort) {}
 
-  getMovies(_req: Request, res: Response): void {
-    const movies = this.movieUseCase.getMovies()
+  async getMovies(_req: Request, res: Response): Promise<void> {
+    const movies = await this.movieUseCase.getMovies()
     const movies_json = MoviesToJson.get(movies)
 
     if (movies_json.length === 0) {
       res.status(404).send('Movies not found')
-      return
+      return 
     }
 
     res.status(200).json(movies_json)
