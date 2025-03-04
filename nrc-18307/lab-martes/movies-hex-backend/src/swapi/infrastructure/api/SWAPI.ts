@@ -1,7 +1,8 @@
 import SWMovieInterface from '../../domain/SWMovieInterface'
 import SWCharacterInterface from '../../domain/SWCharacterInterface'
+import SWAPIInterface from '../../domain/SWAPIInterface'
 
-export default class SWAPI {
+export default class SWAPI implements SWAPIInterface {
   private readonly uriFilms = 'https://swapi.dev/api/films/'
 
   public fetchSWMovies = async (): Promise<SWMovieInterface[]> => {
