@@ -13,11 +13,13 @@ export default class SWRepositoryFactory {
     const getterDirector = new GetterDirector()
     const getterProducers = new GetterProducers()
     const getterCharacters = new GetterCharacters(swapi)
+
     const filmsToMovies = new FilmsToMovies(
       getterDirector,
       getterProducers,
       getterCharacters
     )
+    
     return new SWMovieRepository(swapi, filmsToMovies)
   }
 }
