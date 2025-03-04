@@ -1,9 +1,13 @@
 import SWMovieInterface from '../../../../swapi/domain/SWMovieInterface'
-import Director from '../../../domain/director/Director'
-import NullDirector from '../../../domain/director/NullDirector'
 import Movie from '../../../domain/movie/Movie'
+import GetterDirector from './GetterDirector'
+import GetterProducers from './GetterProducer'
 
 export default class FilmsToMovies {
+  constructor(private readonly getterDirector: GetterDirector,
+    private readonly getterProducers: GetterProducers
+  ) {}
+
   public get = (swMovieInterface: SWMovieInterface[]): Movie[] => {
     const movies = swMovieInterface.map((swMovie) => {
       return new Movie({
@@ -12,26 +16,13 @@ export default class FilmsToMovies {
         year: parseInt(swMovie.release_date),
         genres: '',
         extract: swMovie.opening_crawl,
-        director: this.getDirector(swMovie.director),
-        producer: swMovie.producer,
+        director: this.getterDirector.get(swMovie.director),
+        producer: this.getterProducers.get(swMovie.producer),
         age: 0,
         image: [],
-        characters: []
+        characters: [],
       })
     })
-  }
-
-  private readonly getDirector = (director: string): Director => {
-    const directorNames = director.split(' ')
-
-    if(directorNames[0] === undefined || directorNames[0] === null || directorNames[0] === '') {
-      return new NullDirector()
-    }
-
-    return new Director({
-      names: directorNames[0] ?? "",
-      surnames: directorNames[1] ?? "",
-      yearsOfExperience: 0
-    })
-  }
+    return movies
+  }  
 }
