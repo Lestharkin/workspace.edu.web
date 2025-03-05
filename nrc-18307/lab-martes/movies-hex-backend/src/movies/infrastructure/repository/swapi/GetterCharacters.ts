@@ -9,7 +9,7 @@ export default class GetterCharacters {
   public readonly get = async (
     swMovie: SWMovieInterface
   ): Promise<Character[]> => {
-    const swCharacters = await this.swapi.fetchSWCharacters(swMovie)
+    const swCharacters = await this.swapi.fetchSWCharacters(swMovie)   
 
     if (swCharacters === undefined || swCharacters === null) {
       return Promise.resolve([])

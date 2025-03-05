@@ -7,9 +7,7 @@ export default class MovieService implements MovieServiceInterface {
     private readonly swMovieRepository: SWMovieRepositoryPort
   ) {}
 
-  public retrieveMovies = (): Promise<Movie[]> => {
-    const swMovies = this.swMovieRepository.findAll()
-
-    return swMovies
+  public retrieveMovies = async (): Promise<Movie[]> => {
+    return await this.swMovieRepository.findAll()
   }
 }
