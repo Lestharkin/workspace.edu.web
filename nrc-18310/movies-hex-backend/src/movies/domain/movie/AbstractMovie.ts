@@ -28,6 +28,8 @@ export default abstract class AbstractMovie {
     this.characters = movieInterface.characters
   }
 
+  public validatePrice = (price: number): number => (price <= 0 ? 5 : price)
+
   public abstract isNull(): boolean
 
   public validateAge = (age: number): boolean => age >= this.age
@@ -110,8 +112,11 @@ export default abstract class AbstractMovie {
     this.characters = characters
   }
 
-  private readonly validateString = (value: string, min: number, max: number): boolean =>
-    value === '' || value.length < min || value.length > max
+  private readonly validateString = (
+    value: string,
+    min: number,
+    max: number
+  ): boolean => value === '' || value.length < min || value.length > max
 }
 
 interface MovieInterface {
