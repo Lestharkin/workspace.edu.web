@@ -24,10 +24,10 @@ export default class MovieControllerExpress
     throw new Error('Method not implemented.')
   }
 
-  getMovieResume(_req: Request, res: Response): void {
+  async getMovieResume(_req: Request, res: Response): Promise<void> {
     const movies = this.movieUseCase.getMovies()
-    
-    const movies_json = JSON.stringify(GetterMovies.resumen(movies))
+
+    const movies_json = JSON.stringify(GetterMovies.resumen(await movies))
 
     if (movies_json === undefined || movies_json === '[]') {
       res.status(404).send({ message: 'Movies not found' })

@@ -5,8 +5,8 @@ import MovieUseCasePort from '../../domain/port/driver/MovieUseCasePort'
 export default class MovieUseCase implements MovieUseCasePort {
   constructor(private readonly movieService: MovieServiceInterface) {}
 
-  public getMovies(): Movie[] {
-    let movies = this.movieService.retrieveMovies()
+  public async getMovies(): Promise<Movie[]> {
+    let movies = await this.movieService.retrieveMovies()
 
     if (movies.length === 0) {
       return []
