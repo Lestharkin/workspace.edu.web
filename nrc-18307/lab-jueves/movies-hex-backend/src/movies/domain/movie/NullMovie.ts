@@ -18,40 +18,4 @@ export default class NullMovie extends AbstractMovie {
   }
 
   public isNull = (): boolean => true
-
-  public override setTitle = (_title: string): void => {
-    return
-  }
-
-  public override setPrice = (_price: number): void => {
-    return
-  }
-
-  public override setYear = (_year: number): void => {
-    return
-  }
-
-  public override setGenres = (_genres: string): void => {
-    return
-  }
-
-  public override setExtract = (_extract: string): void => {
-    return
-  }
-
-  public override setDirector = (_director: any): void => {
-    return
-  }
-
-  public override setProducer = (_producer: any): void => {
-    return
-  }
-
-  public override setAge = (_age: number): void => {
-    return
-  }
-
-  public override setImage = (_image: any): void => {
-    return
-  }
 }

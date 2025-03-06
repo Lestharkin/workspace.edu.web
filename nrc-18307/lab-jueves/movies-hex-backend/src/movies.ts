@@ -1,9 +1,9 @@
 import ServerFactory from './express/infrastructure/factory/ServerFactory'
-import MovieRouterFactory from './movies/infrastructure/express/factory/MovieRouterFactory'
+import MovieRouterFactory from './movies/infrastructure/factory/MovieRouterFactory'
 
-const movieRouter = MovieRouterFactory.create()
+const moviesRouter = MovieRouterFactory.create()
 
-const routes = [movieRouter]
+const routers = [moviesRouter]
 
-const server = ServerFactory.create(routes)
+const server = ServerFactory.create(routers)
 server.start()

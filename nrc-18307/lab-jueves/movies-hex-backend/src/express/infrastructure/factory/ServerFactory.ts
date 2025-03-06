@@ -5,12 +5,10 @@ import Server from '../sever/Server'
 
 export default class ServerFactory {
   public static readonly create = (
-    routes: RouterExpressInterface[]
+    routers: RouterExpressInterface[]
   ): Server => {
     const errorController = new ErrorExpressController()
     const errorRouter = new ErrorExpressRouter(errorController)
-    const server = new Server(routes, errorRouter)
-
-    return server
+    return new Server(routers, errorRouter)
   }
 }

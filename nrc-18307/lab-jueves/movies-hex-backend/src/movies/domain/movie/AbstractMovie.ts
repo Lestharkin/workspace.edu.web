@@ -51,55 +51,6 @@ export default abstract class AbstractMovie {
   public getImage = (): AbstractImage[] => this.image
 
   public getCharacters = (): AbstractCharacter[] => this.characters
-
-  public setTitle = (title: string): void => {
-    if(this.validateString(title, 10, 80)) {
-      return
-    }
-    this.title = title
-  }
-
-  public setPrice = (price: number): void => {
-    this.price = price
-  }
-
-  public setYear = (year: number): void => {
-    this.year = year
-  }
-
-  public setGenres = (genres: string): void => {
-    this.genres = genres
-  }
-
-  public setExtract = (extract: string): void => {
-    if(this.validateString(extract, 10, 200)) {
-      return
-    }
-    this.extract = extract
-  }
-
-  public setDirector = (director: AbstractDirector): void => {
-    this.director = director
-  }
-
-  public setProducer = (producer: AbstractProducer[]): void => {
-    this.producer = producer
-  }
-
-  public setAge = (age: number): void => {
-    this.age = age
-  }
-
-  public setImage = (image: AbstractImage[]): void => {
-    this.image = image
-  }
-
-  public setCharacters = (characters: AbstractCharacter[]): void => {
-    this.characters = characters
-  }
-  
-  private readonly validateString = (value: string, min: number, max: number): boolean => value === '' || value.length > max || value.length < min    
-  
 }
 
 interface MovieInterface {

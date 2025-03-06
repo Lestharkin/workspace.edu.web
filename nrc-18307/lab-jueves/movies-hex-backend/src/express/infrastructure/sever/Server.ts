@@ -19,6 +19,7 @@ export default class Server {
     this.routesExpress.forEach((route) => {
       this.app.use(route.path, route.router)
     })
+
     this.app.use(this.error.path, this.error.router)
   }
 

@@ -2,6 +2,5 @@ import RouterExpressInterface from '../../../express/domain/RouterExpressInterfa
 
 export default interface MovieRouterExpressInterface
   extends RouterExpressInterface {
-    configureMovies: () => void
-    configureMovieById: () => void
+    getMovies(): void
   }
