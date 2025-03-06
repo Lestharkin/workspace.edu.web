@@ -8,8 +8,8 @@ export default class MovieControllerExpress
 {
   constructor(private readonly movieUseCase: MovieUseCasePort) {}
 
-  getMovies(_req: Request, res: Response): void {
-    const movies = this.movieUseCase.getMovies()
+  async getMovies(_req: Request, res: Response): Promise<void> {
+    const movies = await this.movieUseCase.getMovies()
     const movies_json = MoviesToJson.get(movies)
 
     if (movies_json.length === 0) {
@@ -19,7 +19,7 @@ export default class MovieControllerExpress
 
     res.status(200).json(movies_json)
   }
-  getMovieById(_req: Request, _res: Response): void {
+  getMovieById(_req: Request, _res: Response): Promise<void> {
     throw new Error('Method not implemented.')
   }
 }
