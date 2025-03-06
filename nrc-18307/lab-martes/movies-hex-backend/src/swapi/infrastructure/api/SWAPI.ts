@@ -38,6 +38,14 @@ export default class SWAPI implements SWAPIInterface {
     const characters = swMovie.characters.map(
       async (url: string): Promise<SWCharacterInterface> => {
         const response = await fetch(url)
+
+        if (response.ok === false) { 
+          return {
+            name: 'No data found',
+            birthYear: 'No data found',
+          }
+        }
+
         const data = await response.json()
         return {
           name: data.name,

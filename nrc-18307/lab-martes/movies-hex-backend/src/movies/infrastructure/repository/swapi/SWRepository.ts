@@ -15,16 +15,15 @@ export default class SWMovieRepository implements SWMovieRepositoryPort {
     const films = await this.swapi.fetchSWMovies()
 
     if(films === undefined || films === null) {
-      return Promise.resolve([])
+      return []
     }
-
-    const movies = this.filmsToMovies.get(films)
-
-    if(movies !== undefined && movies !== null) {
-      return Promise.resolve([])
+    
+    const movies = await this.filmsToMovies.get(films)
+    
+    if(movies === undefined && movies === null) {
+      return []
     }
-
-    return Promise.resolve(movies)
+    return movies
   }
 
   public findById = (_id: string): Promise<Movie> => {
