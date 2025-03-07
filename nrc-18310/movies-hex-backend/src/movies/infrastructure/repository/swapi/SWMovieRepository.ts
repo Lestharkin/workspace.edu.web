@@ -2,20 +2,26 @@ import { SWAPIInterface } from '../../../../swapi/domain/SWAPIInterface'
 import Movie from '../../../domain/movie/Movie'
 import NullMovie from '../../../domain/movie/NullMovie'
 import SWMovieRepositoryPort from '../../../domain/port/driven/SWMovieRepositoryPort'
+import FilmsToMovies from './FilmsToMovies'
 
 export default class SWMovieRepository implements SWMovieRepositoryPort {
-  constructor(private readonly swapi: SWAPIInterface) {}
+  constructor(
+    private readonly swapi: SWAPIInterface,
+    private readonly filmsToMovies: FilmsToMovies
+  ) {}
 
-  public findAll = (): Promise<Movie[]> => {
-    const films = this.swapi.fetchSWMovies()
-
+  public findAll = async (): Promise<Movie[]> => {
+    const films = await this.swapi.fetchSWMovies()
     if (films === undefined || films === null) {
-      return Promise.resolve([])
+      return []
     }
-
     // ---------------------
 
-    return Promise.resolve([])
+    const movies = this.filmsToMovies.get(films)
+    if (movies === undefined || movies === null) {
+      return []
+    }
+    return movies
   }
 
   public findById = (_id: string): Promise<Movie> =>
