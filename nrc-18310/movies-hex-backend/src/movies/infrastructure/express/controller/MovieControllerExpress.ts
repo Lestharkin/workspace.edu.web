@@ -9,18 +9,19 @@ export default class MovieControllerExpress
 {
   constructor(private readonly movieUseCase: MovieUseCasePort) {}
 
-  getMovies(_req: Request, res: Response): void {
-    const movies = this.movieUseCase.getMovies()
+  async getMovies(_req: Request, res: Response): Promise<void> {
+    const movies = await this.movieUseCase.getMovies()
     const movies_json = JSON.stringify(movies)
 
     if (movies_json === undefined || movies_json === '[]') {
       res.status(404).send({ message: 'Movies not found' })
+      return
     }
 
     res.status(200).send({ movies: movies_json })
   }
 
-  getMovieById(_req: Request, _res: Response): void {
+  getMovieById(_req: Request, _res: Response): Promise<void> {
     throw new Error('Method not implemented.')
   }
 

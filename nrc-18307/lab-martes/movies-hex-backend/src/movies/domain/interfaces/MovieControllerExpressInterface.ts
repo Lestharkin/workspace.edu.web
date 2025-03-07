@@ -3,6 +3,6 @@ import ControllerExpressInterface from '../../../express/domain/ControllerExpres
 
 export default interface MovieControllerExpressInterface
   extends ControllerExpressInterface {
-    getMovies(req: Request, res: Response): void
-    getMovieById(req: Request, res: Response): void
-  }
+  getMovies(req: Request, res: Response): Promise<void>
+  getMovieById(req: Request, res: Response): Promise<void>
+}
