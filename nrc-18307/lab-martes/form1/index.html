@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+</head>
+
+<body>
+
+  <main>
+    <section>
+      <fieldset>
+        <legend>Contacto</legend>
+        <form action="http://localhost:3000/search" method="get">
+          <table>
+            <tr>
+              <td>
+                <label for="email">Email</label>
+              </td>
+              <td>
+                <input type="email" name="email" id="email" placeholder="...@gmail.com">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="name">Nombre:</label>
+              </td>
+              <td>
+                <input type="text" name="name" id="name" placeholder="Nombre">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="message">Mensaje:</label>
+              </td>
+              <td>
+                <textarea name="message" id="message" placeholder="..."></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: right;">
+                <input type="submit" value="Enviar">&nbsp;
+                <input type="submit" value="Reset">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </fieldset>
+    </section>
+  </main>
+
+
+</body>
+
+</html>
