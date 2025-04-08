@@ -13,6 +13,6 @@ export default class IndexController {
     console.log('IndexController initialized')
     this.model.init()
     this.view.render()
-    this.moviesComponent.init()
+    this.moviesComponent.init(this.view.getMovies())
   }
 }

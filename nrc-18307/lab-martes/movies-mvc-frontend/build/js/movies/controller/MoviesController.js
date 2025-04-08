@@ -5,9 +5,10 @@ export default class MoviesController {
         this.model = model;
         this.view = view;
     }
-    init = () => {
+    init = (movies) => {
         console.log('MoviesController initialized');
         this.model.init();
+        this.view.init(movies);
         this.view.render();
     };
 }

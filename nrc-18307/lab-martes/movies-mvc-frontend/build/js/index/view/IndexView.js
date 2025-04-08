@@ -1,12 +1,17 @@
 export default class IndexView {
-    h1;
+    movies;
     constructor() {
         console.log('IndexView initialized');
-        this.h1 =
-            document.querySelector('header h1') ?? document.createElement('h1');
+        const movies = document.querySelector('movies');
+        if (!movies) {
+            this.movies = document.createElement('movies');
+        }
+        this.movies = movies;
     }
+    getMovies = () => {
+        return this.movies;
+    };
     render() {
         console.log('Rendering Index View');
-        this.h1.textContent = 'Hello World';
     }
 }
