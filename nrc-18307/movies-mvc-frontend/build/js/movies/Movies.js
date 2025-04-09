@@ -7,11 +7,11 @@ export default class Movies {
     MoviesView;
     constructor() {
         this.MoviesModel = new MoviesModel();
-        this.MoviesView = new MoviesView();
+        this.MoviesView = new MoviesView(this.MoviesModel);
         this.moviesController = new MoviesController(this.MoviesModel, this.MoviesView);
     }
-    init = () => {
-        this.moviesController.init();
+    init = async () => {
+        await this.moviesController.init();
     };
     getMoviesHTML = () => {
         return this.MoviesView.getMoviesHTML();

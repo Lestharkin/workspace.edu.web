@@ -1,17 +1,28 @@
-export default class MoviesView {
+import Observer from '../../shared/types/Observer.js';
+export default class MoviesView extends Observer {
     moviesHTML;
-    constructor() {
+    constructor(moviesModel) {
+        super(moviesModel);
         this.moviesHTML = document.createElement('movies');
     }
     init = () => {
         console.log('MoviesView initialized');
     };
-    render() {
-        this.moviesHTML.innerHTML = `
-      <h1>Movies</h1>
-      <p>Welcome to the Movies page!</p>
+    update = () => {
+        this.render();
+    };
+    render = () => {
+        const moviesData = this.subject.getMoviesData();
+        moviesData.forEach((movie) => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+        <h2>${movie.title}</h2>
+        <p>${movie.extract}</p>
+        <img src="./img/movies/${movie.thumbnail}" alt="${movie.title}">
       `;
-    }
+            this.moviesHTML.appendChild(div);
+        });
+    };
     getMoviesHTML = () => {
         return this.moviesHTML;
     };

@@ -9,18 +9,18 @@ export default class Movies {
 
   constructor() {
     this.MoviesModel = new MoviesModel()
-    this.MoviesView = new MoviesView()
+    this.MoviesView = new MoviesView(this.MoviesModel)
     this.moviesController = new MoviesController(
       this.MoviesModel,
       this.MoviesView
     )
   }
 
-  readonly init = () => {
-    this.moviesController.init()
+  readonly init = async (): Promise<void> => {
+    await this.moviesController.init()
   }
 
-  readonly getMoviesHTML = () => {
+  readonly getMoviesHTML = (): HTMLElement => {
     return this.MoviesView.getMoviesHTML()
   }
 }

@@ -7,9 +7,9 @@ export default class MoviesController {
     private readonly view: MoviesView
   ) {}
 
-  readonly init = () => {
+  readonly init = async (): Promise<void> => {
     console.log('MoviesController initialized')
-    this.model.init()
+    await this.model.init()
     this.view.init()
     this.view.render()
   }
