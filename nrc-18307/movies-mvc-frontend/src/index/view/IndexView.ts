@@ -1,20 +1,20 @@
 export default class IndexView {
-  private readonly movies: HTMLElement
+  private readonly main: HTMLElement
 
   constructor() {
-    console.log('IndexView initialized')
-    const movies = document.querySelector('movies') as HTMLElement
-    if (!movies) {
-      this.movies = document.createElement('movies')
+    const main = document.querySelector('main') as HTMLElement
+    if (!main) {
+      this.main = document.createElement('main')
     }
-    this.movies = movies
+    this.main = main
   }
 
-  readonly getMovies = () => {
-    return this.movies
+  readonly init = (elements: HTMLElement[]) => {
+    console.log('IndexView initialized')
+    elements.forEach((element) => {
+      this.main.appendChild(element)
+    })
   }
 
-  render() {
-    console.log('Rendering Index View')
-  }
+  readonly render = () => {}
 }

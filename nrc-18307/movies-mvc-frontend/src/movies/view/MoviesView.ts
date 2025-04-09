@@ -1,20 +1,22 @@
 export default class MoviesView {
-  private movies: HTMLElement
+  private readonly moviesHTML: HTMLElement
 
   constructor() {
-    console.log('MoviesView initialized')
-    this.movies = document.createElement('div')
+    this.moviesHTML = document.createElement('movies')
   }
 
-  init = (movies: HTMLElement) => {
-    this.movies = movies
+  init = () => {
+    console.log('MoviesView initialized')
   }
 
   render() {
-    console.log(this.movies)
-    this.movies.innerHTML = `
+    this.moviesHTML.innerHTML = `
       <h1>Movies</h1>
       <p>Welcome to the Movies page!</p>
       `
+  }
+
+  readonly getMoviesHTML = () => {
+    return this.moviesHTML
   }
 }

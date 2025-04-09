@@ -1,18 +1,16 @@
-import MoviesController from '../../movies/controller/MoviesController.js'
 import IndexModel from '../model/IndexModel.js'
 import IndexView from '../view/IndexView.js'
 
 export default class IndexController {
   constructor(
     private readonly model: IndexModel,
-    private readonly view: IndexView,
-    private readonly moviesComponent: MoviesController
+    private readonly view: IndexView
   ) {}
 
-  readonly init = () => {
+  readonly init = (elements: HTMLElement[]) => {
     console.log('IndexController initialized')
     this.model.init()
+    this.view.init(elements)
     this.view.render()
-    this.moviesComponent.init(this.view.getMovies())
   }
 }

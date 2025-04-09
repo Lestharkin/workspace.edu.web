@@ -7,10 +7,10 @@ export default class MoviesController {
     private readonly view: MoviesView
   ) {}
 
-  readonly init = (movies: HTMLElement) => {
+  readonly init = () => {
     console.log('MoviesController initialized')
     this.model.init()
-    this.view.init(movies)
+    this.view.init()
     this.view.render()
   }
 }

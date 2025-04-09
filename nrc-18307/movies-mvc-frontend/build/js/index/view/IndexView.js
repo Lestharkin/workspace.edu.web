@@ -1,17 +1,17 @@
 export default class IndexView {
-    movies;
+    main;
     constructor() {
-        console.log('IndexView initialized');
-        const movies = document.querySelector('movies');
-        if (!movies) {
-            this.movies = document.createElement('movies');
+        const main = document.querySelector('main');
+        if (!main) {
+            this.main = document.createElement('main');
         }
-        this.movies = movies;
+        this.main = main;
     }
-    getMovies = () => {
-        return this.movies;
+    init = (elements) => {
+        console.log('IndexView initialized');
+        elements.forEach((element) => {
+            this.main.appendChild(element);
+        });
     };
-    render() {
-        console.log('Rendering Index View');
-    }
+    render = () => { };
 }
