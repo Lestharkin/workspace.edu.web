@@ -5,9 +5,9 @@ export default class IndexController {
         this.model = model;
         this.view = view;
     }
-    init = (elements) => {
+    init = () => {
         console.log('IndexController.init()');
         this.model.init();
-        this.view.init(elements);
+        this.view.init();
     };
 }

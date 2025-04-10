@@ -10,7 +10,7 @@ export default class Index {
         this.view = new IndexView();
         this.controller = new IndexController(this.model, this.view);
     }
-    init = (elements) => {
-        this.controller.init(elements);
+    init = () => {
+        this.controller.init();
     };
 }
