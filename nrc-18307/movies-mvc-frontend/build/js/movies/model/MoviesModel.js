@@ -8,6 +8,7 @@ export default class MoviesModel extends Subject {
     }
     init = async () => {
         this.moviesData = await this.loadData();
+        this.notifyALL();
     };
     getMoviesData = () => {
         return this.moviesData;

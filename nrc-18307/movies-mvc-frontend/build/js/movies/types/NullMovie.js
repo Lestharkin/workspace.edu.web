@@ -6,5 +6,5 @@ export default {
     cast: [],
     genres: [],
     extract: 'Not Found',
-    thumbnail: 'Not Found',
+    thumbnail: 'not-icon.png',
 };

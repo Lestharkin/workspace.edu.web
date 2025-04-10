@@ -13,6 +13,7 @@ export default class MoviesModel extends Subject<MoviesView> {
 
   readonly init = async () => {
     this.moviesData = await this.loadData()
+    this.notifyALL()
   }
 
   readonly getMoviesData = () => {

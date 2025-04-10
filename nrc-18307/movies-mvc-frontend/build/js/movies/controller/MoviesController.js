@@ -7,8 +7,7 @@ export default class MoviesController {
     }
     init = async () => {
         console.log('MoviesController initialized');
-        await this.model.init();
         this.view.init();
-        this.view.render();
+        await this.model.init();
     };
 }

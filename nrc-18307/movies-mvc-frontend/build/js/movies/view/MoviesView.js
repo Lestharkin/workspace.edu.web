@@ -1,9 +1,11 @@
 import Observer from '../../shared/types/Observer.js';
+import MoviesTemplate from '../template/MoviesTemplate.js';
 export default class MoviesView extends Observer {
     moviesHTML;
     constructor(moviesModel) {
         super(moviesModel);
         this.moviesHTML = document.createElement('movies');
+        this.moviesHTML.classList.add('movies');
     }
     init = () => {
         console.log('MoviesView initialized');
@@ -11,17 +13,10 @@ export default class MoviesView extends Observer {
     update = () => {
         this.render();
     };
-    render = () => {
+    render = async () => {
         const moviesData = this.subject.getMoviesData();
-        moviesData.forEach((movie) => {
-            const div = document.createElement('div');
-            div.innerHTML = `
-        <h2>${movie.title}</h2>
-        <p>${movie.extract}</p>
-        <img src="./img/movies/${movie.thumbnail}" alt="${movie.title}">
-      `;
-            this.moviesHTML.appendChild(div);
-        });
+        const template = new MoviesTemplate(moviesData);
+        this.moviesHTML.innerHTML = await template.get();
     };
     getMoviesHTML = () => {
         return this.moviesHTML;
