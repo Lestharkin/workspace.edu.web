@@ -17,4 +17,8 @@ export default class Movies {
     console.log('Movies initialized')
     await this.controller.init()
   }
+
+  readonly getMoviesHTML = () => {
+    return this.view.getMoviesHTML()
+  }
 }

@@ -1,7 +1,8 @@
 import Index from './index/Index.js'
+import Movies from './movies/Movies.js'
 
-const p = document.createElement('p') as HTMLElement
-p.innerHTML = 'Hello, world!'
+const movies = new Movies()
+movies.init()
 
 const index = new Index()
-index.init([p])
+index.init([movies.getMoviesHTML()])

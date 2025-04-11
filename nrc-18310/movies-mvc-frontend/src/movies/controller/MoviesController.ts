@@ -13,5 +13,6 @@ export default class MoviesController {
     console.log('MoviesController initialized')
     this.model.init()
     this.view.init()
+    this.view.render()
   }
 }
