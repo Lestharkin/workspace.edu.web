@@ -17,5 +17,5 @@ touch test/inventory/view/inventoryView.test.ts
 
 npm init -y
 npm i express cors morgan helmet 
-npm i typescript ts-jest @types/jest jest @types/express @types/cors @types/morgan -D
+npm i typescript ts-node ts-node-dev ts-jest @types/jest jest @types/express @types/cors @types/morgan -D
 tsc --init
