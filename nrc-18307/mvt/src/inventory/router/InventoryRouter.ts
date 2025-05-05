@@ -1,13 +1,14 @@
 import { Router } from 'express'
-import RouterExpressInterface from './RouterExpressInterface'
+import RouterExpressInterface from '../../server/router/RouterExpressInterface'
+import InventoryView from '../view/InventoryView'
 
-export default class ErrorExpressRouter implements RouterExpressInterface {
+export default class InventoryRouter implements RouterExpressInterface {
   router: Router
   path: string
 
   constructor(private readonly inventoryView: InventoryView) {
     this.router = Router()
-    this.path = '*'
+    this.path = '/inventory'
     this.routes()
   }
 
