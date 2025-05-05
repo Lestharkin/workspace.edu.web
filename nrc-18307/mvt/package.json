@@ -1,0 +1,35 @@
+{
+  "name": "mvt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node --env-file=./env/.pro.env build/rental.js",
+    "dev": "ts-node-dev --env-file=./env/.devp.env src/rental.ts",
+    "test": "jest --verbose",
+    "test-desc": "jest --testNamePattern='should do something' --verbose",
+    "test-file": "jest --testPathPattern='MoviesModel.test.ts' --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ]
+  }
+}
