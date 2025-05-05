@@ -6,8 +6,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node --env-file=./env/.pro.env build/rental.js",
-    "dev": "ts-node-dev --env-file=./env/.devp.env src/rental.ts",
+    "start": "node build/buena-vida.js",
+    "dev": "ts-node-dev src/buena-vida.ts",
     "test": "jest --verbose",
     "test-desc": "jest --testNamePattern='should do something' --verbose",
     "test-file": "jest --testPathPattern='MoviesModel.test.ts' --verbose"
