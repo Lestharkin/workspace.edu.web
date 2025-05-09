@@ -5,7 +5,7 @@ export default class ExpressProvider {
   public env: EnvInterface
 
   constructor() {
-    this.env = env_json
+    this.env = env_json as EnvInterface
   }
 
   public host() {
