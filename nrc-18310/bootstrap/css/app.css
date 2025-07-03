@@ -1,9 +1,0 @@
-:root {
-  --main-color: #51128b;
-  --main-text-color: white;
-}
-
-.vitrina {
-  background-color: var(--main-color);
-  color: var(--main-text-color);
-}
