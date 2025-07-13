@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Lenin Serrano",
+    "age": 25,
+    "email": "lenin.serrano@upb.edu.co"
+  },
+  {
+    "id": 2,
+    "name": "Juan Perez",
+    "age": 30,
+    "email": "juan.perez@upb.edu.co"
+  }
+]
