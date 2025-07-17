@@ -1,25 +1,25 @@
-"use strict";
+"use strict"
+/*
+console.log('# Spread Operator')
 
-console.log('# Spread Operator');
+const meses = ['Enero', 'Febrero', 'Marzo', 'abril', 'mayo']
 
-const meses = ['Enero', 'Febrero', 'Marzo', 'abril', 'mayo'];
-
-console.table(meses);
-console.table(meses.length);
+console.table(meses)
+console.table(meses.length)
 
 for (let index = 0; index < meses.length; index++) {
-    console.log(index);
-    console.log(meses[index]);
+    console.log(index)
+    console.log(meses[index])
 }
 
 // Spread Operator
 
-console.log(...meses);
+console.log(...meses)
 
-const bag  = [];
+const bag = []
 
 const producto1 = {
-    name: "Moinitor Asus",
+    name: "Monitor Asus",
     precio: 200,
 }
 
@@ -33,45 +33,49 @@ const producto3 = {
     precio: 50,
 }
 
-let resultado = [...bag, producto1];
+let resultado = [...bag, producto1]
 
-resultado = [...resultado, producto2];
-resultado = [producto3, ...resultado];
+resultado = [...resultado, producto2]
+resultado = [producto3, ...resultado]
 
-console.table(resultado);
+console.table(resultado)
+
+*/
 
 const shopcar = [
-    { nombre: 'Monitor HP', precio: 700},
-    { nombre: 'Televisión LG', precio: 1200},
-    { nombre: 'Tablet Samsung', precio: 2000},
-    { nombre: 'Audifonos Buen sonido', precio: 300},
-    { nombre: 'teclado gammer', precio: 400},
-    { nombre: 'Celular Iphone', precio: 18000},
-];
+    { nombre: 'Monitor HP', precio: 700 },
+    { nombre: 'Televisión LG', precio: 1200 },
+    { nombre: 'Tablet Samsung', precio: 2000 },
+    { nombre: 'Audifonos Buen sonido', precio: 300 },
+    { nombre: 'teclado gammer', precio: 400 },
+    { nombre: 'Celular Iphone', precio: 18000 },
+]
 
 for (let index = 0; index < shopcar.length; index++) {
-    console.log(shopcar[index]);
+    console.log(shopcar[index])
 }
 
 for (let index of shopcar) {
-    console.log(shopcar[index]);
+    console.log(index)
 }
 
 for (let itemcar in shopcar) {
-    console.log(itemcar);
+    console.log(itemcar)
 }
 
-const nfor = shopcar.forEach((producto) => {
-    return (`${producto.nombre} - Precio: ${producto.precio}`);
-});
+const nfor = shopcar.forEach(
+    (producto) => {
+        return (`${producto.nombre} - Precio: ${producto.precio}`)
+    }
+)
 
 const nmap = shopcar.map((producto) => {
-    return (`${producto.nombre} - Precio: ${producto.precio}`);
-});
+    return (`${producto.nombre} - Precio: ${producto.precio}`)
+})
 
 
-console.log(nmap);
-console.log(nfor);
+console.log(nmap)
+console.log(nfor)
 
 
 const item = {
@@ -89,10 +93,19 @@ const item = {
     }
 }
 
-console.log(item);
+console.log(item)
 
-const { nombre, informacion, informacion: { fabricacion: { pais } } } = item;
+const {
+    nombre,
+    informacion,
+    informacion: {
+        fabricacion:
+        { pais
 
-console.log(nombre);
-console.log(informacion);
-console.log(pais);
+        }
+    }
+} = item
+
+console.log(nombre)
+console.log(informacion)
+console.log(pais)

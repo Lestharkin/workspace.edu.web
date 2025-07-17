@@ -1,11 +1,13 @@
-import fs from 'fs';
+import fs from 'fs'
 
-const data = async  () => {
-  return JSON.parse(fs.readFileSync('./data/data.json', 'utf8'));
+const data = async () => {
+  return JSON.parse(fs.readFileSync('./data/data.json', 'utf8'))
 }
 
-const sum = (a, b) => a + b;
+const sum = (a, b) => a + b
 
-export default data;
+const sub = (a, b) => a - b
 
-export { sum };
+export default data
+
+export { sum, sub }
