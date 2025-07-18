@@ -1,5 +1,5 @@
 "use strict"
-/*
+
 console.log('# Spread Operator')
 
 const meses = ['Enero', 'Febrero', 'Marzo', 'abril', 'mayo']
@@ -40,7 +40,6 @@ resultado = [producto3, ...resultado]
 
 console.table(resultado)
 
-*/
 
 const shopcar = [
     { nombre: 'Monitor HP', precio: 700 },
@@ -100,7 +99,8 @@ const {
     informacion,
     informacion: {
         fabricacion:
-        { pais
+        {
+            pais
 
         }
     }

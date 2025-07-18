@@ -28,7 +28,7 @@ const constante = 'esto es constante'
 // constante = 123;
 console.log(constante)
 
-object["nombre"] = "juan"
+object.nombre = "juan"
 console.log(object)
 
 function hola () {
