@@ -1,0 +1,62 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "main": "movies.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "rm -rf ./build && tsc",
+    "dev": "tsnd src/movies.ts",
+    "test": "jest --verbose --detectOpenHandles",
+    "test-c": "jest --coverage --runInBand",
+    "test-o": "jest --verbose --runInBand --detectOpenHandles",
+    "test-d": "jest --testNamePattern='describe' --verbose",
+    "test-f": "jest --testPathPattern='movies.test.ts' --verbose"
+  },
+  "keywords": [],
+  "author": "Lenin Javier Serrano Gil",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/helmet": "^0.0.48",
+    "@types/jest": "^30.0.0",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.3.0",
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.1",
+    "ts-jest-mock": "^1.4.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/default-esm",
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": [
+        "ts-jest",
+        {
+          "useESM": true
+        }
+      ]
+    }
+  }
+}
