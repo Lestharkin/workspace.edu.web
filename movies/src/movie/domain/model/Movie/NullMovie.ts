@@ -8,6 +8,8 @@ import Genre from './Genre'
 import Movie from './Movie'
 import Image from '../Image/Image'
 import Trailer from '../trailer/Trailer'
+import NullCharacter from '../character/NullCharacter'
+import NullProducer from '../producer/NullProducer'
 
 export default class NullMovie extends Movie {
   constructor() {
@@ -15,12 +17,12 @@ export default class NullMovie extends Movie {
       id: 'not-found',
       title: 'Not found in database',
       synopsis: 'Not found in database',
-      release: new Date(),
+      release: new Date('1900'),
       classification: Classification.UNKNOWN,
       genre: Genre.UNKNOWN,
-      characters: [],
+      characters: [new NullCharacter()],
       director: new NullDirector(),
-      producers: [],
+      producers: [new NullProducer()],
       studio: new NullStudio(),
       images: [],
       trailer: [],

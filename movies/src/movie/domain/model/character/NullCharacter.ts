@@ -4,6 +4,7 @@ import Character from './Character'
 export default class NullCharacter extends Character {
   constructor() {
     super({
+      id: 'null-character',
       names: 'Not found in database',
       surnames: 'Not found in database',
       category: Category.UNKNOWN,
