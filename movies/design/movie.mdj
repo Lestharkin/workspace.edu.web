@@ -3529,7 +3529,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 410,
+									"left": 415,
 									"top": 258,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3551,7 +3551,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 410,
+									"left": 415,
 									"top": 243,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3573,7 +3573,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 410,
+									"left": 415,
 									"top": 288,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -4560,8 +4560,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 349,
-									"top": 422,
+									"left": 356,
+									"top": 421,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4582,8 +4582,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 362,
-									"top": 415,
+									"left": 369,
+									"top": 413,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4604,8 +4604,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 322,
-									"top": 437,
+									"left": 331,
+									"top": 438,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4658,8 +4658,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 406,
-									"top": 432,
+									"left": 414,
+									"top": 431,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4680,8 +4680,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 418,
-									"top": 441,
+									"left": 426,
+									"top": 440,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4702,8 +4702,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 383,
-									"top": 413,
+									"left": 389,
+									"top": 414,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -6357,7 +6357,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 296,
+									"left": 297,
 									"top": 138,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -6379,8 +6379,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 281,
-									"top": 137,
+									"left": 282,
+									"top": 138,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -6401,7 +6401,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 325,
+									"left": 326,
 									"top": 139,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -19960,6 +19960,7 @@
 							}
 						}
 					]
+<<<<<<< HEAD
 				},
 				{
 					"_type": "UMLPackage",
@@ -21843,8 +21844,11 @@
 							}
 						}
 					]
+=======
+>>>>>>> parent of b8d8c75 (sync)
 				}
 			]
 		}
-	]
+	],
+	"documentVersion": 1
 }
