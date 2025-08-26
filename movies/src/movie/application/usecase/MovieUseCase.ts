@@ -1,4 +1,5 @@
-import Movie, { MovieInterface } from '../../domain/model/Movie/Movie'
+import { MovieFilter } from '../../domain/api/MovieFilter'
+import Movie from '../../domain/model/Movie/Movie'
 import NullMovie from '../../domain/model/Movie/NullMovie'
 import MovieUseCasePort from '../../domain/port/driver/usecase/MovieUseCasePort'
 
@@ -9,7 +10,7 @@ export default class MovieUseCase implements MovieUseCasePort {
   }
 
   // TODO: implement
-  readonly search = (_filter: MovieInterface): Promise<Movie[]> => {
+  readonly search = (_filter: MovieFilter): Promise<Movie[]> => {
     return Promise.resolve([new NullMovie()])
   }
 

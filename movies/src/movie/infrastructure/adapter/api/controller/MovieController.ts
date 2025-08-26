@@ -27,12 +27,30 @@ export default class MovieController extends AbstractMovieController {
     }
   }
 
-  readonly create = async (_req: Request, _res: Response): Promise<void> => {}
+  readonly getByIdList = async (req: Request, res: Response): Promise<void> => {
+    const { idList } = req.params
 
-  readonly getByIdList = async (
-    _req: Request,
-    _res: Response
-  ): Promise<void> => {}
+    if (!idList) {
+      res.status(this.HTTPStatusCode.BAD_REQUEST).json({ error: 'Bad Request' })
+      return
+    }
 
-  readonly search = async (_req: Request, _res: Response): Promise<void> => {}
+    const array = idList.split(',').map((id) => id.trim())
+
+    if (array.length === 0) {
+      res.status(this.HTTPStatusCode.BAD_REQUEST).json({ error: 'Bad Request' })
+      return
+    }
+
+    try {
+      const movies = await this.movieUseCase.getByIdList(array)
+
+      res.status(this.HTTPStatusCode.OK).json(movies)
+    } catch (error) {
+      console.error('Internal Server Error: getByIdList ', error)
+      res
+        .status(this.HTTPStatusCode.INTERNAL_SERVER_ERROR)
+        .json({ error: 'Internal Server Error' })
+    }
+  }
 }
