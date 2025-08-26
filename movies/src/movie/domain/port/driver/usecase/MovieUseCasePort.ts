@@ -1,9 +1,8 @@
-import MovieFilter from '../../../interfaces/MovieFilter'
-import Movie from '../../../model/Movie/Movie'
+import Movie, { MovieInterface } from '../../../model/Movie/Movie'
 
 export default interface MovieUseCasePort {
-  register: (movie: Movie) => Promise<Movie>
-  search: (filter: MovieFilter) => Promise<Movie[]>
-  getById: (id: string) => Promise<Movie>
-  getByIdList: (list: string[]) => Promise<Movie[]>
+  register: (movie: Movie) => Movie
+  search: (filter: MovieInterface) => Movie[]
+  getById: (id: string) => Movie
+  getByIdList: (list: string[]) => Movie[]
 }

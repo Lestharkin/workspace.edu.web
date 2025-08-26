@@ -1,8 +1,5 @@
-import ServerFactory from './api/infrastructure/adapter/api/factory/ServerFactory'
-import MovieRouterFactory from './movie/infrastructure/adapter/api/factory/MovieRouterFactory'
+import ServerFactory from './movie/infrastructure/adapter/api/factory/ServerFactory'
 
-const movieRouter = MovieRouterFactory.create()
-
-const server = ServerFactory.create([movieRouter])
+const server = ServerFactory.create()
 
 server.start()

@@ -1,13 +1,11 @@
 import NullObject from '../interfaces/NullObject'
 
 export default abstract class Person implements NullObject {
-  protected id: string
   protected names: string
   protected surnames: string
   abstract isNull: boolean
 
   constructor(person: PersonInterface) {
-    this.id = person.id
     this.names = person.names
     this.surnames = person.surnames
   }
@@ -26,7 +24,6 @@ export default abstract class Person implements NullObject {
 }
 
 export interface PersonInterface {
-  id: string
   names: string
   surnames: string
 }
