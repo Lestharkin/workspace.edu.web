@@ -7,12 +7,11 @@ export default abstract class AbstractRouter {
   constructor(path: string) {
     this.path = path
     this.router = Router()
-    this.routes()
   }
 
   readonly attach = (app: Application) => {
     app.use(this.path, this.router)
   }
 
-  abstract routes(): void
+  protected abstract routes(): void
 }

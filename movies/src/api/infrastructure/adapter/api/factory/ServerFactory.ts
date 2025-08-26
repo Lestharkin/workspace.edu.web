@@ -1,16 +1,15 @@
-import ServerProvider from '../../../../../api/infrastructure/adapter/api/provider/ServerProvider'
 import Server from '../../../../../api/infrastructure/adapter/api/server/Server'
+import ErrorRouterFactory from './ErrorRouterFactory'
+import ServerProviderFactory from './ServerProviderFactory'
 
 export default class ServerFactory {
   static readonly create = (): Server => {
     try {
-      const serverProvider = new ServerProvider()
+      const errorRouter = ErrorRouterFactory.create()
 
-      if (!serverProvider) {
-        throw new Error('Failed to create ServerProvider')
-      }
+      const serverProvider = ServerProviderFactory.create()
 
-      const server = new Server(serverProvider, [])
+      const server = new Server(serverProvider, [errorRouter])
 
       if (!server) {
         throw new Error('Failed to create Server')
