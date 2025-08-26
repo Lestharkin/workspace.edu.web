@@ -4,22 +4,22 @@ import MovieUseCasePort from '../../domain/port/driver/usecase/MovieUseCasePort'
 
 export default class MovieUseCase implements MovieUseCasePort {
   // TODO: implement
-  register = (_movie: Movie): Movie => {
-    return new NullMovie()
+  readonly register = (_movie: Movie): Promise<Movie> => {
+    return Promise.resolve(new NullMovie())
   }
 
   // TODO: implement
-  search = (_filter: MovieInterface): Movie[] => {
-    return [new NullMovie()]
+  readonly search = (_filter: MovieInterface): Promise<Movie[]> => {
+    return Promise.resolve([new NullMovie()])
   }
 
   // TODO: implement
-  getById = (_id: string): Movie => {
-    return new NullMovie()
+  readonly getById = (_id: string): Promise<Movie> => {
+    return Promise.resolve(new NullMovie())
   }
 
   // TODO: implement
-  getByIdList = (_list: string[]): Movie[] => {
-    return [new NullMovie()]
+  readonly getByIdList = (_list: string[]): Promise<Movie[]> => {
+    return Promise.resolve([new NullMovie()])
   }
 }
