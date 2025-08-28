@@ -4,6 +4,7 @@ import Role from './Role'
 export default class NullProducer extends Producer {
   constructor() {
     super({
+      id: 'not-found',
       names: 'Not found in database',
       surnames: 'Not found in database',
       role: Role.UNKNOWN,

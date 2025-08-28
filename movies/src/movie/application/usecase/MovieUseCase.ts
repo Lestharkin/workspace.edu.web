@@ -1,4 +1,4 @@
-import { MovieFilter } from '../../domain/api/MovieFilter'
+import { MovieFilter } from '../../domain/model/Movie/MovieFilter'
 import Movie from '../../domain/model/Movie/Movie'
 import NullMovie from '../../domain/model/Movie/NullMovie'
 import MovieUseCasePort from '../../domain/port/driver/usecase/MovieUseCasePort'

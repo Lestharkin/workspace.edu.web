@@ -3,6 +3,7 @@ import Director from './Director'
 export default class NullDirector extends Director {
   constructor() {
     super({
+      id: 'not-found',
       names: 'Not found in database',
       surnames: 'Not found in database',
       reputation: 0,

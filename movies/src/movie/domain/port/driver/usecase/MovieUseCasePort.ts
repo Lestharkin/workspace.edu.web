@@ -1,4 +1,4 @@
-import { MovieFilter } from '../../../api/MovieFilter'
+import { MovieFilter } from '../../../model/Movie/MovieFilter'
 import Movie from '../../../model/Movie/Movie'
 
 export default interface MovieUseCasePort {
