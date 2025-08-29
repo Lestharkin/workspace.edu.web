@@ -1,6 +1,6 @@
 import Person, {
   PersonInterface,
-} from '../../../../shared/domain/abstracts/Person'
+} from '../../../../shared/base/domain/abstracts/Person'
 import Role from './Role'
 
 export default class Producer extends Person {

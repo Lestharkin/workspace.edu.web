@@ -1,6 +1,6 @@
 import Person, {
   PersonInterface,
-} from '../../../../shared/domain/abstracts/Person'
+} from '../../../../shared/base/domain/abstracts/Person'
 import Category from './Category'
 
 export default class Character extends Person {

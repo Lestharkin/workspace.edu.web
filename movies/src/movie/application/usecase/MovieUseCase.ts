@@ -2,10 +2,10 @@ import { MovieFilter } from '../../domain/model/Movie/MovieFilter'
 import Movie from '../../domain/model/Movie/Movie'
 import NullMovie from '../../domain/model/Movie/NullMovie'
 import MovieUseCasePort from '../../domain/port/driver/usecase/MovieUseCasePort'
-import MovieServicePort from '../../domain/interfaces/MovieServiceInterface'
+import MovieServiceInterface from '../../domain/interfaces/MovieServiceInterface'
 
 export default class MovieUseCase implements MovieUseCasePort {
-  constructor(private readonly movieService: MovieServicePort) {}
+  constructor(private readonly movieService: MovieServiceInterface) {}
 
   // TODO: implement
   readonly register = (_movie: Movie): Promise<Movie> => {

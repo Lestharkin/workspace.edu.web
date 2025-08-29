@@ -1,6 +1,6 @@
 import Person, {
   PersonInterface,
-} from '../../../../shared/domain/abstracts/Person'
+} from '../../../../shared/base/domain/abstracts/Person'
 
 export default class Director extends Person {
   private reputation: number

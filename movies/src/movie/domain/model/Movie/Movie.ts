@@ -1,4 +1,4 @@
-import NullObject from '../../../../shared/domain/interfaces/NullObject'
+import NullObject from '../../../../shared/base/domain/interfaces/NullObject'
 import Character from '../character/Character'
 import Director from '../director/Director'
 import Image from '../image/Image'

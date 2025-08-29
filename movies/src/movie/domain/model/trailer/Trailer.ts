@@ -1,4 +1,4 @@
-import NullObject from '../../../../shared/domain/interfaces/NullObject'
+import NullObject from '../../../../shared/base/domain/interfaces/NullObject'
 
 export default class Trailer implements NullObject {
   private readonly id: string
