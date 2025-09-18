@@ -1,0 +1,11 @@
+:root {
+  --bs-body-bg: rgb(154, 107, 70);
+}
+
+body {
+  background-color: var(--bs-body-bg);
+}
+
+.rojos {
+  background-color: var(--bs-body-bg);
+}
