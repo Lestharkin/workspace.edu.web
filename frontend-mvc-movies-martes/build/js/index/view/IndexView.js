@@ -8,6 +8,6 @@ export default class IndexView {
     }
     getMainHTML = () => this.main;
     render = () => {
-        this.index.innerHTML += `<h1>Index View</h1>`;
+        this.index.innerHTML += ``;
     };
 }

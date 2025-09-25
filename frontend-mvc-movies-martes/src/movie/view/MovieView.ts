@@ -1,3 +1,5 @@
+import MovieTemplate from '../template/MovieTemplate.js'
+
 export default class MovieView {
   private readonly movie: HTMLElement
 
@@ -7,6 +9,6 @@ export default class MovieView {
   }
 
   readonly render = () => {
-    this.movie.innerHTML += `<h1>Movie View</h1>`
+    this.movie.innerHTML = MovieTemplate.render()
   }
 }

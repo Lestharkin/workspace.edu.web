@@ -1,3 +1,4 @@
+import MovieTemplate from '../template/MovieTemplate.js';
 export default class MovieView {
     parent;
     movie;
@@ -7,6 +8,6 @@ export default class MovieView {
         this.parent.appendChild(this.movie);
     }
     render = () => {
-        this.movie.innerHTML += `<h1>Movie View</h1>`;
+        this.movie.innerHTML = MovieTemplate.render();
     };
 }

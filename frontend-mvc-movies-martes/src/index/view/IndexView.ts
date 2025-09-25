@@ -11,6 +11,6 @@ export default class IndexView {
   readonly getMainHTML = (): HTMLElement => this.main
 
   readonly render = () => {
-    this.index.innerHTML += `<h1>Index View</h1>`
+    this.index.innerHTML += ``
   }
 }
