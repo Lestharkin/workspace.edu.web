@@ -1,5 +1,5 @@
 export default class MovieModel {
-    constructor() {
-        console.log('MovieModel');
-    }
+    init = () => {
+        console.log('MovieModel init');
+    };
 }

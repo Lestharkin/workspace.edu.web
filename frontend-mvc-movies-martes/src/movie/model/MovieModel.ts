@@ -1,5 +1,5 @@
 export default class MovieModel {
-  constructor() {
-    console.log('MovieModel')
+  readonly init = () => {
+    console.log('MovieModel init')
   }
 }

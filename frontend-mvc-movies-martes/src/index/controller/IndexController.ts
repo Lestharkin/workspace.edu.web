@@ -18,6 +18,8 @@ export default class IndexController {
   }
 
   readonly init = () => {
+    this.model.init()
+    this.movie.init()
     this.view.render()
   }
 }
