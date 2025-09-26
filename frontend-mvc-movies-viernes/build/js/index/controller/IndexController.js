@@ -6,7 +6,7 @@ export default class IndexController {
         this.view = view;
         console.log('IndexController');
     }
-    initComponent = async () => {
+    initComponent = () => {
         this.model.initComponent();
         this.view.initComponent();
         console.log('IndexController initComponent');

@@ -1,8 +1,9 @@
 export default class IndexView {
+    body;
     constructor() {
-        console.log('IndexView');
+        this.body = document.body;
     }
-    initComponent = async () => {
-        console.log('IndexView initComponent');
+    initComponent = () => {
+        this.body.innerHTML += `<h1>Hello, World!</h1>`;
     };
 }

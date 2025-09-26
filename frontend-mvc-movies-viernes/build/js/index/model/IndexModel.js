@@ -2,7 +2,7 @@ export default class IndexModel {
     constructor() {
         console.log('IndexModel');
     }
-    initComponent = async () => {
+    initComponent = () => {
         console.log('IndexModel initComponent');
     };
 }

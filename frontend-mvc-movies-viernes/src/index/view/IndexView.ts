@@ -1,9 +1,11 @@
 export default class IndexView {
+  private readonly body: HTMLElement
+
   constructor() {
-    console.log('IndexView')
+    this.body = document.body
   }
 
-  readonly initComponent = async () => {
-    console.log('IndexView initComponent')
+  readonly initComponent = () => {
+    this.body.innerHTML += `<h1>Hello, World!</h1>`
   }
 }

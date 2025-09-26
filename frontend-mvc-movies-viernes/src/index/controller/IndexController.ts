@@ -9,7 +9,7 @@ export default class IndexController {
     console.log('IndexController')
   }
 
-  readonly initComponent = async () => {
+  readonly initComponent = () => {
     this.model.initComponent()
     this.view.initComponent()
     console.log('IndexController initComponent')

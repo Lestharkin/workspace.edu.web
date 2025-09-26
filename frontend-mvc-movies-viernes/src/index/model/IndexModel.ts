@@ -3,7 +3,7 @@ export default class IndexModel {
     console.log('IndexModel')
   }
 
-  readonly initComponent = async () => {
+  readonly initComponent = () => {
     console.log('IndexModel initComponent')
   }
 }
