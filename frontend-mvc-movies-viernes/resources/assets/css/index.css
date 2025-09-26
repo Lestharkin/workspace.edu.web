@@ -4,11 +4,21 @@ body {
   padding: 0px;
 }
 
+.main-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 header {
   background: var(--main-color-gradient);
   color: var(--text-color-light);
   text-align: center;
   padding: 20px;
+}
+
+.main-content {
+  flex: 1;
 }
 
 footer {
@@ -140,7 +150,7 @@ nav span:hover {
     display: block;
     text-align: center;
   }
-  
+
   footer {
     position: relative;
   }
