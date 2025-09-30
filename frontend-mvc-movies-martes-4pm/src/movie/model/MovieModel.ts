@@ -1,4 +1,4 @@
-import Movie from '../types/Movie'
+import Movie from '../types/Movie.js'
 
 export default class MovieModel {
   private movies: Movie[]
@@ -13,7 +13,7 @@ export default class MovieModel {
     return this.movies
   }
 
-  readonly init = async () => {
+  readonly init = async (): Promise<void> => {
     await this.getMovies()
   }
 }
