@@ -4,18 +4,23 @@ import MovieTemplate from '../template/MovieTemplate.js'
 
 export default class MovieView extends Observer<MovieModel> {
   private readonly movie: HTMLElement
+  private readonly movieTemplate: MovieTemplate
 
   constructor(private readonly parent: HTMLElement, movieModel: MovieModel) {
     super(movieModel)
     this.movie = document.createElement('movie')
     this.parent.appendChild(this.movie)
+    this.movieTemplate = new MovieTemplate([])
   }
 
   override readonly update = (): void => {
     this.render()
   }
 
-  readonly render = () => {
-    this.movie.innerHTML = MovieTemplate.getMoviesGridHTML()
+  readonly render = async () => {
+    const movies = await (this.subject as MovieModel).getMovies()
+    this.movieTemplate.setMovies(movies)
+    console.log(this.movieTemplate.getMoviesGridHTML())
+    this.movie.innerHTML = this.movieTemplate.getMoviesGridHTML()
   }
 }

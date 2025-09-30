@@ -11,6 +11,5 @@ export default class IndexController {
     init = () => {
         this.model.init();
         this.movie.init();
-        this.view.render();
     };
 }
