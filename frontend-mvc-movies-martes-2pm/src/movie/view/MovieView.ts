@@ -11,14 +11,13 @@ export default class MovieView extends Observer<MovieModel> {
     this.parent.appendChild(this.movie)
   }
 
-  readonly update = (): void => {
-    this.render()
+  override readonly update = async () => {
+    await this.render()
   }
 
   readonly render = async (): Promise<void> => {
     const movies = await (this.subject as MovieModel).getMovies()
     const movieTemplate = new MovieTemplate(movies)
-    console.log(movieTemplate.getMoviesGridHTML())
     this.movie.innerHTML = movieTemplate.getMoviesGridHTML()
   }
 }

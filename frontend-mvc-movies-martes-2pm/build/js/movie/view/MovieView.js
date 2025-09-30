@@ -9,13 +9,12 @@ export default class MovieView extends Observer {
         this.movie = document.createElement('movie');
         this.parent.appendChild(this.movie);
     }
-    update = () => {
-        this.render();
+    update = async () => {
+        await this.render();
     };
     render = async () => {
         const movies = await this.subject.getMovies();
         const movieTemplate = new MovieTemplate(movies);
-        console.log(movieTemplate.getMoviesGridHTML());
         this.movie.innerHTML = movieTemplate.getMoviesGridHTML();
     };
 }
