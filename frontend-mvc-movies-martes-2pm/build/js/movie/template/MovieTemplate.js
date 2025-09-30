@@ -6,18 +6,19 @@ export default class MovieTemplate {
     setMovies = (movies) => {
         this.movies = movies;
     };
-    render = () => {
-        return `
+    getMoviesGridHTML = () => {
+        const movies = `
     <div class="movies">
-      ${this.movies.map((movie) => this.renderMovie(movie)).join('')}     
+      ${this.movies.map((movie) => this.getMovieHTML(movie)).join('')}     
     </div>
     `;
+        return movies;
     };
-    renderMovie = (movie) => {
+    getMovieHTML = (movie) => {
         return `
     <div class="movie">
         <div class="movie-poster">
-          <img src="./img/movies/${movie.thumbnail}" alt="">
+          <img src="./asset/img/${movie.thumbnail}" alt="">
           <div>
             <p>
               <span>

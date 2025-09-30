@@ -12,6 +12,6 @@ export default class MovieModel extends Subject {
     };
     init = async () => {
         await this.getMovies();
-        console.log(this.movies);
+        this.notifyAllObservers();
     };
 }

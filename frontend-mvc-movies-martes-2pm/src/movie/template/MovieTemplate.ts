@@ -7,19 +7,20 @@ export default class MovieTemplate {
     this.movies = movies
   }
 
-  readonly render = (): string => {
-    return `
+  readonly getMoviesGridHTML = (): string => {
+    const movies = `
     <div class="movies">
-      ${this.movies.map((movie) => this.renderMovie(movie)).join('')}     
+      ${this.movies.map((movie) => this.getMovieHTML(movie)).join('')}     
     </div>
     `
+    return movies
   }
 
-  readonly renderMovie = (movie: Movie): string => {
+  readonly getMovieHTML = (movie: Movie): string => {
     return `
     <div class="movie">
         <div class="movie-poster">
-          <img src="./img/movies/${movie.thumbnail}" alt="">
+          <img src="./asset/img/${movie.thumbnail}" alt="">
           <div>
             <p>
               <span>
