@@ -11,12 +11,13 @@ export default class MovieModel extends Subject<MovieView> {
   }
 
   readonly getMovies = async (): Promise<Movie[]> => {
-    const data = await fetch('./movies-2020s.json')
+    const data = await fetch('../database/movies-2020s.json')
     this.movies = await data.json()
     return this.movies
   }
 
   readonly init = async (): Promise<void> => {
     await this.getMovies()
+    console.log(this.movies)
   }
 }

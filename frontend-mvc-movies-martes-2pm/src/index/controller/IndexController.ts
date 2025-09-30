@@ -5,20 +5,17 @@ import IndexView from '../view/IndexView.js'
 
 export default class IndexController {
   private readonly movie: MovieController
-  private readonly movie2: MovieController
 
   constructor(
     private readonly model: IndexModel,
     private readonly view: IndexView
   ) {
     this.movie = MovieFactory.create(this.view.getMainHTML())
-    this.movie2 = MovieFactory.create(this.view.getMainHTML())
   }
 
-  readonly init = () => {
+  readonly init = async (): Promise<void> => {
     this.model.init()
-    this.movie.init()
-    this.movie2.init()
+    await this.movie.init()
     this.view.render()
   }
 }
