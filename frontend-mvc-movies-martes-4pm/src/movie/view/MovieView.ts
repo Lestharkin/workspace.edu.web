@@ -20,7 +20,6 @@ export default class MovieView extends Observer<MovieModel> {
   readonly render = async () => {
     const movies = await (this.subject as MovieModel).getMovies()
     this.movieTemplate.setMovies(movies)
-    console.log(this.movieTemplate.getMoviesGridHTML())
     this.movie.innerHTML = this.movieTemplate.getMoviesGridHTML()
   }
 }
