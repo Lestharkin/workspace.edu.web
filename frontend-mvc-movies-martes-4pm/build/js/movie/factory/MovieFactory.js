@@ -7,7 +7,7 @@ export default class MovieFactory {
         if (!model) {
             throw new Error('MovieModel not created');
         }
-        const view = new MovieView(parent);
+        const view = new MovieView(parent, model);
         if (!view) {
             throw new Error('MovieView not created');
         }

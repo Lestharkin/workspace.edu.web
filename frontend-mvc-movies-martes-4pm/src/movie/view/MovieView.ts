@@ -11,11 +11,11 @@ export default class MovieView extends Observer<MovieModel> {
     this.parent.appendChild(this.movie)
   }
 
-  readonly update = (): void => {
+  override readonly update = (): void => {
     this.render()
   }
 
   readonly render = () => {
-    this.movie.innerHTML = MovieTemplate.render()
+    this.movie.innerHTML = MovieTemplate.getMoviesGridHTML()
   }
 }

@@ -1,5 +1,5 @@
 export default class MovieTemplate {
-  static readonly render = (): string => {
+  static readonly getMoviesGridHTML = (): string => {
     return `
     <div class="movies">
       <div class="movie">

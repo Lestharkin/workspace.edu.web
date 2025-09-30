@@ -1,5 +1,5 @@
 export default class MovieTemplate {
-    static render = () => {
+    static getMoviesGridHTML = () => {
         return `
     <div class="movies">
       <div class="movie">

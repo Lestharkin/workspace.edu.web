@@ -13,6 +13,6 @@ export default class MovieView extends Observer {
         this.render();
     };
     render = () => {
-        this.movie.innerHTML = MovieTemplate.render();
+        this.movie.innerHTML = MovieTemplate.getMoviesGridHTML();
     };
 }
