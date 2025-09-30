@@ -1,6 +1,8 @@
-export default class MovieModel {
+import Subject from '../../shared/Observer/Subject.js';
+export default class MovieModel extends Subject {
     movies;
     constructor() {
+        super();
         this.movies = [];
     }
     getMovies = async () => {

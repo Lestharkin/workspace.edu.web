@@ -1,9 +1,12 @@
+import Subject from '../../shared/Observer/Subject.js'
 import Movie from '../types/Movie.js'
+import MovieView from '../view/MovieView.js'
 
-export default class MovieModel {
+export default class MovieModel extends Subject<MovieView> {
   private movies: Movie[]
 
   constructor() {
+    super()
     this.movies = []
   }
 
