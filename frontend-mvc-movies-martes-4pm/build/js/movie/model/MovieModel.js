@@ -4,7 +4,7 @@ export default class MovieModel {
         this.movies = [];
     }
     getMovies = async () => {
-        const data = await fetch('./movies-2020s.json');
+        const data = await fetch('../database/movies-2020s.json');
         this.movies = await data.json();
         return this.movies;
     };

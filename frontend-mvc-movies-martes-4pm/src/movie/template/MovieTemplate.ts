@@ -4,7 +4,7 @@ export default class MovieTemplate {
     <div class="movies">
       <div class="movie">
         <div class="movie-poster">
-          <img src="./img/movies/The_Grudge_2020_Poster.jpeg" alt="">
+          <img src="./assets/img/The_Grudge_2020_Poster.jpeg" alt="">
           <div>
             <p>
               <span>
@@ -76,7 +76,7 @@ export default class MovieTemplate {
       </div>
       <div class="movie">
         <div class="movie-poster">
-          <img src="./img/movies/The_Grudge_2020_Poster.jpeg" alt="">
+          <img src="./assets/img/The_Grudge_2020_Poster.jpeg" alt="">
           <div>
             <p>
               <span>

@@ -8,7 +8,7 @@ export default class MovieModel {
   }
 
   readonly getMovies = async (): Promise<Movie[]> => {
-    const data = await fetch('./movies-2020s.json')
+    const data = await fetch('../database/movies-2020s.json')
     this.movies = await data.json()
     return this.movies
   }
