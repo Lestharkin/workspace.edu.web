@@ -8,5 +8,6 @@ export default class MovieController {
     }
     init = () => {
         this.model.init();
+        this.view.render();
     };
 }
