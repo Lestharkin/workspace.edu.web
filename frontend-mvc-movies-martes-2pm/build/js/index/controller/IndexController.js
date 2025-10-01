@@ -8,9 +8,8 @@ export default class IndexController {
         this.view = view;
         this.movie = MovieFactory.create(this.view.getMainHTML());
     }
-    init = async () => {
+    init = () => {
         this.model.init();
-        await this.movie.init();
-        this.view.render();
+        this.movie.init();
     };
 }

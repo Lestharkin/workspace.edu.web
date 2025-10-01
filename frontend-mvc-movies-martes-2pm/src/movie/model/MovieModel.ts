@@ -16,6 +16,12 @@ export default class MovieModel extends Subject<MovieView> {
     return this.movies
   }
 
+  readonly get10Movies = async (): Promise<void> => {
+    this.movies = this.movies.slice(0, 10)
+    console.log(this.movies)
+    this.notifyAllObservers()
+  }
+
   readonly init = async (): Promise<void> => {
     await this.getMovies()
     this.notifyAllObservers()

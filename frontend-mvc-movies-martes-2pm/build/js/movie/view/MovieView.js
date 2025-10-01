@@ -3,18 +3,20 @@ import MovieTemplate from '../template/MovieTemplate.js';
 export default class MovieView extends Observer {
     parent;
     movie;
-    constructor(parent, subject) {
-        super(subject);
+    movieTemplate;
+    constructor(parent, movieModel) {
+        super(movieModel);
         this.parent = parent;
         this.movie = document.createElement('movie');
         this.parent.appendChild(this.movie);
+        this.movieTemplate = new MovieTemplate([]);
     }
-    update = async () => {
-        await this.render();
+    update = () => {
+        this.render();
     };
     render = async () => {
         const movies = await this.subject.getMovies();
-        const movieTemplate = new MovieTemplate(movies);
-        this.movie.innerHTML = movieTemplate.getMoviesGridHTML();
+        this.movieTemplate.setMovies(movies);
+        this.movie.innerHTML = this.movieTemplate.getMoviesGridHTML();
     };
 }

@@ -1,13 +1,5 @@
-import IndexController from './index/controller/IndexController.js'
-import IndexModel from './index/model/IndexModel.js'
-import IndexView from './index/view/IndexView.js'
+import IndexFactory from './index/factory/IndexFactory.js'
 
-const main = async (): Promise<void> => {
-  const model = new IndexModel()
-  const view = new IndexView()
-  const index = new IndexController(model, view)
+const index = IndexFactory.create()
 
-  await index.init()
-}
-
-void main()
+index.init()

@@ -10,6 +10,11 @@ export default class MovieModel extends Subject {
         this.movies = await data.json();
         return this.movies;
     };
+    get10Movies = async () => {
+        this.movies = this.movies.slice(0, 10);
+        console.log(this.movies);
+        this.notifyAllObservers();
+    };
     init = async () => {
         await this.getMovies();
         this.notifyAllObservers();

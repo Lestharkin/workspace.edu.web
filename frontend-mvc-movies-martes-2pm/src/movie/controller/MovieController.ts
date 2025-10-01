@@ -9,7 +9,8 @@ export default class MovieController {
     console.log('MovieController')
   }
 
-  readonly init = async () => {
-    await this.model.init()
+  readonly init = () => {
+    this.model.init()
+    this.view.render()
   }
 }

@@ -5,16 +5,16 @@ export default class MovieFactory {
     static create = (parent) => {
         const model = new MovieModel();
         if (!model) {
-            throw new Error('MovieModel is undefined');
+            throw new Error('MovieModel not created');
         }
         const view = new MovieView(parent, model);
         if (!view) {
-            throw new Error('MovieView is undefined');
+            throw new Error('MovieView not created');
         }
-        const controller = new MovieController(model, view);
-        if (!controller) {
-            throw new Error('MovieController is undefined');
+        const Movie = new MovieController(model, view);
+        if (!Movie) {
+            throw new Error('MovieController not created');
         }
-        return controller;
+        return Movie;
     };
 }

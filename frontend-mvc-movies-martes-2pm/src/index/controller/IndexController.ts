@@ -13,9 +13,8 @@ export default class IndexController {
     this.movie = MovieFactory.create(this.view.getMainHTML())
   }
 
-  readonly init = async (): Promise<void> => {
+  readonly init = () => {
     this.model.init()
-    await this.movie.init()
-    this.view.render()
+    this.movie.init()
   }
 }
