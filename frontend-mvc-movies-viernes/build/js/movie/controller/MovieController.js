@@ -6,9 +6,8 @@ export default class MovieController {
         this.view = view;
         console.log('MovieController');
     }
-    initComponent = () => {
-        this.model.initComponent();
+    initComponent = async () => {
+        await this.model.initComponent();
         this.view.initComponent();
-        console.log('MovieController initComponent');
     };
 }
