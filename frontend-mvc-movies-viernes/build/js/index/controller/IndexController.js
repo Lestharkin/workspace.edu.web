@@ -1,3 +1,4 @@
+import MovieFactory from '../../movie/factory/MovieFactory.js';
 export default class IndexController {
     model;
     view;
@@ -5,11 +6,10 @@ export default class IndexController {
     constructor(model, view) {
         this.model = model;
         this.view = view;
-        console.log('IndexController');
+        this.movie = MovieFactory.create();
     }
     initComponent = () => {
         this.model.initComponent();
         this.view.initComponent();
-        console.log('IndexController initComponent');
     };
 }

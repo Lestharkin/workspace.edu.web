@@ -1,4 +1,5 @@
 import MovieController from '../../movie/controller/MovieController.js'
+import MovieFactory from '../../movie/factory/MovieFactory.js'
 import IndexModel from '../model/IndexModel.js'
 import IndexView from '../view/IndexView.js'
 
@@ -9,12 +10,11 @@ export default class IndexController {
     private readonly model: IndexModel,
     private readonly view: IndexView
   ) {
-    console.log('IndexController')
+    this.movie = MovieFactory.create()
   }
 
   readonly initComponent = () => {
     this.model.initComponent()
     this.view.initComponent()
-    console.log('IndexController initComponent')
   }
 }
