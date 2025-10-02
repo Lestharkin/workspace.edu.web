@@ -1,15 +1,14 @@
-export default class IndexController {
+export default class MovieController {
     model;
     view;
-    movie;
     constructor(model, view) {
         this.model = model;
         this.view = view;
-        console.log('IndexController');
+        console.log('MovieController');
     }
     initComponent = () => {
         this.model.initComponent();
         this.view.initComponent();
-        console.log('IndexController initComponent');
+        console.log('MovieController initComponent');
     };
 }
