@@ -1,8 +1,16 @@
-export default class MovieView {
+import Observer from '../../shared/Observer/Observer.js'
+import MovieModel from '../model/MovieModel.js'
+
+export default class MovieView extends Observer<MovieModel> {
   private readonly body: HTMLElement
 
-  constructor() {
+  constructor(MovieModel: MovieModel) {
+    super(MovieModel)
     this.body = document.body
+  }
+
+  override readonly update = () => {
+    console.log('MovieView update')
   }
 
   readonly initComponent = () => {
