@@ -1,16 +1,14 @@
 import Observer from '../../shared/Observer/Observer.js';
 export default class MovieView extends Observer {
-    body;
-    main;
-    constructor(MovieModel) {
+    parent;
+    constructor(parent, MovieModel) {
         super(MovieModel);
-        this.body = document.body;
-        this.main = this.body.querySelector('main');
+        this.parent = parent;
     }
     update = () => {
         console.log('MovieView update');
     };
     initComponent = () => {
-        this.main.innerHTML += `<h1>Hello, World!</h1>`;
+        this.parent.innerHTML += `<h1>Movies</h1>`;
     };
 }

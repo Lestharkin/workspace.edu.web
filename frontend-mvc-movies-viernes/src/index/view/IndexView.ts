@@ -7,9 +7,9 @@ export default class IndexView {
     this.main = this.body.querySelector('main') as HTMLElement
   }
 
-  readonly getMainHTML = () => this.main.innerHTML
+  readonly getMainHTML = (): HTMLElement => this.main
 
   readonly initComponent = () => {
-    this.main.innerHTML += `<h1>Hello, World!</h1>`
+    this.main.innerHTML += `<h1>Index</h1>`
   }
 }

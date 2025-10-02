@@ -10,11 +10,12 @@ export default class IndexController {
     private readonly model: IndexModel,
     private readonly view: IndexView
   ) {
-    this.movie = MovieFactory.create()
+    this.movie = MovieFactory.create(this.view.getMainHTML())
   }
 
   readonly initComponent = () => {
     this.model.initComponent()
     this.view.initComponent()
+    this.movie.initComponent()
   }
 }

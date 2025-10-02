@@ -2,13 +2,8 @@ import Observer from '../../shared/Observer/Observer.js'
 import MovieModel from '../model/MovieModel.js'
 
 export default class MovieView extends Observer<MovieModel> {
-  private readonly body: HTMLElement
-  private readonly main: HTMLElement
-
-  constructor(MovieModel: MovieModel) {
+  constructor(private readonly parent: HTMLElement, MovieModel: MovieModel) {
     super(MovieModel)
-    this.body = document.body
-    this.main = this.body.querySelector('main') as HTMLElement
   }
 
   override readonly update = () => {
@@ -16,6 +11,6 @@ export default class MovieView extends Observer<MovieModel> {
   }
 
   readonly initComponent = () => {
-    this.main.innerHTML += `<h1>Hello, World!</h1>`
+    this.parent.innerHTML += `<h1>Movies</h1>`
   }
 }
