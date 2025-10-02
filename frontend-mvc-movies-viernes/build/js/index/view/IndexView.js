@@ -6,7 +6,5 @@ export default class IndexView {
         this.main = this.body.querySelector('main');
     }
     getMainHTML = () => this.main;
-    initComponent = () => {
-        this.main.innerHTML += `<h1>Index</h1>`;
-    };
+    initComponent = () => { };
 }

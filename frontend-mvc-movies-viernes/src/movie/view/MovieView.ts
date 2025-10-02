@@ -1,5 +1,6 @@
 import Observer from '../../shared/Observer/Observer.js'
 import MovieModel from '../model/MovieModel.js'
+import MovieTemplate from '../template/MovieTemplate.js'
 
 export default class MovieView extends Observer<MovieModel> {
   constructor(private readonly parent: HTMLElement, MovieModel: MovieModel) {
@@ -11,6 +12,6 @@ export default class MovieView extends Observer<MovieModel> {
   }
 
   readonly initComponent = () => {
-    this.parent.innerHTML += `<h1>Movies</h1>`
+    this.parent.innerHTML += MovieTemplate.getMoviesHTML()
   }
 }

@@ -9,7 +9,5 @@ export default class IndexView {
 
   readonly getMainHTML = (): HTMLElement => this.main
 
-  readonly initComponent = () => {
-    this.main.innerHTML += `<h1>Index</h1>`
-  }
+  readonly initComponent = () => {}
 }
