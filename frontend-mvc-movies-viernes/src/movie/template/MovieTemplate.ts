@@ -59,29 +59,19 @@ export default class MovieTemplate {
           </span>
         </p>
         <ul>
-          <li>Horror</li>
-          <li>Supernatural</li>
+          ${movie.genres.map((genre) => `<li>${genre}</li>`).join('')}
         </ul>
       </div>
     </div>
     <div class="movie-info">
       <div>
-        <h2>The Grudge</h2>
-        <p>2020</p>
+        <h2>${movie.title}</h2>
+        <p>${movie.year}</p>
         <div class="text-info">
-          <p>The Grudge is a 2020 American psychological supernatural horror film written and directed by Nicolas
-            Pesce.
-            Originally announced as a reboot of the 2004 American remake and the original 2002 Japanese horror film
-            Ju-On:
-            The Grudge, the film ended up taking place before and during the events of the 2004 film and its two
-            direct
-            sequels, and is the fourth installment in the American The Grudge film series. The film stars Andrea
-            Riseborough, Demián Bichir, John Cho, Betty Gilpin, Lin Shaye, and Jacki Weaver, and follows a police
-            officer
-            who investigates several murders that are seemingly connected to a single house.</p>
+          <p>${movie.extract}</p>
         </div>
         <div class="movie-btn-rental">
-          <button>$52,729.00 RENT</button>
+          <button>$${movie.price} RENT</button>
         </div>
       </div>
     </div>
