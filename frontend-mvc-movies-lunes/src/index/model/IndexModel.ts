@@ -4,6 +4,6 @@ export default class IndexModel {
   }
 
   readonly initComponent = () => {
-    console.log('initComponent IndexModel')
+    console.log('IndexModel initComponent')
   }
 }

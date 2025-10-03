@@ -3,6 +3,6 @@ export default class IndexModel {
         console.log('IndexModel');
     }
     initComponent = () => {
-        console.log('initComponent IndexModel');
+        console.log('IndexModel initComponent');
     };
 }
