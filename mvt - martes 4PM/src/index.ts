@@ -22,7 +22,7 @@ export default class Server {
   }
 
   private readonly routes = (): void => {
-    this.app.get('/product', this.productRouter.router)
+    this.app.get('/products', this.productRouter.router)
     this.app.get('/{*any}', (_req: Request, res: Response) => {
       res.status(404).send('404')
     })
