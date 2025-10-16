@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro - Usuarios</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title mb-3">Formulario de registro</h4>
+            <p class="text-muted small mb-4">Complete los datos personales.</p>
+
+            <form id="registerForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="nombres" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ej. Juan Carlos"
+                  required minlength="2">
+                <div class="invalid-feedback">Ingrese al menos 2 caracteres para los nombres.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ej. Pérez Gómez"
+                  required minlength="2">
+                <div class="invalid-feedback">Ingrese al menos 2 caracteres para los apellidos.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="cedula" class="form-label">Cédula / Documento</label>
+                <input type="text" pattern="^[0-9]{6,15}$" class="form-control" id="cedula" name="cedula"
+                  placeholder="Sólo números" required>
+                <div class="form-text">Sólo dígitos, entre 6 y 15 caracteres.</div>
+                <div class="invalid-feedback">Ingrese una cédula válida (solo números).</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion"
+                  placeholder="Calle, número, colonia" required minlength="5">
+                <div class="invalid-feedback">Proporcione una dirección válida.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" pattern="^[0-9()+\-\s]{7,20}$" class="form-control" id="telefono" name="telefono"
+                  placeholder="Ej. +593 9 1234 567" required>
+                <div class="form-text">Puede incluir +, espacios y guiones.</div>
+                <div class="invalid-feedback">Ingrese un teléfono válido.</div>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-primary" type="submit">Registrar</button>
+              </div>
+            </form>
+
+            <div id="successAlert" class="alert alert-success mt-3 d-none" role="alert">
+              Registro realizado correctamente (simulado).
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-muted small mt-3">© Registro - ejemplo Bootstrap</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bootstrap 5 JS (Popper incluido) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Activar validación de Bootstrap
+    (function () {
+      'use strict'
+      const form = document.getElementById('registerForm')
+      const successAlert = document.getElementById('successAlert')
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        if (form.checkValidity()) {
+          // Aquí podrías enviar datos por fetch/ajax a tu servidor.
+          successAlert.classList.remove('d-none')
+          form.classList.remove('was-validated')
+          form.reset()
+          // ocultar mensaje después de 3s
+          setTimeout(() => successAlert.classList.add('d-none'), 3000)
+        } else {
+          form.classList.add('was-validated')
+        }
+      }, false)
+    })();
+  </script>
+</body>
+
+</html>

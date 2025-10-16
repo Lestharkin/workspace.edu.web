@@ -2,13 +2,17 @@ import express, { Application } from 'express'
 import path from 'path'
 import ProductRouter from './product/router/ProductRouter'
 import ProductView from './product/view/ProductView'
-import { Request, Response } from 'express'
 import ProductModel from './product/model/ProductModel'
+import ErrorRouter from './error/router/ErrorRouter'
+import ErrorView from './error/view/ErrorView'
 
 export default class Server {
   private readonly app: Application
 
-  constructor(private readonly productRouter: ProductRouter) {
+  constructor(
+    private readonly productRouter: ProductRouter,
+    private readonly errorRouter: ErrorRouter
+  ) {
     this.app = express()
     this.configure()
     this.static()
@@ -24,9 +28,7 @@ export default class Server {
 
   private readonly routes = (): void => {
     this.app.use('/products', this.productRouter.router)
-    this.app.use('/{*any}', (_req: Request, res: Response) => {
-      res.status(404).send('404')
-    })
+    this.app.use('/{*any}', this.errorRouter.router)
   }
 
   private readonly static = (): void => {
@@ -43,6 +45,7 @@ export default class Server {
 }
 
 const server = new Server(
-  new ProductRouter(new ProductView(new ProductModel()))
+  new ProductRouter(new ProductView(new ProductModel())),
+  new ErrorRouter(new ErrorView())
 )
 server.start()
