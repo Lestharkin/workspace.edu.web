@@ -3,6 +3,7 @@ import path from 'path'
 import ProductRouter from './product/router/ProductRouter'
 import ProductView from './product/view/ProductView'
 import { Request, Response } from 'express'
+import ProductModel from './product/model/ProductModel'
 
 export default class Server {
   private readonly app: Application
@@ -22,8 +23,8 @@ export default class Server {
   }
 
   private readonly routes = (): void => {
-    this.app.get('/products', this.productRouter.router)
-    this.app.get('/{*any}', (_req: Request, res: Response) => {
+    this.app.use('/products', this.productRouter.router)
+    this.app.use('/{*any}', (_req: Request, res: Response) => {
       res.status(404).send('404')
     })
   }
@@ -41,5 +42,7 @@ export default class Server {
   }
 }
 
-const server = new Server(new ProductRouter(new ProductView()))
+const server = new Server(
+  new ProductRouter(new ProductView(new ProductModel()))
+)
 server.start()
