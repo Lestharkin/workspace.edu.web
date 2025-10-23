@@ -4,6 +4,7 @@ import ProductView from './product/view/ProductView'
 import path from 'node:path'
 import ErrorRouter from './error/router/ErrorRouter'
 import ErrorView from './error/view/ErrorView'
+import ProductModel from './product/model/ProductModel'
 
 export default class Server {
   private readonly app: Application
@@ -44,7 +45,7 @@ export default class Server {
 }
 
 const server = new Server(
-  new ProductRouter(new ProductView()),
+  new ProductRouter(new ProductView(new ProductModel())),
   new ErrorRouter(new ErrorView())
 )
 server.start()
