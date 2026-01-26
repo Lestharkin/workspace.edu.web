@@ -18,3 +18,5 @@ async function simpleSum () {
   console.log("Sum is", Number(a) + Number(b))
 }
 simpleSum()
+
+export { prompt } 
