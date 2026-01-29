@@ -1,4 +1,4 @@
-import readline from "readline/promises"
+import readline from "node:readline/promises"
 
 const prompt = async (message) => {
   const rl = readline.createInterface({

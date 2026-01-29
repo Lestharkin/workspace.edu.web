@@ -1,6 +1,6 @@
-import data, { sum } from './data.js';
+import getData, { sum } from './data.js'
 
-const obj = await data();
-console.log(obj);
+const obj = await getData()
+console.log(obj)
 
-console.log(sum(1, 2));
+console.log(sum(1, 2))
