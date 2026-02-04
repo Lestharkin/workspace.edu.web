@@ -11,7 +11,6 @@
   "keywords": [],
   "author": "Your Name",
   "license": "ISC",
-  "type": "module",
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.2.0",

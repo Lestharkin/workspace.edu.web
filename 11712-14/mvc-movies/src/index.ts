@@ -1,4 +1,4 @@
-import Server from './server/Server.js'
+import Server from './server/Server'
 
 try {
   const server = new Server()
