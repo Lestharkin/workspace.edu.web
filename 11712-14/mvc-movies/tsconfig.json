@@ -9,8 +9,8 @@
     // See also https://aka.ms/tsconfig/module
     "module": "NodeNext",
     "target": "es2023",
-    "moduleResolution": "NodeNext",
     "types": ["node"],
+    "moduleResolution": "NodeNext",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -24,6 +24,7 @@
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
+    "resolveJsonModule": true,
 
     // Style Options
     "noImplicitReturns": true,
@@ -32,9 +33,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
-
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
 
     // Recommended Options
     "strict": true,
