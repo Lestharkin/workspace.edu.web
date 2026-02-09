@@ -1,7 +1,7 @@
 import type { Application } from 'express'
 import express from 'express'
-import MovieView from '../movies/views/MovieView.js'
-import MovieController from '../movies/controllers/MovieController.js'
+import MovieView from '../movies/views/MovieView'
+import MovieController from '../movies/controllers/MovieController'
 
 export default class Server {
   private readonly app: Application

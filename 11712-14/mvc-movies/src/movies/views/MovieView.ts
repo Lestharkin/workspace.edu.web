@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import type MovieController from '../controllers/MovieController.js'
+import type MovieController from '../controllers/MovieController'
 
 export default class MovieView {
   router: Router
