@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf build && tsc",
     "start": "node ./build/index.js",
-    "dev": "tsx ./src/index.ts"
+    "dev": "tsx --watch ./src/index.ts"
   },
   "keywords": [],
   "author": "Your Name",
