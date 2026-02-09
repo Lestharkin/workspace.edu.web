@@ -8,6 +8,11 @@ export default class Server {
   constructor(private readonly routers: MovieView[]) {
     this.app = express()
     this.routes()
+    this.configure()
+  }
+
+  private configure(): void {
+    this.app.use(express.json())
   }
 
   private routes(): void {

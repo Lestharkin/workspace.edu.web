@@ -8,3 +8,14 @@ export default interface Movie {
   extract: string
   thumbnail: string
 }
+
+export const NullMovie: Movie = {
+  price: 0,
+  title: 'Not found',
+  year: 0,
+  score: 0,
+  cast: [],
+  genres: [],
+  extract: 'Not found',
+  thumbnail: 'Not found',
+}

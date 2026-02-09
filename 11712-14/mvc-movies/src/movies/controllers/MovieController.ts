@@ -6,12 +6,27 @@ export default class MovieController {
 
   readonly getMovieList = async (_req: Request, res: Response) => {
     const movies = await this.movieModel.fetchMovieList()
-
     res.status(200).json(movies)
   }
 
-  readonly getMovie = (_req: Request, res: Response) => {
-    res.send('Movie Details')
+  readonly getMovie = async (req: Request, res: Response) => {
+    const { id } = req.params
+
+    if (!id || id === undefined) {
+      res.status(400).json({ error: 'Movie ID is required' })
+      return
+    }
+
+    let key = ''
+    if (Array.isArray(id)) {
+      key = id[0] ?? ''
+    } else {
+      key = id ?? ''
+    }
+
+    const movie = await this.movieModel.fetchMovieById(key)
+
+    res.status(200).json(movie)
   }
 
   readonly getMovieImage = (_req: Request, res: Response) => {

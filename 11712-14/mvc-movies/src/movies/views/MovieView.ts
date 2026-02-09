@@ -11,9 +11,9 @@ export default class MovieView {
 
   routes() {
     this.router.get('/api/v1.0/movies/list', this.controller.getMovieList)
-    this.router.get('/api/v1.0/movies/id', this.controller.getMovie)
+    this.router.get('/api/v1.0/movies/:id', this.controller.getMovie)
     this.router.get(
-      '/api/v1.0/movies/movie/image/id',
+      '/api/v1.0/movies/movie/image/:id',
       this.controller.getMovieImage,
     )
 
