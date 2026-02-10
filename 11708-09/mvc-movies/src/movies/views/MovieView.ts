@@ -1,11 +1,10 @@
-import { Router } from 'express'
 import MovieController from '../controllers/MovieController'
+import AbstractRouter from '../../server/model/AbstractRouter'
 
-export default class MovieView {
-  router: Router
-
+export default class MovieView extends AbstractRouter {
   constructor(private readonly movieController: MovieController) {
-    this.router = Router()
+    super()
+    this.routes()
   }
 
   readonly routes = () => {
