@@ -22,8 +22,11 @@ export default class Server {
   }
 
   readonly start = (): void => {
-    this.app.listen(1802, () => {
-      console.log('Server: http://localhost:1802')
+    const PORT = process.env['PORT'] ?? 1802
+    const HOST = process.env['HOST'] ?? 'localhost'
+
+    this.app.listen(PORT, () => {
+      console.log(`Server: http://${HOST}:${PORT}`)
     })
   }
 }
