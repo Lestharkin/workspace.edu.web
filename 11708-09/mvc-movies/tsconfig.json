@@ -8,8 +8,9 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "NodeNext",
-    "target": "es2023",
+    "target": "es2024",
     "types": ["node"],
+    "moduleResolution": "NodeNext",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -23,6 +24,7 @@
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
+    "resolveJsonModule": true,
 
     // Style Options
     "noImplicitReturns": true,
@@ -32,12 +34,8 @@
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
 
-    "resolveJsonModule": true,
-
     // Recommended Options
     "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
