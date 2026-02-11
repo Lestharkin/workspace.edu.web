@@ -8,3 +8,21 @@ export default interface Movie {
   extract: string
   thumbnail: string
 }
+
+interface NullObject {
+  isNull: boolean
+}
+
+interface NullObject extends Movie {}
+
+export const NullMovie: NullObject = {
+  price: -1,
+  title: 'Not Found',
+  year: -1,
+  score: -1,
+  cast: [],
+  genres: [],
+  extract: '',
+  thumbnail: 'Not Found',
+  isNull: true,
+}
