@@ -1,0 +1,24 @@
+{
+  "name": "hex-movies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf build && tsc",
+    "dev": "tsx --watch ./src/index.ts",
+    "start": "node ./build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

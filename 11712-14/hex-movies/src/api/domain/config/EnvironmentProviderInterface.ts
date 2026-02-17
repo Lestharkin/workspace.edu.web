@@ -1,4 +1,4 @@
 export default interface EnvironmentProviderInterface {
-  getPort(): number
-  getHost(): string
+  getPort: () => number
+  getHost: () => string
 }
