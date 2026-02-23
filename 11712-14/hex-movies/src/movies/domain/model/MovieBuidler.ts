@@ -8,17 +8,17 @@ import Studio from './Studio'
 import Trailer from './Trailer'
 
 export default class MovieBuilder {
-  private id: string
-  private title: string
-  private synopsis: string
-  private release: Date
-  private classification: Classification
-  private genre: Genre
-  private trailers: Trailer[]
-  private characters: Character[]
-  private director: Director
-  private studio: Studio
-  private producer: Producer[]
+  private id: string = ''
+  private title: string = ''
+  private synopsis: string = ''
+  private release: Date = new Date()
+  private classification: Classification = Classification.UNKNOWN
+  private genre: Genre = Genre.SCIFI
+  private trailers: Trailer[] = []
+  private characters: Character[] = []
+  private director: Director = new Director()
+  private studio: Studio = new Studio()
+  private producer: Producer[] = []
 
   readonly setId = (id: string): this => {
     this.id = id

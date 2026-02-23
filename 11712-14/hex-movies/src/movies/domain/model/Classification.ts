@@ -1,3 +1,5 @@
-enum Classification {}
+enum Classification {
+  UNKNOWN = 'UNKNOWN',
+}
 
 export default Classification

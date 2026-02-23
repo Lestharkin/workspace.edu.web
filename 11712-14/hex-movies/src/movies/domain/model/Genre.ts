@@ -1,3 +1,5 @@
-enum Genre {}
+enum Genre {
+  SCIFI = 'SCIFI',
+}
 
 export default Genre
