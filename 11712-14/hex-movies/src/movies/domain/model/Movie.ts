@@ -2,23 +2,23 @@ import Character from './Character'
 import Classification from './Classification'
 import Director from './Director'
 import Genre from './Genre'
-import MovieBuilder from './MovieBuidler'
+import MovieBuilder from './MovieBuilder'
 import Producer from './Producer'
 import Studio from './Studio'
 import Trailer from './Trailer'
 
 export default class Movie {
   private readonly id: string
-  private readonly title: string
-  private readonly synopsis: string
-  private readonly release: Date
-  private readonly classification: Classification
-  private readonly genre: Genre
-  private readonly trailers: Trailer[]
-  private readonly characters: Character[]
-  private readonly director: Director
-  private readonly studio: Studio
-  private readonly producer: Producer[]
+  private title: string
+  private synopsis: string
+  private release: Date
+  private classification: Classification
+  private genre: Genre
+  private trailers: Trailer[]
+  private characters: Character[]
+  private director: Director
+  private studio: Studio
+  private producer: Producer[]
 
   constructor(movie: MovieInterface) {
     this.id = movie.id
@@ -36,6 +36,68 @@ export default class Movie {
 
   static readonly builder = (): MovieBuilder => {
     return new MovieBuilder()
+  }
+
+  readonly getId = (): string => this.id
+
+  readonly getTitle = (): string => this.title
+
+  readonly getSynopsis = (): string => this.synopsis
+
+  readonly getRelease = (): Date => this.release
+
+  readonly getClassification = (): Classification => this.classification
+
+  readonly getGenre = (): Genre => this.genre
+
+  readonly getTrailers = (): Trailer[] => this.trailers
+
+  readonly getCharacters = (): Character[] => this.characters
+
+  readonly getDirector = (): Director => this.director
+
+  readonly getStudio = (): Studio => this.studio
+
+  readonly getProducer = (): Producer[] => this.producer
+
+  readonly setTitle = (title: string): void => {
+    this.title = title
+  }
+
+  readonly setSynopsis = (synopsis: string): void => {
+    this.synopsis = synopsis
+  }
+
+  readonly setRelease = (release: Date): void => {
+    this.release = release
+  }
+
+  readonly setClassification = (classification: Classification): void => {
+    this.classification = classification
+  }
+
+  readonly setGenre = (genre: Genre): void => {
+    this.genre = genre
+  }
+
+  readonly setTrailers = (trailers: Trailer[]): void => {
+    this.trailers = trailers
+  }
+
+  readonly setCharacters = (characters: Character[]): void => {
+    this.characters = characters
+  }
+
+  readonly setDirector = (director: Director): void => {
+    this.director = director
+  }
+
+  readonly setStudio = (studio: Studio): void => {
+    this.studio = studio
+  }
+
+  readonly setProducer = (producer: Producer[]): void => {
+    this.producer = producer
   }
 }
 
