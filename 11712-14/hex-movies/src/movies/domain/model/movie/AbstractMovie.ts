@@ -1,13 +1,12 @@
-import Character from './Character'
-import Classification from './Classification'
-import Director from './Director'
-import Genre from './Genre'
-import MovieBuilder from './MovieBuilder'
-import Producer from './Producer'
-import Studio from './Studio'
-import Trailer from './Trailer'
+import Character from '../Character'
+import Classification from '../Classification'
+import Director from '../Director'
+import Genre from '../Genre'
+import Producer from '../Producer'
+import Studio from '../Studio'
+import Trailer from '../Trailer'
 
-export default class Movie {
+export default abstract class AbstractMovie {
   private readonly id: string
   private title: string
   private synopsis: string
@@ -18,7 +17,7 @@ export default class Movie {
   private characters: Character[]
   private director: Director
   private studio: Studio
-  private producer: Producer[]
+  private producers: Producer[]
 
   constructor(movie: MovieInterface) {
     this.id = movie.id
@@ -31,11 +30,7 @@ export default class Movie {
     this.characters = movie.characters
     this.director = movie.director
     this.studio = movie.studio
-    this.producer = movie.producer
-  }
-
-  static readonly builder = (): MovieBuilder => {
-    return new MovieBuilder()
+    this.producers = movie.producers
   }
 
   readonly getId = (): string => this.id
@@ -58,7 +53,7 @@ export default class Movie {
 
   readonly getStudio = (): Studio => this.studio
 
-  readonly getProducer = (): Producer[] => this.producer
+  readonly getProducers = (): Producer[] => this.producers
 
   readonly setTitle = (title: string): void => {
     this.title = title
@@ -96,8 +91,8 @@ export default class Movie {
     this.studio = studio
   }
 
-  readonly setProducer = (producer: Producer[]): void => {
-    this.producer = producer
+  readonly setProducers = (producers: Producer[]): void => {
+    this.producers = producers
   }
 }
 
@@ -112,5 +107,5 @@ export interface MovieInterface {
   characters: Character[]
   director: Director
   studio: Studio
-  producer: Producer[]
+  producers: Producer[]
 }

@@ -1,4 +1,5 @@
-import Movie from '../../domain/model/Movie'
+import Movie from '../../domain/model/movie/Movie'
+import NullMovie from '../../domain/model/movie/NullMovie'
 
 export default class TestAdapter {
   readonly getTest = (): Movie => {
@@ -8,6 +9,10 @@ export default class TestAdapter {
       .setSynopsis('This is a test movie')
       .setRelease(new Date('2024-01-01'))
       .build()
+
+    if (!movie) {
+      return new NullMovie()
+    }
     return movie
   }
 }

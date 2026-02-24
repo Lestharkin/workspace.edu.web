@@ -1,11 +1,11 @@
-import Character from './Character'
-import Classification from './Classification'
-import Director from './Director'
-import Genre from './Genre'
+import Character from '../Character'
+import Classification from '../Classification'
+import Director from '../Director'
+import Genre from '../Genre'
 import Movie from './Movie'
-import Producer from './Producer'
-import Studio from './Studio'
-import Trailer from './Trailer'
+import Producer from '../Producer'
+import Studio from '../Studio'
+import Trailer from '../Trailer'
 
 export default class MovieBuilder {
   private id: string = ''
@@ -87,7 +87,7 @@ export default class MovieBuilder {
       characters: this.characters,
       director: this.director,
       studio: this.studio,
-      producer: this.producer,
+      producers: this.producer,
     })
   }
 }
