@@ -1,5 +1,5 @@
-import Classification from '../Classification'
-import Genre from '../Genre'
+import Classification from '../enum/Classification'
+import Genre from '../enum/Genre'
 import AbstractMovie from './AbstractMovie'
 
 export default class NullMovie extends AbstractMovie {
