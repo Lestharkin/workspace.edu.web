@@ -14,6 +14,4 @@ export default abstract class AbstractTrailer {
   readonly setSource = (source: string): void => {
     this.source = source
   }
-
-  abstract readonly isNull: () => boolean
 }

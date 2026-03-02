@@ -1,26 +1,31 @@
-import Classification from '../../enum/Classification'
-import Genre from '../../enum/Genre'
-import Character from '../Character'
-import Director from '../Director'
-import Producer from '../Producer'
-import Studio from '../Studio'
-import Trailer from '../Trailer'
-import Image from '../Image'
+import Character from '../character/Character'
+import Director from '../director/Director'
+import Classification from '../enum/Classification'
+import Genre from '../enum/Genre'
+import Image from '../image/Image'
+import Producer from '../producer/Producer'
+import Studio from '../studio/Studio'
+import Trailer from '../trailer/Trailer'
 import Movie from './Movie'
 
 export default class MovieBuilder {
-  id: string = ''
-  title: string = ''
-  synopsis: string = ''
-  release: Date = new Date()
-  classification: Classification = Classification.UNKNOWN
-  genre: Genre = Genre.UNKNOWN
-  trailer: Trailer[] = []
-  characters: Character[] = []
-  director: Director = new Director()
-  producers: Producer[] = []
-  studio: Studio = new Studio()
-  image: Image[] = []
+  private id: string = ''
+  private title: string = ''
+  private synopsis: string = ''
+  private release: Date = new Date()
+  private classification: Classification = Classification.UNKNOWN
+  private genre: Genre = Genre.SCIFI
+  private trailers: Trailer[] = []
+  private characters: Character[] = []
+  private director: Director = new Director(
+    'not assigned yet',
+    'not assigned yet',
+    'not assigned yet',
+    0,
+  )
+  private studio: Studio = new Studio('not assigned yet', 'not assigned yet')
+  private producers: Producer[] = []
+  private images: Image[] = []
 
   readonly setId = (id: string): this => {
     this.id = id
@@ -52,8 +57,8 @@ export default class MovieBuilder {
     return this
   }
 
-  readonly setTrailer = (trailer: Trailer[]): this => {
-    this.trailer = trailer
+  readonly setTrailers = (trailers: Trailer[]): this => {
+    this.trailers = trailers
     return this
   }
 
@@ -67,34 +72,35 @@ export default class MovieBuilder {
     return this
   }
 
-  readonly setProducers = (producers: Producer[]): this => {
-    this.producers = producers
-    return this
-  }
-
   readonly setStudio = (studio: Studio): this => {
     this.studio = studio
     return this
   }
 
-  readonly setImage = (image: Image[]): this => {
-    this.image = image
+  readonly setProducers = (producers: Producer[]): this => {
+    this.producers = producers
     return this
   }
 
-  readonly build = (): Movie =>
-    new Movie({
+  readonly setImages = (images: Image[]): this => {
+    this.images = images
+    return this
+  }
+
+  readonly build = (): Movie => {
+    return new Movie({
       id: this.id,
       title: this.title,
       synopsis: this.synopsis,
       release: this.release,
       classification: this.classification,
       genre: this.genre,
-      trailer: this.trailer,
+      trailers: this.trailers,
       characters: this.characters,
       director: this.director,
-      producers: this.producers,
       studio: this.studio,
-      image: this.image,
+      producers: this.producers,
+      images: this.images,
     })
+  }
 }
