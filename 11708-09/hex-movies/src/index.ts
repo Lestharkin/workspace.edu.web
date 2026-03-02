@@ -1,1 +1,1 @@
-console.log('Hello, Hex Movies!')
+console.log('Hello, world!')
