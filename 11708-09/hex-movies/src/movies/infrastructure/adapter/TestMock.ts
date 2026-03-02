@@ -1,4 +1,4 @@
-import Genre from '../../domain/enum/Genre'
+import Genre from '../../domain/model/enum/Genre'
 import Movie from '../../domain/model/movie/Movie'
 import NullMovie from '../../domain/model/movie/NullMovie'
 
