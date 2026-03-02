@@ -1,10 +1,10 @@
 import Character from '../character/Character'
+import Director from '../director/Director'
 import Classification from '../enum/Classification'
-import Director from '../Director'
 import Genre from '../enum/Genre'
-import Producer from '../Producer'
-import Studio from '../Studio'
-import Trailer from '../Trailer'
+import Producer from '../producer/Producer'
+import Studio from '../studio/Studio'
+import Trailer from '../trailer/Trailer'
 import Image from '../image/Image'
 
 export default abstract class AbstractMovie {

@@ -1,12 +1,12 @@
 import Character from '../character/Character'
+import Director from '../director/Director'
 import Classification from '../enum/Classification'
-import Director from '../Director'
 import Genre from '../enum/Genre'
-import Movie from './Movie'
-import Producer from '../Producer'
-import Studio from '../Studio'
-import Trailer from '../Trailer'
 import Image from '../image/Image'
+import Producer from '../producer/Producer'
+import Studio from '../studio/Studio'
+import Trailer from '../trailer/Trailer'
+import Movie from './Movie'
 
 export default class MovieBuilder {
   private id: string = ''
@@ -17,9 +17,14 @@ export default class MovieBuilder {
   private genre: Genre = Genre.SCIFI
   private trailers: Trailer[] = []
   private characters: Character[] = []
-  private director: Director = new Director()
-  private studio: Studio = new Studio()
-  private producer: Producer[] = []
+  private director: Director = new Director(
+    'not assigned yet',
+    'not assigned yet',
+    'not assigned yet',
+    0,
+  )
+  private studio: Studio = new Studio('not assigned yet', 'not assigned yet')
+  private producers: Producer[] = []
   private images: Image[] = []
 
   readonly setId = (id: string): this => {
@@ -72,8 +77,8 @@ export default class MovieBuilder {
     return this
   }
 
-  readonly setProducer = (producer: Producer[]): this => {
-    this.producer = producer
+  readonly setProducers = (producers: Producer[]): this => {
+    this.producers = producers
     return this
   }
 
@@ -94,7 +99,7 @@ export default class MovieBuilder {
       characters: this.characters,
       director: this.director,
       studio: this.studio,
-      producers: this.producer,
+      producers: this.producers,
       images: this.images,
     })
   }
