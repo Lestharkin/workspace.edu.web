@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import ApiController from '../../../../api/domain/controller/ApiController'
+import ApiController from '../../../../api/domain/model/ApiController'
 import MovieUsecasePort from '../../../domain/port/driver/usecase/MovieUsecasePort'
 
 export default class MovieController extends ApiController {
