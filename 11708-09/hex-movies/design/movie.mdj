@@ -1149,7 +1149,7 @@
 																"_parent": {
 																	"$ref": "AAAAAAGYv0zPzhHMRyk="
 																},
-																"name": "producer",
+																"name": "producers",
 																"reference": {
 																	"$ref": "AAAAAAGYrn1Ji/p2T8M="
 																},
@@ -12554,7 +12554,7 @@
 										"$ref": "AAAAAAGYv0zPzhHQOm4="
 									},
 									"edgePosition": 2,
-									"text": "-producer"
+									"text": "-producers"
 								},
 								{
 									"_type": "EdgeLabelView",
