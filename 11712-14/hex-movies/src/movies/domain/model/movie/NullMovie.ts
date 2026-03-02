@@ -1,3 +1,4 @@
+import NullDirector from '../director/NullDirector'
 import Classification from '../enum/Classification'
 import Genre from '../enum/Genre'
 import AbstractMovie from './AbstractMovie'
@@ -13,9 +14,10 @@ export default class NullMovie extends AbstractMovie {
       genre: Genre.UNKNOWN,
       trailers: [],
       characters: [],
-      director: 'Not found',
+      director: new NullDirector(),
       studio: 'Not found',
       producers: [],
+      images: [],
     })
   }
 }

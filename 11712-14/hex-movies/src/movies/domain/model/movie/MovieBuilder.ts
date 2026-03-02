@@ -1,4 +1,4 @@
-import Character from '../Character'
+import Character from '../character/Character'
 import Classification from '../enum/Classification'
 import Director from '../Director'
 import Genre from '../enum/Genre'
@@ -6,7 +6,7 @@ import Movie from './Movie'
 import Producer from '../Producer'
 import Studio from '../Studio'
 import Trailer from '../Trailer'
-import Image from '../trailer/Trailer'
+import Image from '../image/Image'
 
 export default class MovieBuilder {
   private id: string = ''
@@ -20,7 +20,7 @@ export default class MovieBuilder {
   private director: Director = new Director()
   private studio: Studio = new Studio()
   private producer: Producer[] = []
-  private image: Image = new Image('', 'default.png')
+  private images: Image[] = []
 
   readonly setId = (id: string): this => {
     this.id = id
@@ -77,8 +77,8 @@ export default class MovieBuilder {
     return this
   }
 
-  readonly setImage = (image: Image): this => {
-    this.image = image
+  readonly setImages = (images: Image[]): this => {
+    this.images = images
     return this
   }
 
@@ -95,7 +95,7 @@ export default class MovieBuilder {
       director: this.director,
       studio: this.studio,
       producers: this.producer,
-      image: this.image,
+      images: this.images,
     })
   }
 }

@@ -1,11 +1,11 @@
-import Character from '../Character'
+import Character from '../character/Character'
 import Classification from '../enum/Classification'
 import Director from '../Director'
 import Genre from '../enum/Genre'
 import Producer from '../Producer'
 import Studio from '../Studio'
 import Trailer from '../Trailer'
-import Image from '../trailer/Trailer'
+import Image from '../image/Image'
 
 export default abstract class AbstractMovie {
   private readonly id: string
@@ -19,7 +19,7 @@ export default abstract class AbstractMovie {
   private director: Director
   private studio: Studio
   private producers: Producer[]
-  private image: Image
+  private images: Image[]
 
   constructor(movie: MovieInterface) {
     this.id = movie.id
@@ -33,7 +33,7 @@ export default abstract class AbstractMovie {
     this.director = movie.director
     this.studio = movie.studio
     this.producers = movie.producers
-    this.image = movie.image
+    this.images = movie.images
   }
 
   readonly getId = (): string => this.id
@@ -58,7 +58,7 @@ export default abstract class AbstractMovie {
 
   readonly getProducers = (): Producer[] => this.producers
 
-  readonly getImage = (): Image => this.image
+  readonly getImages = (): Image[] => this.images
 
   readonly setTitle = (title: string): void => {
     this.title = title
@@ -100,8 +100,8 @@ export default abstract class AbstractMovie {
     this.producers = producers
   }
 
-  readonly setImage = (image: Image): void => {
-    this.image = image
+  readonly setImages = (images: Image[]): void => {
+    this.images = images
   }
 }
 
@@ -117,5 +117,5 @@ export interface MovieInterface {
   director: Director
   studio: Studio
   producers: Producer[]
-  image: Image
+  images: Image[]
 }
