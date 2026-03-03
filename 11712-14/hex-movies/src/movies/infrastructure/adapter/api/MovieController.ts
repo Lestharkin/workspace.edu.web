@@ -29,4 +29,9 @@ export default class MovieController extends ApiController {
 
     res.status(this.STATUS.OK).json(movie)
   }
+
+  readonly getAllMovies = async (_req: Request, res: Response) => {
+    const movies = await this.movieUsecase.getAll()
+    res.status(this.STATUS.OK).json(movies)
+  }
 }

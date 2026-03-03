@@ -31,4 +31,12 @@ export default class MovieService implements MovieServicePort {
 
     return new NullMovie()
   }
+
+  readonly retrieveAll = async (): Promise<Movie[]> => {
+    const moviesFromIMDB = await this.IMDBRepository.findAll()
+    const moviesFromJSON = await this.JSONRepository.findAll()
+    const moviesFromSWAPI = await this.SWAPIRepository.findAll()
+    //TODO transformar los * a Movie
+    return [...moviesFromIMDB, ...moviesFromJSON, ...moviesFromSWAPI]
+  }
 }

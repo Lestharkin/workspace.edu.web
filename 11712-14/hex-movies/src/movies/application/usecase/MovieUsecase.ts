@@ -13,4 +13,12 @@ export default class MovieUsecase implements MovieUsecasePort {
     }
     return movie
   }
+
+  readonly getAll = async (): Promise<Movie[]> => {
+    const movies = await this.movieService.retrieveAll()
+    if (!movies || movies.length === 0) {
+      return []
+    }
+    return movies
+  }
 }
