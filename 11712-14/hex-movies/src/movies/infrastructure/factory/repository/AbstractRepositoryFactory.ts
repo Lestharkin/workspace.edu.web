@@ -1,3 +1,5 @@
+import FinderRepository from '../../../../shared/domain/FinderRepository'
+import Movie from '../../../domain/model/movie/Movie'
 import IMDBRepositoryFactory from './IMDBRepositoryFactory'
 import JSONRepositoryFactory from './JSONRepositoryFactory'
 import SWAPIRepositoryFactory from './SWAPIRepositoryFactory'
@@ -5,7 +7,7 @@ import SWAPIRepositoryFactory from './SWAPIRepositoryFactory'
 export default abstract class AbstractRepositoryFactory {
   static readonly create = (
     type: RepositoryType,
-  ): AbstractRepositoryFactory => {
+  ): FinderRepository<string, Movie> => {
     switch (type) {
       case RepositoryType.SWAPI:
         return SWAPIRepositoryFactory.create()
