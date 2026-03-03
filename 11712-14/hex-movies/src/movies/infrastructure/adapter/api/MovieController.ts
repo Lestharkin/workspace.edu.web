@@ -17,9 +17,10 @@ export default class MovieController extends ApiController {
     }
 
     if (!id) {
-      return res
+      res
         .status(this.STATUS.BAD_REQUEST)
         .json({ message: 'Movie ID is required' })
+      return
     }
 
     id = id.trim().replaceAll(/[<>'"$;\\]/g, '')

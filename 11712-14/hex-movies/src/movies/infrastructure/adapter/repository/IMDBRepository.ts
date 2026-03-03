@@ -1,7 +1,7 @@
 import Movie from '../../../domain/model/movie/Movie'
-import JSONRepositoryPort from '../../../domain/port/driven/repository/json/JSONRepositoryPort'
+import IMDBRepositoryPort from '../../../domain/port/driven/repository/imdb/IMDBRepositoryPort'
 
-export default class JSONRepository implements JSONRepositoryPort {
+export default class IMDBRepository implements IMDBRepositoryPort {
   readonly findAll = (): Promise<Movie[]> => {
     return Promise.resolve([Movie.builder().build()])
   }

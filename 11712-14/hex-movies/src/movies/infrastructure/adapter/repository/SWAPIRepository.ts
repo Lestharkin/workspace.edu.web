@@ -1,7 +1,7 @@
 import Movie from '../../../domain/model/movie/Movie'
-import JSONRepositoryPort from '../../../domain/port/driven/repository/json/JSONRepositoryPort'
+import SWAPIRepositoryPort from '../../../domain/port/driven/repository/swapi/SWAPIRepositoryPort'
 
-export default class JSONRepository implements JSONRepositoryPort {
+export default class SWAPIRepository implements SWAPIRepositoryPort {
   readonly findAll = (): Promise<Movie[]> => {
     return Promise.resolve([Movie.builder().build()])
   }
