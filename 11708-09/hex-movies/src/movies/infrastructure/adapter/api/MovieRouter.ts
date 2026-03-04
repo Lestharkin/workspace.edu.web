@@ -8,6 +8,6 @@ export default class MovieRouter extends ApiRouter {
   }
 
   readonly routes = (): void => {
-    this.router.get('/api/v1.0/movie', this.controller.getMovieByTitle)
+    this.router.get('/api/v1.0/movies/movie', this.controller.getMovieByTitle)
   }
 }
