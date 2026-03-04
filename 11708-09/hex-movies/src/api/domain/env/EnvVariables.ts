@@ -1,4 +1,4 @@
-interface EnvVariables {
+type EnvVariables = {
   HOST: string
   PORT: number
 }

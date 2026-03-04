@@ -9,9 +9,12 @@ export default class EnvironmentProvider implements EnvironmentLoader {
   private constructor() {
     const env = env_json as EnvVariables
     if (!env) {
-      this.env.HOST = 'localhost'
-      this.env.PORT = 3000
+      this.env = {
+        HOST: 'localhost',
+        PORT: 3000,
+      }
     }
+    this.env = env
   }
 
   static getInstance(): EnvironmentProvider {
@@ -22,10 +25,10 @@ export default class EnvironmentProvider implements EnvironmentLoader {
   }
 
   readonly host = (): string => {
-    return ''
+    return this.env.HOST
   }
 
   readonly port = (): number => {
-    return 0
+    return this.env.PORT
   }
 }
