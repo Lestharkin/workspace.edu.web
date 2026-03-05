@@ -1,9 +1,7 @@
-import FinderRepository from '../../../../../shared/domain/FinderRepository'
 import Movie from '../../../model/movie/Movie'
+import MovieFinderRepositoryPort from './MovieFinderRepositoryPort'
 
-export default interface JSONrepositoryPort extends FinderRepository<
+export default interface JSONrepositoryPort extends MovieFinderRepositoryPort<
   string,
   Movie
-> {
-  readonly findByTitle: (title: string) => Promise<Movie>
-}
+> {}

@@ -3,14 +3,15 @@ import MovieRouter from '../adapter/api/MovieRouter'
 import MovieControllerFactory from './MovieControllerFactory'
 import MovieServiceFactory from './MovieServiceFactory'
 import MovieUseCaseFactory from './MovieUseCaseFactory'
-import JSONrepositoryFactory from './repository/JSONrepositoryFactory'
-import SWAPIRepositoryFactory from './repository/SWAPIRepositoryFactory'
+import AbstractFinderFactory, {
+  FinderType,
+} from './repository/AbstractFinderFactory'
 
 export default class MovieFactory {
   static readonly create = (): ApiRouter => {
-    const swapi = SWAPIRepositoryFactory.create()
+    const swapi = AbstractFinderFactory.create(FinderType.SWAPI)
 
-    const json = JSONrepositoryFactory.create()
+    const json = AbstractFinderFactory.create(FinderType.JSON)
 
     const service = MovieServiceFactory.create(swapi, json)
 

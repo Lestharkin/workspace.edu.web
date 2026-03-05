@@ -1,12 +1,12 @@
-import FinderRepository from '../../../../shared/domain/FinderRepository'
 import Movie from '../../../domain/model/movie/Movie'
+import MovieFinderRepositoryPort from '../../../domain/port/driven/repository/MovieFinderRepositoryPort'
 import JSONrepositoryFactory from './JSONrepositoryFactory'
 import SWAPIRepositoryFactory from './SWAPIRepositoryFactory'
 
 export default abstract class AbstractFinderFactory {
   static readonly create = (
     type: FinderType,
-  ): FinderRepository<string, Movie> => {
+  ): MovieFinderRepositoryPort<string, Movie> => {
     switch (type) {
       case FinderType.JSON:
         return JSONrepositoryFactory.create()
