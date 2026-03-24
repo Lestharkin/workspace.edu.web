@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(234, 240, 244);
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  display: flex;
+  margin: 0px 8% 0px 8%;
+  background-color: white;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
