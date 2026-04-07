@@ -1,3 +1,7 @@
 .signin {
   background-color: rgb(54, 22, 114);
 }
+
+.colorRojo {
+  color: red !important;
+}
