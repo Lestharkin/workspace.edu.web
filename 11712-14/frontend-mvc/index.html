@@ -13,33 +13,34 @@
 
 
   <div class="row">
-    <div class="col"></div>
-    <div class="col">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
       <form method="get" action="#">
         <fieldset class="mt-4 p-4 signin rounded rounded-4 border border-2 border-dark">
           <legend>Sign In</legend>
-          <div>
+          <div class="control">
             <label for="email" class="form-label mt-4">Email address</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"
               name="email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
-          <div>
+          <div class="control">
             <label for="password" class="form-label mt-4">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off"
               name="password">
-          </div>
-          <div class="text-end mt-4">
-            <button type="submit" class="btn btn-primary">Submit</button>
+          </div class="control">
+          <div class="text-end mt-4" id="btns">
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
           </div>
         </fieldset>
       </form>
     </div>
-    <div class="col"></div>
+    <div class="col-sm-2"></div>
   </div>
 
 
   <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
