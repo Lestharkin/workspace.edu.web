@@ -1,4 +1,7 @@
-export default class IndexView {
+import Observer from '../../shared/observer/Observer.js'
+import type IndexModel from '../model/IndexModel.js'
+
+export default class IndexView extends Observer {
   private readonly root: HTMLElement
 
   private readonly nav = `<nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
@@ -44,11 +47,33 @@ export default class IndexView {
       </div>
     </nav>`
 
-  constructor() {
+  constructor(model: IndexModel) {
+    super(model)
     this.root = document.querySelector('root') ?? document.createElement('div')
   }
 
   readonly init = () => {
     this.root.innerHTML = this.nav
+  }
+
+  readonly update = () => {
+    const movies = (this.subjects as IndexModel).getMovies()
+
+    const list = document.createElement('div')
+    list.innerHTML = `
+    <ul class="list-group">
+      ${movies
+        .map(
+          (movie) => `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          ${movie.title}
+          <span class="badge bg-primary rounded-pill">${movie.episode_id}</span>
+        </li>
+      `,
+        )
+        .join('')}
+    </ul>
+    `
+    this.root.appendChild(list)
   }
 }

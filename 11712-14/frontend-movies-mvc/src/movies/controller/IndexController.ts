@@ -7,7 +7,8 @@ export default class IndexController {
     private readonly view: IndexView,
   ) {}
 
-  readonly init = () => {
+  readonly init = async () => {
     this.view.init()
+    await this.model.init()
   }
 }
