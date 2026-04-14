@@ -5,6 +5,7 @@ export default abstract class Observer {
 
   protected constructor(subject: Subject) {
     this.subject = subject
+    this.subject.attach(this)
   }
 
   abstract readonly update: () => void

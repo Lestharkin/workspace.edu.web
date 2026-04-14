@@ -1,15 +1,20 @@
+import Subject from '../../shared/observer/Subject.js'
 import type { StarWarsMovie } from './types/StarWarsMovie.js'
 
-export default class IndexModel {
-  private readonly movies: StarWarsMovie[]
+export default class IndexModel extends Subject {
+  private movies: StarWarsMovie[]
 
   constructor() {
+    super()
     this.movies = []
   }
 
-  readonly init = () => {
-    console.log('IndexModel loaded')
+  readonly init = async () => {
+    this.movies = await this.fetchMovies()
+    this.notify()
   }
+
+  readonly getMovies = () => this.movies
 
   readonly fetchMovies = async (): Promise<StarWarsMovie[]> => {
     try {
