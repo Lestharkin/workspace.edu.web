@@ -1,0 +1,1 @@
+{"version":3,"file":"IndexModel.d.ts","sourceRoot":"","sources":["../../../../../../src/index/controller/model/IndexModel.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,0BAA0B,CAAA;AAE7D,MAAM,CAAC,OAAO,OAAO,UAAU;IAC7B,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAiB;;IAMxC,QAAQ,CAAC,IAAI,aAEZ;IAED,QAAQ,CAAC,WAAW,QAAa,OAAO,CAAC,aAAa,EAAE,CAAC,CASxD;CACF"}

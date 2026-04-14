@@ -1,0 +1,1 @@
+{"version":3,"file":"Observer.d.ts","sourceRoot":"","sources":["../../../../../src/shared/observer/Observer.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,OAAO,MAAM,cAAc,CAAA;AAEvC,MAAM,CAAC,OAAO,CAAC,QAAQ,OAAO,QAAQ;IACpC,SAAS,CAAC,QAAQ,CAAC,OAAO,EAAE,OAAO,CAAA;IAEnC,SAAS,aAAa,OAAO,EAAE,OAAO;IAItC,QAAQ,CAAC,QAAQ,CAAC,MAAM,EAAE,MAAM,IAAI,CAAA;CACrC"}

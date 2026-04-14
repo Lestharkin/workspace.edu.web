@@ -1,6 +1,6 @@
-import IndexController from './controller/IndexController.js'
-import IndexModel from './model/IndexModel.js'
-import IndexView from './view/IndexView.js'
+import IndexController from './index/controller/IndexController.js'
+import IndexModel from './index/model/IndexModel.js'
+import IndexView from './index/view/IndexView.js'
 
 const model = new IndexModel()
 const view = new IndexView()
