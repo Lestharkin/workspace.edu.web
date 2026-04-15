@@ -1,7 +1,8 @@
-export default class LayoutComponent extends HTMLDivElement {
+export default class LayoutComponent {
+    private readonly root;
+    private readonly layout;
     private readonly header;
-    private readonly main;
-    private readonly footer;
-    constructor(header: HTMLDivElement, main: HTMLDivElement, footer: HTMLDivElement);
+    constructor(header: HTMLDivElement, root: HTMLElement);
+    get(): HTMLDivElement;
 }
 //# sourceMappingURL=LayoutComponent.d.ts.map

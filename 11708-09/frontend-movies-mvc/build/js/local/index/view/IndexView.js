@@ -1,25 +1,22 @@
-import ButtonComponent, { ButtonType, } from '../../component/button/ButtonComponent.js';
-import SuperButtonComponent from '../../component/button/superButtonComponent.js';
 import Observer from '../../shared/observer/Observer.js';
+import Subject from '../../shared/observer/Subject.js';
+import IndexModel from '../model/IndexModel.js';
+import HeaderComponent from './component/HeaderComponent.js';
+import LayoutComponent from './component/LayoutComponent.js';
 export default class IndexView extends Observer {
     root;
+    layout;
+    header;
     constructor(subject) {
         super(subject);
         this.root = document.querySelector('root') ?? document.createElement('div');
-        this.root.appendChild(new ButtonComponent('Aceptar', () => {
-            alert('Button clicked');
-        }, ButtonType.primary).get());
-        this.root.appendChild(new ButtonComponent('Aceptar', () => {
-            alert('OTRA ACCION');
-        }, ButtonType.danger).get());
-        this.root.appendChild(new SuperButtonComponent('Super Aceptar', () => {
-            alert('Super ACCION');
-        }, () => {
-            alert('Super Dblclick');
-        }, ButtonType.warning).get());
+        this.header = new HeaderComponent();
+        this.layout = new LayoutComponent(this.header.get(() => {
+            alert('Search button clicked');
+        }), this.root);
     }
     init = () => {
-        console.log('IndexView loaded');
+        this.layout.get();
     };
     update = () => {
         const movies = this.subject.getMovies();

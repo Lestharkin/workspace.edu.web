@@ -1,12 +1,19 @@
-export default class LayoutComponent extends HTMLDivElement {
+export default class LayoutComponent {
+    root;
+    layout;
     header;
-    main;
-    footer;
-    constructor(header, main, footer) {
-        super();
+    // private readonly main: HTMLDivElement
+    // private readonly footer: HTMLDivElement
+    constructor(header, root) {
+        this.root = root;
         this.header = header;
-        this.main = main;
-        this.footer = footer;
+        this.header.classList.add('p-5');
+        this.layout = document.createElement('div');
+    }
+    get() {
+        this.layout.appendChild(this.header);
+        this.root.appendChild(this.layout);
+        return this.layout;
     }
 }
 //# sourceMappingURL=LayoutComponent.js.map

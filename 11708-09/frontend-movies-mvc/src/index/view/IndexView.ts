@@ -1,52 +1,28 @@
-import ButtonComponent, {
-  ButtonType,
-} from '../../component/button/ButtonComponent.js'
-import SuperButtonComponent from '../../component/button/superButtonComponent.js'
 import Observer from '../../shared/observer/Observer.js'
-import type Subject from '../../shared/observer/Subject.js'
-import type IndexModel from '../model/IndexModel.js'
+import Subject from '../../shared/observer/Subject.js'
+import IndexModel from '../model/IndexModel.js'
+import HeaderComponent from './component/HeaderComponent.js'
+import LayoutComponent from './component/LayoutComponent.js'
 
 export default class IndexView extends Observer {
   private readonly root: HTMLDivElement
+  private readonly layout: LayoutComponent
+  private readonly header: HeaderComponent
 
   constructor(subject: Subject) {
     super(subject)
     this.root = document.querySelector('root') ?? document.createElement('div')
-    this.root.appendChild(
-      new ButtonComponent(
-        'Aceptar',
-        () => {
-          alert('Button clicked')
-        },
-        ButtonType.primary,
-      ).get(),
-    )
-    this.root.appendChild(
-      new ButtonComponent(
-        'Aceptar',
-        () => {
-          alert('OTRA ACCION')
-        },
-        ButtonType.danger,
-      ).get(),
-    )
-
-    this.root.appendChild(
-      new SuperButtonComponent(
-        'Super Aceptar',
-        () => {
-          alert('Super ACCION')
-        },
-        () => {
-          alert('Super Dblclick')
-        },
-        ButtonType.warning,
-      ).get(),
+    this.header = new HeaderComponent()
+    this.layout = new LayoutComponent(
+      this.header.get(() => {
+        alert('Search button clicked')
+      }),
+      this.root,
     )
   }
 
   readonly init = () => {
-    console.log('IndexView loaded')
+    this.layout.get()
   }
 
   readonly update = () => {
