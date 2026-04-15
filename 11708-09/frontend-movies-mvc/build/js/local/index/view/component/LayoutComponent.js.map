@@ -1,0 +1,1 @@
+{"version":3,"file":"LayoutComponent.js","sourceRoot":"","sources":["../../../../../../src/index/view/component/LayoutComponent.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,OAAO,eAAgB,SAAQ,cAAc;IAEtC;IACA;IACA;IAHnB,YACmB,MAAsB,EACtB,IAAoB,EACpB,MAAsB;QAEvC,KAAK,EAAE,CAAA;QAJU,WAAM,GAAN,MAAM,CAAgB;QACtB,SAAI,GAAJ,IAAI,CAAgB;QACpB,WAAM,GAAN,MAAM,CAAgB;IAGzC,CAAC;CACF"}

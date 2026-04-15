@@ -1,0 +1,1 @@
+{"version":3,"file":"superButtonComponent.d.ts","sourceRoot":"","sources":["../../../../../src/component/button/superButtonComponent.ts"],"names":[],"mappings":"AAAA,OAAO,eAAe,EAAE,EAAE,UAAU,EAAE,MAAM,sBAAsB,CAAA;AAElE,MAAM,CAAC,OAAO,OAAO,oBAAqB,SAAQ,eAAe;gBACnD,IAAI,EAAE,MAAM,EAAE,EAAE,EAAE,MAAM,IAAI,EAAE,GAAG,EAAE,MAAM,IAAI,EAAE,IAAI,EAAE,UAAU;CAI5E"}

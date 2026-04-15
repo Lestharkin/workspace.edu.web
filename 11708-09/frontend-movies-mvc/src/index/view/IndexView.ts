@@ -1,3 +1,7 @@
+import ButtonComponent, {
+  ButtonType,
+} from '../../component/button/ButtonComponent.js'
+import SuperButtonComponent from '../../component/button/superButtonComponent.js'
 import Observer from '../../shared/observer/Observer.js'
 import type Subject from '../../shared/observer/Subject.js'
 import type IndexModel from '../model/IndexModel.js'
@@ -8,6 +12,37 @@ export default class IndexView extends Observer {
   constructor(subject: Subject) {
     super(subject)
     this.root = document.querySelector('root') ?? document.createElement('div')
+    this.root.appendChild(
+      new ButtonComponent(
+        'Aceptar',
+        () => {
+          alert('Button clicked')
+        },
+        ButtonType.primary,
+      ).get(),
+    )
+    this.root.appendChild(
+      new ButtonComponent(
+        'Aceptar',
+        () => {
+          alert('OTRA ACCION')
+        },
+        ButtonType.danger,
+      ).get(),
+    )
+
+    this.root.appendChild(
+      new SuperButtonComponent(
+        'Super Aceptar',
+        () => {
+          alert('Super ACCION')
+        },
+        () => {
+          alert('Super Dblclick')
+        },
+        ButtonType.warning,
+      ).get(),
+    )
   }
 
   readonly init = () => {
