@@ -4,6 +4,7 @@ export default class IndexView extends Observer {
     private readonly root;
     private readonly layout;
     private readonly header;
+    private readonly list;
     constructor(subject: Subject);
     readonly init: () => void;
     readonly update: () => void;
