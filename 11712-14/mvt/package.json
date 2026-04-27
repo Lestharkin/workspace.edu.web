@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "rm -rf build && tsc",
-    "dev": "tsx --watch ./src/index.ts",
+    "dev": "tsx --env-file=./env/.env --watch ./src/index.ts",
     "test": "jest --verbose"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "ejs": "^5.0.2",
     "express": "^5.2.1"
   },
   "devDependencies": {
