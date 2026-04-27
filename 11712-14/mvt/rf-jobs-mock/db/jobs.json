@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "company": "TechNova Solutions",
+    "company_description": "Leader in cloud computing services and microservices architecture.",
+    "position": "Senior Backend Developer (Python/Django)",
+    "job_description": "Responsible for designing and maintaining scalable APIs and optimizing server performance.",
+    "type": "fulltime",
+    "benefits": ["Private health insurance", "Performance bonuses", "Education budget"],
+    "location": "Madrid, Spain",
+    "posted_ago": "2 hours"
+  },
+  {
+    "id": 2,
+    "company": "GreenCode",
+    "company_description": "Startup focused on sustainable technology and energy efficiency.",
+    "position": "Junior Data Analyst",
+    "job_description": "Data cleaning and creation of interactive dashboards for sustainability metrics.",
+    "type": "halftime",
+    "benefits": ["Flexible hours", "100% remote work"],
+    "location": "Berlin, Germany",
+    "posted_ago": "45 minutes"
+  },
+  {
+    "id": 3,
+    "company": "CyberShield Inc.",
+    "company_description": "International consultancy specialized in industrial cybersecurity.",
+    "position": "Pentester / Security Auditor",
+    "job_description": "Performing penetration tests and vulnerability reporting on critical infrastructure.",
+    "type": "byhours",
+    "benefits": ["Pay per project", "Access to hacking labs"],
+    "location": "Washington D.C., USA",
+    "posted_ago": "1 day"
+  },
+  {
+    "id": 4,
+    "company": "PixelPerfect Studios",
+    "company_description": "Creative agency for UI/UX design and frontend development.",
+    "position": "Frontend Developer (React)",
+    "job_description": "Transform Figma designs into functional and responsive components.",
+    "type": "fulltime",
+    "benefits": ["Latest generation Mac equipment", "Fruit and snacks in the office"],
+    "location": "Buenos Aires, Argentina",
+    "posted_ago": "5 hours"
+  },
+  {
+    "id": 5,
+    "company": "Global Logistics AI",
+    "company_description": "Logistics company using AI to optimize transport routes.",
+    "position": "Machine Learning Engineer",
+    "job_description": "Training deep learning models for demand forecasting.",
+    "type": "fulltime",
+    "benefits": ["Access to GPU clusters", "Unlimited vacation"],
+    "location": "Tokyo, Japan",
+    "posted_ago": "15 minutes"
+  },
+  {
+    "id": 6,
+    "company": "FinTech Flow",
+    "company_description": "Digital payment platform for emerging markets.",
+    "position": "QA Automation Engineer",
+    "job_description": "Developing automated test scripts for Android and iOS mobile applications.",
+    "type": "fulltime",
+    "benefits": ["Stock options", "Gym membership"],
+    "location": "San Francisco, USA",
+    "posted_ago": "3 days"
+  },
+  {
+    "id": 7,
+    "company": "CloudScale",
+    "company_description": "Infrastructure as a Service (IaaS) provider.",
+    "position": "DevOps Engineer",
+    "job_description": "Managing CI/CD pipelines and orchestration with Kubernetes.",
+    "type": "fulltime",
+    "benefits": ["Paid AWS/Azure certifications", "Mental health days"],
+    "location": "London, UK",
+    "posted_ago": "12 hours"
+  },
+  {
+    "id": 8,
+    "company": "EduTech Online",
+    "company_description": "Massive e-learning platform with a presence throughout Latin America.",
+    "position": "Programming Tutor",
+    "job_description": "Supporting students in resolving doubts about JavaScript and Node.js.",
+    "type": "byhours",
+    "benefits": ["Discounts on courses", "International networking"],
+    "location": "Bogotá, Colombia",
+    "posted_ago": "30 minutes"
+  },
+  {
+    "id": 9,
+    "company": "HealthIT Systems",
+    "company_description": "Hospital management and telemedicine software.",
+    "position": "Database Administrator (PostgreSQL)",
+    "job_description": "Maintenance, backup, and optimization of large volumes of medical data.",
+    "type": "halftime",
+    "benefits": ["Life insurance", "Telecommuting"],
+    "location": "Mexico City, Mexico",
+    "posted_ago": "6 days"
+  },
+  {
+    "id": 10,
+    "company": "BitMining Corp",
+    "company_description": "Company dedicated to cryptocurrency mining infrastructure.",
+    "position": "Hardware Maintenance Tech",
+    "job_description": "Preventive maintenance of ASIC equipment and cooling systems.",
+    "type": "fulltime",
+    "benefits": ["Crypto bonuses", "Housing included"],
+    "location": "Reykjavik, Iceland",
+    "posted_ago": "10 hours"
+  },
+  {
+    "id": 11,
+    "company": "Mobile First",
+    "company_description": "Agency focused exclusively on native mobile development.",
+    "position": "iOS Developer (Swift)",
+    "job_description": "Developing new features for mobile banking apps.",
+    "type": "fulltime",
+    "benefits": ["Streaming service subscriptions", "Coworking pass"],
+    "location": "Santiago, Chile",
+    "posted_ago": "4 days"
+  },
+  {
+    "id": 12,
+    "company": "SmartCity Labs",
+    "company_description": "Research and development of sensors for smart cities.",
+    "position": "Embedded Systems Developer",
+    "job_description": "C/C++ programming for microcontrollers and IoT devices.",
+    "type": "fulltime",
+    "benefits": ["Own prototyping lab", "Travel to conferences"],
+    "location": "Seoul, South Korea",
+    "posted_ago": "22 hours"
+  },
+  {
+    "id": 13,
+    "company": "E-Commerce Giant",
+    "company_description": "Global retail sales platform.",
+    "position": "SRE (Site Reliability Engineer)",
+    "job_description": "Ensuring 99.99% availability of the store during high traffic events.",
+    "type": "fulltime",
+    "benefits": ["Massive annual bonuses", "Retirement plan"],
+    "location": "Seattle, USA",
+    "posted_ago": "1 hour"
+  },
+  {
+    "id": 14,
+    "company": "Web3 Wonders",
+    "company_description": "Decentralized protocol for finance (DeFi).",
+    "position": "Smart Contract Developer (Solidity)",
+    "job_description": "Writing and auditing secure smart contracts on the Ethereum network.",
+    "type": "byhours",
+    "benefits": ["Anonymous work permitted", "Paid in Stablecoins"],
+    "location": "Remote",
+    "posted_ago": "55 minutes"
+  },
+  {
+    "id": 15,
+    "company": "GameDev Horizon",
+    "company_description": "Independent multi-platform video game studio.",
+    "position": "Unity 3D Developer",
+    "job_description": "Implementation of game mechanics and particle systems.",
+    "type": "halftime",
+    "benefits": ["Game store credits", "Birthday day off"],
+    "location": "Montreal, Canada",
+    "posted_ago": "2 days"
+  }
+]
