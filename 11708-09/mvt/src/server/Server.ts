@@ -12,7 +12,7 @@ export default class Server {
     this.configure()
   }
 
-  private configure(): void {
+  private readonly configure = (): void => {
     this.app.set('view engine', 'ejs')
 
     this.app.use(express.json())
@@ -20,7 +20,7 @@ export default class Server {
     this.app.use(express.static(path.join(__dirname, '../public')))
   }
 
-  private routes(): void {
+  private readonly routes = (): void => {
     this.routers.forEach((router) => {
       this.app.use('/', router.router)
     })
