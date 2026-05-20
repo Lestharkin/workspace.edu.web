@@ -8,9 +8,19 @@ export default class MovieController {
     private readonly imageModel: ImageModel,
   ) {}
 
-  readonly getMovieList = async (_req: Request, res: Response) => {
+  readonly getMovieList = async (req: Request, res: Response) => {
     const movies = await this.movieModel.fetchMovieList()
-    res.status(200).json(movies)
+    
+    const protocol = req.protocol
+    const host = req.get('host')
+    const baseUrl = `${protocol}://${host}`
+    
+    const moviesWithFullUrl = movies.map((movie) => ({
+      ...movie,
+      thumbnail: `${baseUrl}/api/v1.0/movies/movie/image/${encodeURIComponent(movie.title)}`,
+    }))
+    
+    res.status(200).json(moviesWithFullUrl)
   }
 
   readonly getMovie = async (req: Request, res: Response) => {
